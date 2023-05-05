@@ -12,16 +12,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="David">
   <meta name="keywords" content="">
   
-    <meta name="description" content="【educoder】 机器学习 — 决策树第1关：什么是决策树任务描述本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识为了完成本关任务，你需要掌握决策树的相关基础知识。 引例在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。  假设现在水果店里有3个西瓜，它们的属性如下">
+    <meta name="description" content="【educoder】 机器学习 --- 决策树 第1关：什么是决策树 任务描述 本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识 为了完成本关任务，你需要掌握决策树的相关基础知识。 引例 在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。   im">
 <meta property="og:type" content="article">
 <meta property="og:title" content="头歌 - 机器学习作业">
 <meta property="og:url" content="https://david_deng.gitee.io/my-blog/2023/05/05/educoder-ml-homework/index.html">
-<meta property="og:site_name" content="David&#39;s Bolg">
-<meta property="og:description" content="【educoder】 机器学习 — 决策树第1关：什么是决策树任务描述本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识为了完成本关任务，你需要掌握决策树的相关基础知识。 引例在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。  假设现在水果店里有3个西瓜，它们的属性如下">
+<meta property="og:site_name" content="David 的博客">
+<meta property="og:description" content="【educoder】 机器学习 --- 决策树 第1关：什么是决策树 任务描述 本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识 为了完成本关任务，你需要掌握决策树的相关基础知识。 引例 在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。   im">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://data.educoder.net/api/attachments/283157">
 <meta property="og:image" content="https://data.educoder.net/api/attachments/283157">
@@ -48,7 +50,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>头歌 - 机器学习作业 - David&#39;s Bolg</title>
+  <title>头歌 - 机器学习作业 - David 的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -127,7 +129,11 @@
 
 
   
-<meta name="generator" content="Hexo 5.4.2"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -140,7 +146,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/my-blog/">
-      <strong>David&#39;s Bolg</strong>
+      <strong>David 的博客</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -319,14 +325,24 @@
             
               <div class="markdown-body">
                 
-                <h1 id="【educoder】-机器学习-—-决策树"><a href="#【educoder】-机器学习-—-决策树" class="headerlink" title="【educoder】 机器学习 — 决策树"></a>【educoder】 机器学习 — 决策树</h1><h2 id="第1关：什么是决策树"><a href="#第1关：什么是决策树" class="headerlink" title="第1关：什么是决策树"></a>第1关：什么是决策树</h2><h4 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：根据本节课所学知识完成本关所设置的选择题。</p>
-<h4 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握决策树的相关基础知识。</p>
-<h5 id="引例"><a href="#引例" class="headerlink" title="引例"></a>引例</h5><p>在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。</p>
-<p><img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-1"></p>
+                <h1 id="educoder-机器学习-----决策树">【educoder】 机器学习 ---
+决策树</h1>
+<h2 id="第1关什么是决策树">第1关：什么是决策树</h2>
+<h4 id="任务描述">任务描述</h4>
+<p>本关任务：根据本节课所学知识完成本关所设置的选择题。</p>
+<h4 id="相关知识">相关知识</h4>
+<p>为了完成本关任务，你需要掌握决策树的相关基础知识。</p>
+<h5 id="引例">引例</h5>
+<p>在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。</p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-1" />
+<figcaption aria-hidden="true">img-1</figcaption>
+</figure>
 <p>假设现在水果店里有<code>3</code>个西瓜，它们的属性如下：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>编号</th>
 <th>瓤是否够红</th>
 <th>够不够冰</th>
@@ -334,249 +350,283 @@
 <th>是否有籽</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>1</td>
 <td>是</td>
 <td>否</td>
 <td>是</td>
 <td>否</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>是</td>
 <td>是</td>
 <td>否</td>
 <td>是</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td>否</td>
 <td>是</td>
 <td>是</td>
 <td>否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>那么根据我的脑回路我会买<code>1</code>和<code>2</code>号西瓜。</p>
 <p>其实我的脑回路可以看成一棵树，并且这棵树能够帮助我对买不买西瓜这件事做决策，所以它就是一棵决策树。</p>
-<h5 id="决策树的相关概念"><a href="#决策树的相关概念" class="headerlink" title="决策树的相关概念"></a>决策树的相关概念</h5><p>决策树是一种可以用于分类与回归的机器学习算法，但主要用于分类。用于分类的决策树是一种描述对实例进行分类的树形结构。决策树由结点和边组成，其中结点分为内部结点和叶子结点，内部结点表示一个特征或者属性，叶子结点表示标签（脑回路图中黄色的是内部结点，蓝色的是叶子结点）。</p>
+<h5 id="决策树的相关概念">决策树的相关概念</h5>
+<p>决策树是一种可以用于分类与回归的机器学习算法，但主要用于分类。用于分类的决策树是一种描述对实例进行分类的树形结构。决策树由结点和边组成，其中结点分为内部结点和叶子结点，内部结点表示一个特征或者属性，叶子结点表示标签（脑回路图中黄色的是内部结点，蓝色的是叶子结点）。</p>
 <p>从代码角度来看，决策树其实可以看成是一堆<code>if-else</code>语句的集合，例如引例中的决策树完全可以看成是如下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> isRed:<br>    <span class="hljs-keyword">if</span> isCold:<br>        <span class="hljs-keyword">if</span> hasSeed:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;buy&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;don&#x27;t buy&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">if</span> isCheap:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;buy&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;don&#x27;t buy&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;don&#x27;t buy&quot;</span>)<br></code></pre></td></tr></table></figure>
-
 <p>因此决策树的一个非常大的优势就是模型的可理解性非常高，甚至可以用来挖掘数据中比较重要的信息。</p>
 <p>那么如何构造出一棵好的决策树呢？其实构造决策树时会遵循一个指标，有的是按照信息增益来构建，如ID3算法；有的是信息增益率来构建，如C4.5算法；有的是按照基尼系数来构建的，如CART算法。但不管是使用哪种构建算法，决策树的构建过程通常都是一个递归选择最优特征，并根据特征对训练集进行分割，使得对各个子数据集有一个最好的分类的过程。</p>
 <p>这一过程对应着对特征空间的划分，也对应着决策树的构建。一开始，构建决策树的根结点，将所有训练数据都放在根结点。选择一个最优特征，并按照这一特征将训练数据集分割成子集，使得各个子集有一个在当前条件下最好的分类。如果这些子集已经能够被基本正确分类，那么构建叶子结点，并将这些子集分到所对应的叶结点中去；如果还有子集不能被基本正确分类，那么就对这些子集选择新的最优特征，继续对其进行分割，并构建相应的结点。如此递归进行下去，直至所有训练数据子集被基本正确分类，或者没有合适的特征为止。最后每个子集都被分到叶子结点上，即都有了明确的类别。这就构建出了一棵决策树。</p>
-<h4 id="编程要求"><a href="#编程要求" class="headerlink" title="编程要求"></a>编程要求</h4><p>根据本关所学习到的知识，完成所有选择题。</p>
-<h4 id="测试说明"><a href="#测试说明" class="headerlink" title="测试说明"></a>测试说明</h4><p>平台会对你的选项进行判断，如果实际输出结果与预期结果相同，则通关；反之，则 <code>GameOver</code>。</p>
-<h4 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h4><ul>
+<h4 id="编程要求">编程要求</h4>
+<p>根据本关所学习到的知识，完成所有选择题。</p>
+<h4 id="测试说明">测试说明</h4>
+<p>平台会对你的选项进行判断，如果实际输出结果与预期结果相同，则通关；反之，则
+<code>GameOver</code>。</p>
+<h4 id="参考答案">参考答案</h4>
+<ul>
 <li><p>1、下列说法正确的是？</p>
 <p>A、训练决策树的过程就是构建决策树的过程</p>
 <p>B、ID3算法是根据信息增益来构建决策树</p>
 <p>C、C4.5算法是根据基尼系数来构建决策树</p>
-<p>D、决策树模型的可理解性不高</p>
-</li>
+<p>D、决策树模型的可理解性不高</p></li>
 <li><p>2、下列说法错误的是？</p>
 <p>A、从树的根节点开始，根据特征的值一步一步走到叶子节点的过程是决策树做决策的过程</p>
 <p>B、决策树只能是一棵二叉树</p>
-<p>C、根节点所代表的特征是最优特征</p>
-</li>
+<p>C、根节点所代表的特征是最优特征</p></li>
 </ul>
 <blockquote>
-<ol>
+<ol type="1">
 <li>A B</li>
 <li>B</li>
 </ol>
 </blockquote>
-<h2 id="第2关：信息熵与信息增益"><a href="#第2关：信息熵与信息增益" class="headerlink" title="第2关：信息熵与信息增益"></a>第2关：信息熵与信息增益</h2><h4 id="任务描述-1"><a href="#任务描述-1" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：掌握什么是信息增益，完成计算信息增益的程序设计。</p>
-<h4 id="相关知识-1"><a href="#相关知识-1" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握：</p>
+<h2 id="第2关信息熵与信息增益">第2关：信息熵与信息增益</h2>
+<h4 id="任务描述-1">任务描述</h4>
+<p>本关任务：掌握什么是信息增益，完成计算信息增益的程序设计。</p>
+<h4 id="相关知识-1">相关知识</h4>
+<p>为了完成本关任务，你需要掌握：</p>
 <ul>
 <li>信息熵；</li>
 <li>条件熵；</li>
 <li>信息增益。</li>
 </ul>
-<h5 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h5><p>信息是个很抽象的概念。人们常常说信息很多，或者信息较少，但却很难说清楚信息到底有多少。比如一本五十万字的中文书到底有多少信息量。</p>
+<h5 id="信息熵">信息熵</h5>
+<p>信息是个很抽象的概念。人们常常说信息很多，或者信息较少，但却很难说清楚信息到底有多少。比如一本五十万字的中文书到底有多少信息量。</p>
 <p>直到1948年，香农提出了“信息熵”的概念，才解决了对信息的量化度量问题。信息熵这个词是香农从热力学中借用过来的。热力学中的热熵是表示分子状态混乱程度的物理量。香农用信息熵的概念来描述信源的不确定度。信源的不确定性越大，信息熵也越大。</p>
 <p>从机器学习的角度来看，信息熵表示的是信息量的期望值。如果数据集中的数据需要被分成多个类别，则信息量<code>I(xi)</code>的定义如下(其中<code>xi</code>表示多个类别中的第<code>i</code>个类别，<code>p(xi)</code>数据集中类别为<code>xi</code>的数据在数据集中出现的概率表示)：</p>
-<p> $I(X_i)=−\log_{2}{p(x_i)} \tag{1} $</p>
+<p><span class="math display">\[I(X_i)=−\log_{2}{p(x_i)} \tag{1}
+\]</span></p>
 <p>由于信息熵是信息量的期望值，所以信息熵<code>H(X)</code>的定义如下(其中<code>n</code>为数据集中类别的数量)：</p>
-<p>$H(X)=−\sum_{i=1}^{n}p(x_i) \log_{2}{p(x_i)} \tag{2}$</p>
+<p><span class="math display">\[H(X)=−\sum_{i=1}^{n}p(x_i)
+\log_{2}{p(x_i)} \tag{2}\]</span></p>
 <p>从这个公式也可以看出，如果概率是<code>0</code>或者是<code>1</code>的时候，熵就是<code>0</code>（因为这种情况下随机变量的不确定性是最低的）。那如果概率是<code>0.5</code>，也就是五五开的时候，此时熵达到最大，也就是<code>1</code>。（就像扔硬币，你永远都猜不透你下次扔到的是正面还是反面，所以它的不确定性非常高）。所以呢，熵越大，不确定性就越高。</p>
-<h5 id="条件熵"><a href="#条件熵" class="headerlink" title="条件熵"></a>条件熵</h5><p>在实际的场景中，我们可能需要研究数据集中某个特征等于某个值时的信息熵等于多少，这个时候就需要用到条件熵。条件熵<code>H(Y|X)</code>表示特征X为某个值的条件下，类别为Y的熵。条件熵的计算公式如下：</p>
-<p>$H(Y|X)= \sum_{i=1}^{n}p_iH(Y|X=x_i) \tag{3}$</p>
+<h5 id="条件熵">条件熵</h5>
+<p>在实际的场景中，我们可能需要研究数据集中某个特征等于某个值时的信息熵等于多少，这个时候就需要用到条件熵。条件熵<code>H(Y|X)</code>表示特征X为某个值的条件下，类别为Y的熵。条件熵的计算公式如下：</p>
+<p><span class="math display">\[H(Y|X)= \sum_{i=1}^{n}p_iH(Y|X=x_i)
+\tag{3}\]</span></p>
 <p>当然条件熵的性质也和熵的性质一样，概率越确定，条件熵就越小，概率越五五开，条件熵就越大。</p>
-<h5 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h5><p>现在已经知道了什么是熵，什么是条件熵。接下来就可以看看什么是信息增益了。所谓的信息增益就是表示我已知条件<code>X</code>后能得到信息<code>Y</code>的不确定性的减少程度。</p>
+<h5 id="信息增益">信息增益</h5>
+<p>现在已经知道了什么是熵，什么是条件熵。接下来就可以看看什么是信息增益了。所谓的信息增益就是表示我已知条件<code>X</code>后能得到信息<code>Y</code>的不确定性的减少程度。</p>
 <p>就好比，我在玩读心术。你心里想一件东西，我来猜。我已开始什么都没问你，我要猜的话，肯定是瞎猜。这个时候我的熵就非常高。然后我接下来我会去试着问你是非题，当我问了是非题之后，我就能减小猜测你心中想到的东西的范围，这样其实就是减小了我的熵。那么我熵的减小程度就是我的信息增益。</p>
 <p>所以信息增益如果套上机器学习的话就是，如果把特征<code>A</code>对训练集<code>D</code>的信息增益记为<code>g(D, A)</code>的话，那么<code>g(D, A)</code>的计算公式就是：</p>
-<p>$ g(D,A)=H(D)-H(D,A)  \tag{4} $</p>
+<p><span class="math display">\[ g(D,A)=H(D)-H(D,A)  \tag{4}
+\]</span></p>
 <p>为了更好的解释熵，条件熵，信息增益的计算过程，下面通过示例来描述。假设我现在有这一个数据集，第一列是编号，第二列是性别，第三列是活跃度，第四列是客户是否流失的标签（<code>0</code>表示未流失，<code>1</code>表示流失）。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>编号</th>
 <th>性别</th>
 <th>活跃度</th>
 <th>是否流失</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>1</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>4</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>5</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>6</td>
 <td>男</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7</td>
 <td>男</td>
 <td>中</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>8</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>9</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>12</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>13</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>14</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>假如要算性别和活跃度这两个特征的信息增益的话，首先要先算总的熵和条件熵。总的熵其实非常好算，就是把标签作为随机变量<code>X</code>。上表中标签只有两种（<code>0</code>和<code>1</code>）因此随机变量<code>X</code>的取值只有<code>0</code>或者<code>1</code>。所以要计算熵就需要先分别计算标签为<code>0</code>的概率和标签为<code>1</code>的概率。从表中能看出标签为<code>0</code>的数据有<code>10</code>条，所以标签为<code>0</code>的概率等于<code>2/3</code>。标签为<code>1</code>的概率为<code>1/3</code>。所以熵为：</p>
-<p>$−(1/3)log(1/3)−(2/3)log(2/3)=0.9182$</p>
+<p><span
+class="math display">\[−(1/3)log(1/3)−(2/3)log(2/3)=0.9182\]</span></p>
 <p>接下来就是条件熵的计算，以性别为男的熵为例。表格中性别为男的数据有<code>8</code>条，这<code>8</code>条数据中有<code>3</code>条数据的标签为<code>1</code>，有<code>5</code>条数据的标签为<code>0</code>。所以根据条件熵的计算公式能够得出该条件熵为：</p>
-<p>$−(3/8)log(3/8)−(5/8)log(5/8)=0.9543$</p>
+<p><span
+class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
 <p>根据上述的计算方法可知，总熵为：</p>
-<p>$−(5/15)log(5/15)−(10/15)log(10/15)=0.9182$</p>
+<p><span
+class="math display">\[−(5/15)log(5/15)−(10/15)log(10/15)=0.9182\]</span></p>
 <p>性别为男的熵为：</p>
-<p>$−(3/8)log(3/8)−(5/8)log(5/8)=0.9543$</p>
+<p><span
+class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
 <p>性别为女的熵为：</p>
-<p>$−(2/7)log(2/7)−(5/7)log(5/7)=0.8631$</p>
+<p><span
+class="math display">\[−(2/7)log(2/7)−(5/7)log(5/7)=0.8631\]</span></p>
 <p>活跃度为低的熵为：</p>
-<p>$−(4/4)log(4/4)−0=0$</p>
+<p><span class="math display">\[−(4/4)log(4/4)−0=0\]</span></p>
 <p>活跃度为中的熵为：</p>
-<p>$−(1/5)log(1/5)−(4/5)log(4/5)=0.7219$</p>
+<p><span
+class="math display">\[−(1/5)log(1/5)−(4/5)log(4/5)=0.7219\]</span></p>
 <p>活跃度为高的熵为：</p>
-<p>$−0−(6/6)log(6/6)=0$</p>
+<p><span class="math display">\[−0−(6/6)log(6/6)=0\]</span></p>
 <p>现在有了总的熵和条件熵之后就能算出性别和活跃度这两个特征的信息增益了。</p>
 <p>性别的信息增益=总的熵-(8/15)*性别为男的熵-(7/15)*性别为女的熵=0.0064</p>
-<p>活跃度的信息增益=总的熵-(6/15)*活跃度为高的熵-(5/15)*活跃度为中的熵-(4/15)*活跃度为低的熵=0.6776</p>
+<p>活跃度的信息增益=总的熵-(6/15)<em>活跃度为高的熵-(5/15)</em>活跃度为中的熵-(4/15)*活跃度为低的熵=0.6776</p>
 <p>那信息增益算出来之后有什么意义呢？回到读心术的问题，为了我能更加准确的猜出你心中所想，我肯定是问的问题越好就能猜得越准！换句话来说我肯定是要想出一个信息增益最大（减少不确定性程度最高）的问题来问你。其实<code>ID3</code>算法也是这么想的。<code>ID3</code>算法的思想是从训练集<code>D</code>中计算每个特征的信息增益，然后看哪个最大就选哪个作为当前结点。然后继续重复刚刚的步骤来构建决策树。</p>
-<h4 id="编程要求-1"><a href="#编程要求-1" class="headerlink" title="编程要求"></a>编程要求</h4><p>根据提示，在右侧编辑器补充代码，完成<code>calcInfoGain</code>函数实现计算信息增益。</p>
+<h4 id="编程要求-1">编程要求</h4>
+<p>根据提示，在右侧编辑器补充代码，完成<code>calcInfoGain</code>函数实现计算信息增益。</p>
 <p><code>calcInfoGain</code>函数中的参数:</p>
 <ul>
 <li><code>feature</code>：测试用例中字典里的<code>feature</code>，类型为<code>ndarray</code>；</li>
 <li><code>label</code>：测试用例中字典里的<code>label</code>，类型为<code>ndarray</code>；</li>
 <li><code>index</code>：测试用例中字典里的<code>index</code>，即<code>feature</code>部分特征列的索引。该索引指的是<code>feature</code>中第几个特征，如<code>index:0</code>表示使用第一个特征来计算信息增益。</li>
 </ul>
-<h4 id="测试说明-1"><a href="#测试说明-1" class="headerlink" title="测试说明"></a>测试说明</h4><p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
-<p>测试输入： <code>&#123;&#39;feature&#39;:[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], &#39;label&#39;:[0, 1, 0, 0, 1], &#39;index&#39;: 0&#125;</code></p>
+<h4 id="测试说明-1">测试说明</h4>
+<p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
+<p>测试输入：
+<code>&#123;'feature':[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], 'label':[0, 1, 0, 0, 1], 'index': 0&#125;</code></p>
 <p>预期输出： <code>0.419973</code></p>
-<p>提示： 计算<code>log</code>可以使用<code>NumPy</code>中的<code>log2</code>函数</p>
-<h4 id="参考答案-1"><a href="#参考答案-1" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># 计算熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">feature, label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        label_set = <span class="hljs-built_in">set</span>(label)  <span class="hljs-comment"># 创建一个无序不重复的元素集</span><br>        result = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 统计不同标签各自的数量（一般为0和1）</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                <span class="hljs-keyword">if</span> label[j] == l:<br>                    count += <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>            p = count / <span class="hljs-built_in">len</span>(label)<br>            <span class="hljs-comment"># 计算熵</span><br>            result -= p * np.log2(p)<br>        <span class="hljs-keyword">return</span> result<br><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">            :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        count = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值</span><br>        <span class="hljs-comment"># 分割出的子数据集中的特征和标签</span><br>        sub_feature = []<br>        sub_label = []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                count += <span class="hljs-number">1</span><br>                sub_feature.append(feature[i])<br>                sub_label.append(label[i])<br>        pHA = count / <span class="hljs-built_in">len</span>(feature)<br>        e = calcInfoEntropy(sub_feature, sub_label)<br>        <span class="hljs-keyword">return</span> pHA * e<br><br>    <span class="hljs-comment">#######请计算信息增益############</span><br>    <span class="hljs-comment"># *********** Begin ***********#</span><br>    values = []  <span class="hljs-comment"># 定义一个列表存放index列，即特征列的所有特征</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>        values.append(feature[i][index])<br>    values_list = <span class="hljs-built_in">set</span>(values)  <span class="hljs-comment"># 创建一个无序不重复的元素集</span><br>    g = calcInfoEntropy(feature, label)  <span class="hljs-comment"># 计算总熵</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> values_list:<br>        g -= calcHDA(feature, label, index, i)  <span class="hljs-comment"># 总熵-每个特征的条件熵</span><br>    <span class="hljs-keyword">return</span> g  <span class="hljs-comment"># 得到信息增益</span><br>    <span class="hljs-comment"># *********** End *************#</span><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="第3关：使用ID3算法构建决策树"><a href="#第3关：使用ID3算法构建决策树" class="headerlink" title="第3关：使用ID3算法构建决策树"></a>第3关：使用ID3算法构建决策树</h2><h4 id="任务描述-2"><a href="#任务描述-2" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：补充<code>python</code>代码，完成<code>DecisionTree</code>类中的<code>fit</code>和<code>predict</code>函数。</p>
-<h4 id="相关知识-2"><a href="#相关知识-2" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握：</p>
+<p>提示：
+计算<code>log</code>可以使用<code>NumPy</code>中的<code>log2</code>函数</p>
+<h4 id="参考答案-1">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># 计算熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">feature, label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        label_set = <span class="hljs-built_in">set</span>(label)  <span class="hljs-comment"># 创建一个无序不重复的元素集</span><br>        result = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 统计不同标签各自的数量（一般为0和1）</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                <span class="hljs-keyword">if</span> label[j] == l:<br>                    count += <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>            p = count / <span class="hljs-built_in">len</span>(label)<br>            <span class="hljs-comment"># 计算熵</span><br>            result -= p * np.log2(p)<br>        <span class="hljs-keyword">return</span> result<br><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">            :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        count = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值</span><br>        <span class="hljs-comment"># 分割出的子数据集中的特征和标签</span><br>        sub_feature = []<br>        sub_label = []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                count += <span class="hljs-number">1</span><br>                sub_feature.append(feature[i])<br>                sub_label.append(label[i])<br>        pHA = count / <span class="hljs-built_in">len</span>(feature)<br>        e = calcInfoEntropy(sub_feature, sub_label)<br>        <span class="hljs-keyword">return</span> pHA * e<br><br>    <span class="hljs-comment">#######请计算信息增益############</span><br>    <span class="hljs-comment"># *********** Begin ***********#</span><br>    values = []  <span class="hljs-comment"># 定义一个列表存放index列，即特征列的所有特征</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>        values.append(feature[i][index])<br>    values_list = <span class="hljs-built_in">set</span>(values)  <span class="hljs-comment"># 创建一个无序不重复的元素集</span><br>    g = calcInfoEntropy(feature, label)  <span class="hljs-comment"># 计算总熵</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> values_list:<br>        g -= calcHDA(feature, label, index, i)  <span class="hljs-comment"># 总熵-每个特征的条件熵</span><br>    <span class="hljs-keyword">return</span> g  <span class="hljs-comment"># 得到信息增益</span><br>    <span class="hljs-comment"># *********** End *************#</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="第3关使用id3算法构建决策树">第3关：使用ID3算法构建决策树</h2>
+<h4 id="任务描述-2">任务描述</h4>
+<p>本关任务：补充<code>python</code>代码，完成<code>DecisionTree</code>类中的<code>fit</code>和<code>predict</code>函数。</p>
+<h4 id="相关知识-2">相关知识</h4>
+<p>为了完成本关任务，你需要掌握：</p>
 <ul>
 <li><code>ID3</code>算法构造决策树的流程；</li>
 <li>如何使用构造好的决策树进行预测。</li>
 </ul>
-<h5 id="ID3算法"><a href="#ID3算法" class="headerlink" title="ID3算法"></a>ID3算法</h5><p><code>ID3</code>算法其实就是依据特征的信息增益来构建树的。其大致步骤就是从根结点开始，对结点计算所有可能的特征的信息增益，然后选择信息增益<strong>最大</strong>的特征作为结点的特征，由该特征的不同取值建立子结点，然后对子结点递归执行上述的步骤直到信息增益很小或者没有特征可以继续选择为止。</p>
+<h5 id="id3算法">ID3算法</h5>
+<p><code>ID3</code>算法其实就是依据特征的信息增益来构建树的。其大致步骤就是从根结点开始，对结点计算所有可能的特征的信息增益，然后选择信息增益<strong>最大</strong>的特征作为结点的特征，由该特征的不同取值建立子结点，然后对子结点递归执行上述的步骤直到信息增益很小或者没有特征可以继续选择为止。</p>
 <p>因此，<code>ID3</code>算法伪代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 假设数据集为D，标签集为A，需要构造的决策树为tree</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">ID3</span>(<span class="hljs-params">D, A</span>):<br>    <span class="hljs-keyword">if</span> D中所有的标签都相同:<br>        <span class="hljs-keyword">return</span> 标签<br>    <span class="hljs-keyword">if</span> 样本中只有一个特征或者所有样本的特征都一样:<br>        对D中所有的标签进行计数<br>        <span class="hljs-keyword">return</span> 计数最高的标签<br><br>    计算所有特征的信息增益<br>    选出增益最大的特征作为最佳特征(best_feature)<br>    将best_feature作为tree的根结点<br>    得到best_feature在数据集中所有出现过的值的集合(value_set)<br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> value_set:<br>        从D中筛选出best_feature = value的子数据集(sub_feature)<br>        从A中筛选出best_feature = value的子标签集(sub_label)<br>        <span class="hljs-comment"># 递归构造tree</span><br>        tree[best_feature][value] = ID3(sub_feature, sub_label)<br>    <span class="hljs-keyword">return</span> tree<br><br></code></pre></td></tr></table></figure>
-
-<h5 id="使用决策树进行预测"><a href="#使用决策树进行预测" class="headerlink" title="使用决策树进行预测"></a>使用决策树进行预测</h5><p>决策树的预测思想非常简单，假设现在已经构建出了一棵用来决策是否买西瓜的决策树。</p>
-<p><img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-2"></p>
+<h5 id="使用决策树进行预测">使用决策树进行预测</h5>
+<p>决策树的预测思想非常简单，假设现在已经构建出了一棵用来决策是否买西瓜的决策树。</p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-2" />
+<figcaption aria-hidden="true">img-2</figcaption>
+</figure>
 <p>并假设现在在水果店里有这样一个西瓜，其属性如下：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>瓤是否够红</th>
 <th>够不够冰</th>
 <th>是否便宜</th>
 <th>是否有籽</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>是</td>
 <td>否</td>
 <td>是</td>
 <td>否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>那买不买这个西瓜呢？只需把西瓜的属性代入决策树即可。决策树的根结点是<code>瓤是否够红</code>，所以就看西瓜的属性，经查看发现够红，因此接下来就看<code>够不够冰</code>。而西瓜不够冰，那么看<code>是否便宜</code>。发现西瓜是便宜的，所以这个西瓜是可以买的。</p>
 <p>因此使用决策树进行预测的伪代码也比较简单，伪代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#tree表示决策树，feature表示测试数据</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">tree, feature</span>):<br>    <span class="hljs-keyword">if</span> tree是叶子结点:<br>        <span class="hljs-keyword">return</span> tree<br>    根据feature中的特征值走入tree中对应的分支<br>    <span class="hljs-keyword">if</span> 分支依然是课树:<br>        result = predict(分支, feature)<br>    <span class="hljs-keyword">return</span> result<br></code></pre></td></tr></table></figure>
-
-<h4 id="编程要求-2"><a href="#编程要求-2" class="headerlink" title="编程要求"></a>编程要求</h4><p>填写<code>fit(self, feature, label)</code>函数，实现<code>ID3</code>算法，要求决策树保存在<code>self.tree</code>中。其中：</p>
+<h4 id="编程要求-2">编程要求</h4>
+<p>填写<code>fit(self, feature, label)</code>函数，实现<code>ID3</code>算法，要求决策树保存在<code>self.tree</code>中。其中：</p>
 <ul>
 <li><code>feature</code>：训练集数据，类型为<code>ndarray</code>，数值全为整数；</li>
 <li><code>label</code>：训练集标签，类型为<code>ndarray</code>，数值全为整数。</li>
@@ -585,278 +635,310 @@
 <ul>
 <li><code>feature</code>：测试集数据，类型为<code>ndarray</code>，数值全为整数。<strong>（PS：feature中有多条数据）</strong></li>
 </ul>
-<h4 id="测试说明-2"><a href="#测试说明-2" class="headerlink" title="测试说明"></a>测试说明</h4><p>只需完成<code>fit</code>与<code>predict</code>函数即可，程序内部会调用您所完成的<code>fit</code>函数构建模型并调用<code>predict</code>函数来对数据进行预测。预测的准确率高于<code>0.92</code>视为过关。(PS:若<code>self.tree is None</code>则会打印<strong>决策树构建失败</strong>)</p>
-<h4 id="参考答案-2"><a href="#参考答案-2" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DecisionTree</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 决策树模型</span><br>        self.tree = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">self, feature, label, index</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息增益</span><br><span class="hljs-string">            :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">            :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">            :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">            :return:信息增益，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># 计算熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">label</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            label_set = <span class="hljs-built_in">set</span>(label)<br>            result = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>                count = <span class="hljs-number">0</span><br>                <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                    <span class="hljs-keyword">if</span> label[j] == l:<br>                        count += <span class="hljs-number">1</span><br>                <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>                p = count / <span class="hljs-built_in">len</span>(label)<br>                <span class="hljs-comment"># 计算熵</span><br>                result -= p * np.log2(p)<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">                :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值分割出的子数据集中的特征和标签</span><br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                    count += <span class="hljs-number">1</span><br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            pHA = count / <span class="hljs-built_in">len</span>(feature)<br>            e = calcInfoEntropy(sub_label)<br>            <span class="hljs-keyword">return</span> pHA * e<br><br>        base_e = calcInfoEntropy(label)  <span class="hljs-comment"># 信息熵</span><br>        f = np.array(feature)<br>        <span class="hljs-comment"># 得到指定特征列的值的集合</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, index])<br>        sum_HDA = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>            sum_HDA += calcHDA(feature, label, index, value)<br>        <span class="hljs-comment"># 计算信息增益</span><br>        <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br>    <span class="hljs-comment"># 获得信息增益最高的特征</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getBestFeature</span>(<span class="hljs-params">self, feature, label</span>):<br>        max_infogain = <span class="hljs-number">0</span><br>        best_feature = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 每一列</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>])):<br>            infogain = self.calcInfoGain(feature, label, i)  <span class="hljs-comment"># 计算每一个特征的信息增益</span><br>            <span class="hljs-keyword">if</span> infogain &gt; max_infogain:<br>                max_infogain = infogain<br>                best_feature = i<br>        <span class="hljs-keyword">return</span> best_feature<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">createTree</span>(<span class="hljs-params">self, feature, label</span>):<br>        <span class="hljs-comment"># 1.所有的标签相同，样本里都是同一个label没必要继续分叉了</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(label)) == <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> label[<span class="hljs-number">0</span>]<br>        <span class="hljs-comment"># 2.样本中只有一个特征或者所有样本的特征都一样的话就看哪个label的票数高</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(np.unique(feature, axis=<span class="hljs-number">0</span>)) == <span class="hljs-number">1</span>:<br>            vote = &#123;&#125;<br>            <span class="hljs-comment"># 为不同的label投票，计算数量最高的label</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label:<br>                <span class="hljs-keyword">if</span> l <span class="hljs-keyword">in</span> vote.keys():<br>                    vote[l] += <span class="hljs-number">1</span><br>                <span class="hljs-keyword">else</span>:<br>                    vote[l] = <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 求vote中计数最高的label</span><br>            max_count = <span class="hljs-number">0</span><br>            vote_label = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vote.items():<br>                <span class="hljs-keyword">if</span> v &gt; max_count:<br>                    max_count = v<br>                    vote_label = k<br>            <span class="hljs-keyword">return</span> vote_label<br>        <span class="hljs-comment"># 3.第三种情况，根据信息增益拿到特征的索引</span><br>        best_feature = self.getBestFeature(feature, label)<br>        <span class="hljs-comment"># 创建树，根结点为信息增益最大的特征索引</span><br>        tree = &#123;best_feature: &#123;&#125;&#125;<br>        f = np.array(feature)<br>        <span class="hljs-comment"># 拿到bestfeature的所有特征值</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, best_feature])<br>        <span class="hljs-comment"># 构建对应特征值的子样本集sub_feature, sub_label</span><br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> f_set:<br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-comment"># 在此特征的此样本条下构建子树</span><br>                <span class="hljs-keyword">if</span> feature[i][best_feature] == v:<br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            <span class="hljs-comment"># 递归构建决策树</span><br>            tree[best_feature][v] = self.createTree(sub_feature, sub_label)<br>        <span class="hljs-keyword">return</span> tree<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fit</span>(<span class="hljs-params">self, feature, label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature: 训练集数据，类型为ndarray</span><br><span class="hljs-string">            :param label:训练集标签，类型为ndarray</span><br><span class="hljs-string">            :return: None</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        self.tree = self.createTree(feature, label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">self, feature</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature:测试集数据，类型为ndarray</span><br><span class="hljs-string">            :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-comment"># 如果tree是叶子结点，也就不是字典类型，返回结点</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            <span class="hljs-comment"># tree.items()返回可遍历的(键, 值) 元组数组。</span><br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            <span class="hljs-comment"># t_index:树根特征对应feature的index,eg:feature[4,3,1,0]</span><br>            f_value = feature[t_index]  <span class="hljs-comment"># 最优信息增益index对应的特征值</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):  <span class="hljs-comment"># 如果tree是叶子结点，继续分叉</span><br>                value = classify(tree[t_index][f_value], feature)  <span class="hljs-comment"># 递归此结点后面的树</span><br>                <span class="hljs-keyword">return</span> value<br>            <span class="hljs-comment"># 最后一个，叶子结点，对应的为标签值</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        label = []<br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> feature:<br>            <span class="hljs-comment"># 添加通过决策树模型找到的叶子结点</span><br>            label.append(classify(self.tree, f))<br>        <span class="hljs-keyword">return</span> np.array(label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="第4关：信息增益率"><a href="#第4关：信息增益率" class="headerlink" title="第4关：信息增益率"></a>第4关：信息增益率</h2><h4 id="任务描述-3"><a href="#任务描述-3" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：根据本关所学知识，完成<code>calcInfoGainRatio</code>函数。</p>
-<h4 id="相关知识-3"><a href="#相关知识-3" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握：信息增益率</p>
-<h5 id="信息增益率"><a href="#信息增益率" class="headerlink" title="信息增益率"></a>信息增益率</h5><p>由于在使用信息增益这一指标进行划分时，更喜欢可取值数量较多的特征。为了减少这种<strong>偏好</strong>可能带来的不利影响，<code>Ross Quinlan</code>使用了<strong>信息增益率</strong>这一指标来选择最优划分属性。</p>
-<p>信息增益率的数学定义为如下，其中<em>D</em>表示数据集，<em>a</em>表示数据集中的某一列，<em>G<strong>a</strong>i**n</em>(<em>D</em>,<em>a</em>)表示<em>D</em>中<em>a</em>的信息增益，<em>V</em>表示<em>a</em>这一列中取值的集合，<em>v</em>表示<em>V</em>中的某种取值，∣<em>D</em>∣表示<em>D</em>中样本的数量，∣<em>D**v</em>∣表示<em>D</em>中<em>a</em>这一列中值等于<em>v</em>的数量。</p>
-<p>$Gain_ratio(D,a)=\frac{Gain(D,a)}{-\sum_{v=1}^{V}\log_{2}{\frac{|D^v|}{|D|}}} \tag5$</p>
+<h4 id="测试说明-2">测试说明</h4>
+<p>只需完成<code>fit</code>与<code>predict</code>函数即可，程序内部会调用您所完成的<code>fit</code>函数构建模型并调用<code>predict</code>函数来对数据进行预测。预测的准确率高于<code>0.92</code>视为过关。(PS:若<code>self.tree is None</code>则会打印<strong>决策树构建失败</strong>)</p>
+<h4 id="参考答案-2">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DecisionTree</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 决策树模型</span><br>        self.tree = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">self, feature, label, index</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息增益</span><br><span class="hljs-string">            :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">            :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">            :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">            :return:信息增益，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># 计算熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">label</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            label_set = <span class="hljs-built_in">set</span>(label)<br>            result = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>                count = <span class="hljs-number">0</span><br>                <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                    <span class="hljs-keyword">if</span> label[j] == l:<br>                        count += <span class="hljs-number">1</span><br>                <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>                p = count / <span class="hljs-built_in">len</span>(label)<br>                <span class="hljs-comment"># 计算熵</span><br>                result -= p * np.log2(p)<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">                :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值分割出的子数据集中的特征和标签</span><br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                    count += <span class="hljs-number">1</span><br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            pHA = count / <span class="hljs-built_in">len</span>(feature)<br>            e = calcInfoEntropy(sub_label)<br>            <span class="hljs-keyword">return</span> pHA * e<br><br>        base_e = calcInfoEntropy(label)  <span class="hljs-comment"># 信息熵</span><br>        f = np.array(feature)<br>        <span class="hljs-comment"># 得到指定特征列的值的集合</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, index])<br>        sum_HDA = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>            sum_HDA += calcHDA(feature, label, index, value)<br>        <span class="hljs-comment"># 计算信息增益</span><br>        <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br>    <span class="hljs-comment"># 获得信息增益最高的特征</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getBestFeature</span>(<span class="hljs-params">self, feature, label</span>):<br>        max_infogain = <span class="hljs-number">0</span><br>        best_feature = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 每一列</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>])):<br>            infogain = self.calcInfoGain(feature, label, i)  <span class="hljs-comment"># 计算每一个特征的信息增益</span><br>            <span class="hljs-keyword">if</span> infogain &gt; max_infogain:<br>                max_infogain = infogain<br>                best_feature = i<br>        <span class="hljs-keyword">return</span> best_feature<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">createTree</span>(<span class="hljs-params">self, feature, label</span>):<br>        <span class="hljs-comment"># 1.所有的标签相同，样本里都是同一个label没必要继续分叉了</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(label)) == <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> label[<span class="hljs-number">0</span>]<br>        <span class="hljs-comment"># 2.样本中只有一个特征或者所有样本的特征都一样的话就看哪个label的票数高</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(np.unique(feature, axis=<span class="hljs-number">0</span>)) == <span class="hljs-number">1</span>:<br>            vote = &#123;&#125;<br>            <span class="hljs-comment"># 为不同的label投票，计算数量最高的label</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label:<br>                <span class="hljs-keyword">if</span> l <span class="hljs-keyword">in</span> vote.keys():<br>                    vote[l] += <span class="hljs-number">1</span><br>                <span class="hljs-keyword">else</span>:<br>                    vote[l] = <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 求vote中计数最高的label</span><br>            max_count = <span class="hljs-number">0</span><br>            vote_label = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vote.items():<br>                <span class="hljs-keyword">if</span> v &gt; max_count:<br>                    max_count = v<br>                    vote_label = k<br>            <span class="hljs-keyword">return</span> vote_label<br>        <span class="hljs-comment"># 3.第三种情况，根据信息增益拿到特征的索引</span><br>        best_feature = self.getBestFeature(feature, label)<br>        <span class="hljs-comment"># 创建树，根结点为信息增益最大的特征索引</span><br>        tree = &#123;best_feature: &#123;&#125;&#125;<br>        f = np.array(feature)<br>        <span class="hljs-comment"># 拿到bestfeature的所有特征值</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, best_feature])<br>        <span class="hljs-comment"># 构建对应特征值的子样本集sub_feature, sub_label</span><br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> f_set:<br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-comment"># 在此特征的此样本条下构建子树</span><br>                <span class="hljs-keyword">if</span> feature[i][best_feature] == v:<br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            <span class="hljs-comment"># 递归构建决策树</span><br>            tree[best_feature][v] = self.createTree(sub_feature, sub_label)<br>        <span class="hljs-keyword">return</span> tree<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fit</span>(<span class="hljs-params">self, feature, label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature: 训练集数据，类型为ndarray</span><br><span class="hljs-string">            :param label:训练集标签，类型为ndarray</span><br><span class="hljs-string">            :return: None</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        self.tree = self.createTree(feature, label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">self, feature</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature:测试集数据，类型为ndarray</span><br><span class="hljs-string">            :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-comment"># 如果tree是叶子结点，也就不是字典类型，返回结点</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            <span class="hljs-comment"># tree.items()返回可遍历的(键, 值) 元组数组。</span><br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            <span class="hljs-comment"># t_index:树根特征对应feature的index,eg:feature[4,3,1,0]</span><br>            f_value = feature[t_index]  <span class="hljs-comment"># 最优信息增益index对应的特征值</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):  <span class="hljs-comment"># 如果tree是叶子结点，继续分叉</span><br>                value = classify(tree[t_index][f_value], feature)  <span class="hljs-comment"># 递归此结点后面的树</span><br>                <span class="hljs-keyword">return</span> value<br>            <span class="hljs-comment"># 最后一个，叶子结点，对应的为标签值</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        label = []<br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> feature:<br>            <span class="hljs-comment"># 添加通过决策树模型找到的叶子结点</span><br>            label.append(classify(self.tree, f))<br>        <span class="hljs-keyword">return</span> np.array(label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="第4关信息增益率">第4关：信息增益率</h2>
+<h4 id="任务描述-3">任务描述</h4>
+<p>本关任务：根据本关所学知识，完成<code>calcInfoGainRatio</code>函数。</p>
+<h4 id="相关知识-3">相关知识</h4>
+<p>为了完成本关任务，你需要掌握：信息增益率</p>
+<h5 id="信息增益率">信息增益率</h5>
+<p>由于在使用信息增益这一指标进行划分时，更喜欢可取值数量较多的特征。为了减少这种<strong>偏好</strong>可能带来的不利影响，<code>Ross Quinlan</code>使用了<strong>信息增益率</strong>这一指标来选择最优划分属性。</p>
+<p>信息增益率的数学定义为如下，其中<em>D</em>表示数据集，<em>a</em>表示数据集中的某一列，<em>G<strong>a</strong>i<strong>n<em>(</em>D<em>,</em>a<em>)表示</em>D<em>中</em>a<em>的信息增益，</em>V<em>表示</em>a<em>这一列中取值的集合，</em>v<em>表示</em>V<em>中的某种取值，∣</em>D<em>∣表示</em>D<em>中样本的数量，∣</em>D</strong>v</em>∣表示<em>D</em>中<em>a</em>这一列中值等于<em>v</em>的数量。</p>
+<p><span
+class="math display">\[Gain\_ratio(D,a)=\frac{Gain(D,a)}{-\sum_{v=1}^{V}\log_{2}{\frac{|D^v|}{|D|}}}
+\tag5\]</span></p>
 <p>从公式可以看出，信息增益率很好算，只是用信息增益除以另一个分母，该分母通常称为<strong>固有值</strong>。举个例子，还是使用<strong>第二关</strong>中提到过的数据集，第一列是编号，第二列是性别，第三列是活跃度，第四列是客户是否流失的标签（<code>0</code>表示未流失，<code>1</code>表示流失）。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>编号</th>
 <th>性别</th>
 <th>活跃度</th>
 <th>是否流失</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>1</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>4</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>5</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>6</td>
 <td>男</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7</td>
 <td>男</td>
 <td>中</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>8</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>9</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>12</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>13</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>14</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-</tbody></table>
-<p>根据<strong>第二关</strong>已经知道性别的信息增益为0.0064，设<em>a</em>为性别，则有<em>G<strong>a</strong>i**n</em>(<em>D</em>,<em>a</em>)=0.0064。由根据数据可知，<em>V</em>=2，假设当<em>v</em>=1时表示性别为男，<em>v</em>=2时表示性别为女，则有∣<em>D</em>∣=15，∣<em>D</em>1∣=8，∣<em>D</em>2∣=7。因此根据信息增益率的计算公式可知<em>G<strong>a</strong>i<strong>n</strong>r<strong>a</strong>t<strong>i</strong>o</em>(<em>D</em>,<em>a</em>)=0.0642。同理可以算出活跃度的信息增益率为0.4328。</p>
-<h4 id="编程要求-3"><a href="#编程要求-3" class="headerlink" title="编程要求"></a>编程要求</h4><p>根据提示，在右侧编辑器补充代码，完成<code>calcInfoGainRatio</code>函数实现计算信息增益。</p>
+</tbody>
+</table>
+<p>根据<strong>第二关</strong>已经知道性别的信息增益为0.0064，设<em>a</em>为性别，则有*G<strong>a</strong>i<strong>n<em>(</em>D<em>,</em>a<em>)=0.0064。由根据数据可知，</em>V<em>=2，假设当</em>v<em>=1时表示性别为男，</em>v<em>=2时表示性别为女，则有∣</em>D<em>∣=15，∣</em>D<em>1∣=8，∣</em>D<em>2∣=7。因此根据信息增益率的计算公式可知</em>G</strong>a<strong>i</strong>n<strong>r</strong>a<strong>t</strong>i**o<em>(</em>D<em>,</em>a*)=0.0642。同理可以算出活跃度的信息增益率为0.4328。</p>
+<h4 id="编程要求-3">编程要求</h4>
+<p>根据提示，在右侧编辑器补充代码，完成<code>calcInfoGainRatio</code>函数实现计算信息增益。</p>
 <p><code>calcInfoGainRatio</code>函数中的参数:</p>
 <ul>
 <li><code>feature</code>：测试用例中字典里的<code>feature</code>，类型为<code>ndarray</code>；</li>
 <li><code>label</code>：测试用例中字典里的<code>label</code>，类型为<code>ndarray</code>；</li>
 <li><code>index</code>：测试用例中字典里的<code>index</code>，即<code>feature</code>部分特征列的索引。该索引指的是<code>feature</code>中第几个特征，如<code>index:0</code>表示使用第一个特征来计算信息增益率。</li>
 </ul>
-<h4 id="测试说明-3"><a href="#测试说明-3" class="headerlink" title="测试说明"></a>测试说明</h4><p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
-<p>测试输入： <code>&#123;&#39;feature&#39;:[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], &#39;label&#39;:[0, 1, 0, 0, 1], &#39;index&#39;: 0&#125;</code></p>
+<h4 id="测试说明-3">测试说明</h4>
+<p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
+<p>测试输入：
+<code>&#123;'feature':[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], 'label':[0, 1, 0, 0, 1], 'index': 0&#125;</code></p>
 <p>预期输出： <code>0.432538</code></p>
-<p>提示： 计算<code>log</code>可以使用<code>NumPy</code>中的<code>log2</code>函数</p>
-<h4 id="参考答案-3"><a href="#参考答案-3" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># 计算熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        label_set = <span class="hljs-built_in">set</span>(label)<br>        result = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                <span class="hljs-keyword">if</span> label[j] == l:<br>                    count += <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>            p = count / <span class="hljs-built_in">len</span>(label)<br>            <span class="hljs-comment"># 计算熵</span><br>            result -= p * np.log2(p)<br>        <span class="hljs-keyword">return</span> result<br><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">            :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        count = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># sub_label表示根据特征列和特征值分割出的子数据集中的标签</span><br>        sub_label = []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                count += <span class="hljs-number">1</span><br>                sub_label.append(label[i])<br>        pHA = count / <span class="hljs-built_in">len</span>(feature)<br>        e = calcInfoEntropy(sub_label)<br>        <span class="hljs-keyword">return</span> pHA * e<br><br>    base_e = calcInfoEntropy(label)<br>    f = np.array(feature)<br>    <span class="hljs-comment"># 得到指定特征列的值的集合,:表示获取所有行</span><br>    f_set = <span class="hljs-built_in">set</span>(f[:, index])  <span class="hljs-comment"># 将不重复的特征值获取出来（比如:男，女）</span><br>    sum_HDA = <span class="hljs-number">0</span><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>        sum_HDA += calcHDA(feature, label, index, value)<br>    <span class="hljs-comment"># 计算信息增益</span><br>    <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGainRatio</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益率</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益率，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># ********* Begin *********#</span><br>    up = calcInfoGain(feature, label, index)  <span class="hljs-comment"># 信息增益率的分子</span><br><br>    <span class="hljs-comment"># 定义一个方法求分母中某个类型的个数(如求当v=1时表示性别为男的)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dcon</span>(<span class="hljs-params">feature, value</span>):<br>        s = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                s += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">pass</span><br>        <span class="hljs-keyword">return</span> s<br><br>    down = <span class="hljs-number">0</span><br>    <span class="hljs-comment"># 取出特征值该列所有数据</span><br>    values = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>        values.append(feature[i][index])<br>    values_set = <span class="hljs-built_in">set</span>(values)  <span class="hljs-comment"># 使用set()过滤重复值，得到特征值列中所有类型(如性别中男和女)</span><br>    <span class="hljs-comment"># 循环递归求出分母</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> values_set:<br>        down -= (dcon(feature, value) / <span class="hljs-built_in">len</span>(feature)) * np.log2(dcon(feature, value) / <span class="hljs-built_in">len</span>(feature))<br>    <span class="hljs-comment"># 求得信息增益率</span><br>    gain = up / down<br>    <span class="hljs-keyword">return</span> gain<br>    <span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="第5关：基尼系数"><a href="#第5关：基尼系数" class="headerlink" title="第5关：基尼系数"></a>第5关：基尼系数</h2><h4 id="任务描述-4"><a href="#任务描述-4" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：根据本关所学知识，完成<code>calcGini</code>函数。</p>
-<h4 id="相关知识-4"><a href="#相关知识-4" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握：基尼系数。</p>
-<h5 id="基尼系数"><a href="#基尼系数" class="headerlink" title="基尼系数"></a>基尼系数</h5><p>在<code>ID3</code>算法中我们使用了信息增益来选择特征，信息增益大的优先选择。在<code>C4.5</code>算法中，采用了信息增益率来选择特征，以减少信息增益容易选择特征值多的特征的问题。但是无论是<code>ID3</code>还是<code>C4.5</code>,都是基于信息论的熵模型的，这里面会涉及大量的对数运算。能不能简化模型同时也不至于完全丢失熵模型的优点呢？当然有！那就是<strong>基尼系数</strong>！</p>
+<p>提示：
+计算<code>log</code>可以使用<code>NumPy</code>中的<code>log2</code>函数</p>
+<h4 id="参考答案-3">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># 计算熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        label_set = <span class="hljs-built_in">set</span>(label)<br>        result = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                <span class="hljs-keyword">if</span> label[j] == l:<br>                    count += <span class="hljs-number">1</span><br>            <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>            p = count / <span class="hljs-built_in">len</span>(label)<br>            <span class="hljs-comment"># 计算熵</span><br>            result -= p * np.log2(p)<br>        <span class="hljs-keyword">return</span> result<br><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息熵</span><br><span class="hljs-string">            :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">            :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">            :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">            :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">            :return:信息熵，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        count = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># sub_label表示根据特征列和特征值分割出的子数据集中的标签</span><br>        sub_label = []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                count += <span class="hljs-number">1</span><br>                sub_label.append(label[i])<br>        pHA = count / <span class="hljs-built_in">len</span>(feature)<br>        e = calcInfoEntropy(sub_label)<br>        <span class="hljs-keyword">return</span> pHA * e<br><br>    base_e = calcInfoEntropy(label)<br>    f = np.array(feature)<br>    <span class="hljs-comment"># 得到指定特征列的值的集合,:表示获取所有行</span><br>    f_set = <span class="hljs-built_in">set</span>(f[:, index])  <span class="hljs-comment"># 将不重复的特征值获取出来（比如:男，女）</span><br>    sum_HDA = <span class="hljs-number">0</span><br>    <span class="hljs-comment"># 计算条件熵</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>        sum_HDA += calcHDA(feature, label, index, value)<br>    <span class="hljs-comment"># 计算信息增益</span><br>    <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGainRatio</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算信息增益率</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:信息增益率，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># ********* Begin *********#</span><br>    up = calcInfoGain(feature, label, index)  <span class="hljs-comment"># 信息增益率的分子</span><br><br>    <span class="hljs-comment"># 定义一个方法求分母中某个类型的个数(如求当v=1时表示性别为男的)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dcon</span>(<span class="hljs-params">feature, value</span>):<br>        s = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>            <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                s += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">pass</span><br>        <span class="hljs-keyword">return</span> s<br><br>    down = <span class="hljs-number">0</span><br>    <span class="hljs-comment"># 取出特征值该列所有数据</span><br>    values = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>        values.append(feature[i][index])<br>    values_set = <span class="hljs-built_in">set</span>(values)  <span class="hljs-comment"># 使用set()过滤重复值，得到特征值列中所有类型(如性别中男和女)</span><br>    <span class="hljs-comment"># 循环递归求出分母</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> values_set:<br>        down -= (dcon(feature, value) / <span class="hljs-built_in">len</span>(feature)) * np.log2(dcon(feature, value) / <span class="hljs-built_in">len</span>(feature))<br>    <span class="hljs-comment"># 求得信息增益率</span><br>    gain = up / down<br>    <span class="hljs-keyword">return</span> gain<br>    <span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="第5关基尼系数">第5关：基尼系数</h2>
+<h4 id="任务描述-4">任务描述</h4>
+<p>本关任务：根据本关所学知识，完成<code>calcGini</code>函数。</p>
+<h4 id="相关知识-4">相关知识</h4>
+<p>为了完成本关任务，你需要掌握：基尼系数。</p>
+<h5 id="基尼系数">基尼系数</h5>
+<p>在<code>ID3</code>算法中我们使用了信息增益来选择特征，信息增益大的优先选择。在<code>C4.5</code>算法中，采用了信息增益率来选择特征，以减少信息增益容易选择特征值多的特征的问题。但是无论是<code>ID3</code>还是<code>C4.5</code>,都是基于信息论的熵模型的，这里面会涉及大量的对数运算。能不能简化模型同时也不至于完全丢失熵模型的优点呢？当然有！那就是<strong>基尼系数</strong>！</p>
 <p><code>CART</code>算法使用<strong>基尼系数</strong>来代替信息增益率，基尼系数代表了模型的不纯度，基尼系数越小，则不纯度越低，特征越好。这和信息增益与信息增益率是相反的(它们都是越大越好)。</p>
-<p>基尼系数的数学定义为如下，其中<em>D</em>表示数据集，<em>p**k</em>表示<code>D</code>中第<code>k</code>个类别在<code>D</code>中所占比例。</p>
-<p><em>G<strong>i</strong>n**i</em>(<em>D</em>)=1−<em>s<strong>u</strong>m**k</em>=1∣<em>y</em>∣<em>p**k</em>2</p>
+<p>基尼系数的数学定义为如下，其中<em>D</em>表示数据集，*p**k*表示<code>D</code>中第<code>k</code>个类别在<code>D</code>中所占比例。</p>
+<p><em>G<strong>i</strong>n<strong>i<em>(</em>D<em>)=1−</em>s</strong>u<strong>m</strong>k</em>=1∣<em>y</em>∣*p**k*2</p>
 <p>从公式可以看出，相比于信息增益和信息增益率，计算起来更加简单。举个例子，还是使用<strong>第二关</strong>中提到过的数据集，第一列是编号，第二列是性别，第三列是活跃度，第四列是客户是否流失的标签（<code>0</code>表示未流失，<code>1</code>表示流失）。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>编号</th>
 <th>性别</th>
 <th>活跃度</th>
 <th>是否流失</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>1</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>4</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>5</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>6</td>
 <td>男</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7</td>
 <td>男</td>
 <td>中</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>8</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>9</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10</td>
 <td>女</td>
 <td>中</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11</td>
 <td>女</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>12</td>
 <td>男</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>13</td>
 <td>女</td>
 <td>低</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>14</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15</td>
 <td>男</td>
 <td>高</td>
 <td>0</td>
 </tr>
-</tbody></table>
-<p>从表格可以看出，<em>D</em>中总共有2个类别，设类别为0的比例为<em>p</em>1，则有<em>p</em>1=1510。设类别为1的比例为<em>p</em>2，则有<em>p</em>2=155。根据基尼系数的公式可知<em>G<strong>i</strong>n**i</em>(<em>D</em>)=1−(<em>p</em>12+<em>p</em>22)=0.4444。</p>
+</tbody>
+</table>
+<p>从表格可以看出，<em>D</em>中总共有2个类别，设类别为0的比例为<em>p</em>1，则有<em>p</em>1=1510。设类别为1的比例为<em>p</em>2，则有<em>p</em>2=155。根据基尼系数的公式可知*G<strong>i</strong>n**i<em>(</em>D<em>)=1−(</em>p<em>12+</em>p*22)=0.4444。</p>
 <p>上面是基于数据集<code>D</code>的基尼系数的计算方法，那么基于数据集<code>D</code>与特征<code>a</code>的基尼系数怎样计算呢？其实和信息增益率的套路差不多。计算公式如下：</p>
-<p>$Gini(D,a)=\sum_{v=1}^{V}\frac{|D^v|}{|D|}Gini(D^v) \tag6$</p>
-<p>还是以用户流失的数据为例，现在算一算性别的基尼系数。设性别男为<em>v</em>=1，性别女为<em>v</em>=2则有∣<em>D</em>∣=15，∣<em>D</em>1∣=8，∣<em>D</em>2∣=7，<em>G<strong>i</strong>n**i</em>(<em>D</em>1)=0.46875，<em>G<strong>i</strong>n**i</em>(<em>D</em>2)=0.40816。所以<em>G<strong>i</strong>n**i</em>(<em>D</em>,<em>a</em>)=0.44048。</p>
-<h4 id="编程要求-4"><a href="#编程要求-4" class="headerlink" title="编程要求"></a>编程要求</h4><p>根据提示，在右侧编辑器补充代码，完成<code>calcGini</code>函数实现计算信息增益。</p>
+<p><span class="math display">\[
+Gini(D,a)=\sum_{v=1}^{V}\frac{|D^v|}{|D|}Gini(D^v) \tag6 \]</span></p>
+<p>还是以用户流失的数据为例，现在算一算性别的基尼系数。设性别男为<em>v</em>=1，性别女为<em>v</em>=2则有∣<em>D</em>∣=15，∣<em>D</em>1∣=8，∣<em>D</em>2∣=7，<em>G<strong>i</strong>n<strong>i<em>(</em>D<em>1)=0.46875，</em>G</strong>i<strong>n</strong>i</em>(<em>D</em>2)=0.40816。所以*G<strong>i</strong>n**i<em>(</em>D<em>,</em>a*)=0.44048。</p>
+<h4 id="编程要求-4">编程要求</h4>
+<p>根据提示，在右侧编辑器补充代码，完成<code>calcGini</code>函数实现计算信息增益。</p>
 <p><code>calcGini</code>函数中的参数:</p>
 <ul>
 <li><code>feature</code>：测试用例中字典里的<code>feature</code>，类型为<code>ndarray</code>；</li>
 <li><code>label</code>：测试用例中字典里的<code>label</code>，类型为<code>ndarray</code>；</li>
 <li><code>index</code>：测试用例中字典里的<code>index</code>，即<code>feature</code>部分特征列的索引。该索引指的是<code>feature</code>中第几个特征，如<code>index:0</code>表示使用第一个特征来计算基尼系数。</li>
 </ul>
-<h4 id="测试说明-4"><a href="#测试说明-4" class="headerlink" title="测试说明"></a>测试说明</h4><p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
-<p>测试输入： <code>&#123;&#39;feature&#39;:[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], &#39;label&#39;:[0, 1, 0, 0, 1], &#39;index&#39;: 0&#125;</code></p>
+<h4 id="测试说明-4">测试说明</h4>
+<p>平台会对你编写的代码进行测试，期望您的代码根据输入来输出正确的信息增益，以下为其中一个测试用例：</p>
+<p>测试输入：
+<code>&#123;'feature':[[0, 1], [1, 0], [1, 2], [0, 0], [1, 1]], 'label':[0, 1, 0, 0, 1], 'index': 0&#125;</code></p>
 <p>预期输出： <code>0.266667</code></p>
-<h4 id="参考答案-4"><a href="#参考答案-4" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcGini</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算基尼系数</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:基尼系数，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># ********* Begin *********#</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_gini</span>(<span class="hljs-params">label</span>):<br>        unique_label = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(label))<br>        gini = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> unique_label:<br>            p = np.<span class="hljs-built_in">sum</span>(label == l) / <span class="hljs-built_in">len</span>(label)<br>            gini -= p ** <span class="hljs-number">2</span><br>        <span class="hljs-keyword">return</span> gini<br><br>    unique_value = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(feature[:, index]))<br>    gini = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> unique_value:<br>        len_v = np.<span class="hljs-built_in">sum</span>(feature[:, index] == value)<br>        gini += (len_v / <span class="hljs-built_in">len</span>(feature)) * _gini(label[feature[:, index] == value])<br>    <span class="hljs-keyword">return</span> gini<br>    <span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="第6关：预剪枝与后剪枝"><a href="#第6关：预剪枝与后剪枝" class="headerlink" title="第6关：预剪枝与后剪枝"></a>第6关：预剪枝与后剪枝</h2><h4 id="任务描述-5"><a href="#任务描述-5" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：补充<code>python</code>代码，完成<code>DecisionTree</code>类中的<code>fit</code>和<code>predict</code>函数。</p>
-<h4 id="相关知识-5"><a href="#相关知识-5" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握：</p>
+<h4 id="参考答案-4">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calcGini</span>(<span class="hljs-params">feature, label, index</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        计算基尼系数</span><br><span class="hljs-string">        :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">        :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">        :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">        :return:基尼系数，类型float</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-comment"># ********* Begin *********#</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_gini</span>(<span class="hljs-params">label</span>):<br>        unique_label = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(label))<br>        gini = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> unique_label:<br>            p = np.<span class="hljs-built_in">sum</span>(label == l) / <span class="hljs-built_in">len</span>(label)<br>            gini -= p ** <span class="hljs-number">2</span><br>        <span class="hljs-keyword">return</span> gini<br><br>    unique_value = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(feature[:, index]))<br>    gini = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> unique_value:<br>        len_v = np.<span class="hljs-built_in">sum</span>(feature[:, index] == value)<br>        gini += (len_v / <span class="hljs-built_in">len</span>(feature)) * _gini(label[feature[:, index] == value])<br>    <span class="hljs-keyword">return</span> gini<br>    <span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="第6关预剪枝与后剪枝">第6关：预剪枝与后剪枝</h2>
+<h4 id="任务描述-5">任务描述</h4>
+<p>本关任务：补充<code>python</code>代码，完成<code>DecisionTree</code>类中的<code>fit</code>和<code>predict</code>函数。</p>
+<h4 id="相关知识-5">相关知识</h4>
+<p>为了完成本关任务，你需要掌握：</p>
 <ul>
 <li>为什么需要剪枝；</li>
 <li>预剪枝；</li>
 <li>后剪枝。</li>
 </ul>
-<h5 id="为什么需要剪枝"><a href="#为什么需要剪枝" class="headerlink" title="为什么需要剪枝"></a>为什么需要剪枝</h5><p>决策树的生成是递归地去构建决策树，直到不能继续下去为止。这样产生的树往往对训练数据有很高的分类准确率，但对未知的测试数据进行预测就没有那么准确了，也就是所谓的过拟合。</p>
+<h5 id="为什么需要剪枝">为什么需要剪枝</h5>
+<p>决策树的生成是递归地去构建决策树，直到不能继续下去为止。这样产生的树往往对训练数据有很高的分类准确率，但对未知的测试数据进行预测就没有那么准确了，也就是所谓的过拟合。</p>
 <p>决策树容易过拟合的原因是在构建决策树的过程时会过多地考虑如何提高对训练集中的数据的分类准确率，从而会构建出非常复杂的决策树（树的宽度和深度都比较大）。在之前的实训中已经提到过，<strong>模型的复杂度越高，模型就越容易出现过拟合的现象。</strong>所以简化决策树的复杂度能够有效地缓解过拟合现象，而简化决策树最常用的方法就是剪枝。剪枝分为预剪枝与后剪枝。</p>
-<h5 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h5><p>预剪枝的核心思想是在决策树生成过程中，对每个结点在划分前先进行一个评估，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点。</p>
+<h5 id="预剪枝">预剪枝</h5>
+<p>预剪枝的核心思想是在决策树生成过程中，对每个结点在划分前先进行一个评估，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点。</p>
 <p>想要评估决策树算法的泛化性能如何，方法很简单。可以将训练数据集中随机取出一部分作为验证数据集，然后在用训练数据集对每个结点进行划分之前用当前状态的决策树计算出在验证数据集上的正确率。正确率越高说明决策树的泛化性能越好，如果在划分结点的时候发现泛化性能有所下降或者没有提升时，说明应该停止划分，并用投票计数的方式将当前结点标记成叶子结点。</p>
 <p>举个例子，假如上一关中所提到的用来决定是否买西瓜的决策树模型已经出现过拟合的情况，模型如下：</p>
-<p><img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-3"></p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-3" />
+<figcaption aria-hidden="true">img-3</figcaption>
+</figure>
 <p>假设当模型在划分<code>是否便宜</code>这个结点前，模型在验证数据集上的正确率为<code>0.81</code>。但在划分后，模型在验证数据集上的正确率降为<code>0.67</code>。此时就不应该划分<code>是否便宜</code>这个结点。所以预剪枝后的模型如下：</p>
-<p><img src="https://data.educoder.net/api/attachments/283551" srcset="/my-blog/img/loading.gif" lazyload alt="img-4"></p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/283551" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-4" />
+<figcaption aria-hidden="true">img-4</figcaption>
+</figure>
 <p>从上图可以看出，<strong>预剪枝能够降低决策树的复杂度。这种预剪枝处理属于贪心思想，但是贪心有一定的缺陷，就是可能当前划分会降低泛化性能，但在其基础上进行的后续划分却有可能导致性能显著提高。所以有可能会导致决策树出现欠拟合的情况。</strong></p>
-<h5 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h5><p>后剪枝是先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能够带来决策树泛化性能提升，则将该子树替换为叶结点。</p>
+<h5 id="后剪枝">后剪枝</h5>
+<p>后剪枝是先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能够带来决策树泛化性能提升，则将该子树替换为叶结点。</p>
 <p>后剪枝的思路很直接，对于决策树中的每一个非叶子结点的子树，我们尝试着把它替换成一个叶子结点，该叶子结点的类别我们用子树所覆盖训练样本中存在最多的那个类来代替，这样就产生了一个简化决策树，然后比较这两个决策树在测试数据集中的表现，如果简化决策树在验证数据集中的准确率有所提高，那么该子树就可以替换成叶子结点。该算法以<code>bottom-up</code>的方式遍历所有的子树，直至没有任何子树可以替换使得测试数据集的表现得以改进时，算法就可以终止。</p>
 <p>从后剪枝的流程可以看出，后剪枝是从全局的角度来看待要不要剪枝，所以造成欠拟合现象的可能性比较小。但由于后剪枝需要先生成完整的决策树，然后再剪枝，所以后剪枝的训练时间开销更高。</p>
-<h4 id="编程要求-5"><a href="#编程要求-5" class="headerlink" title="编程要求"></a>编程要求</h4><p>填写<code>fit(self, train_feature, train_label, val_featrue, val_label)</code>函数，实现带<strong>后剪枝</strong>的<code>ID3</code>算法，要求决策树保存在<code>self.tree</code>中。其中：</p>
+<h4 id="编程要求-5">编程要求</h4>
+<p>填写<code>fit(self, train_feature, train_label, val_featrue, val_label)</code>函数，实现带<strong>后剪枝</strong>的<code>ID3</code>算法，要求决策树保存在<code>self.tree</code>中。其中：</p>
 <ul>
 <li><code>train_feature</code>：训练集数据，类型为<code>ndarray</code>，数值全为整数；</li>
 <li><code>train_label</code>：训练集标签，类型为<code>ndarray</code>，数值全为整数；</li>
@@ -867,19 +949,35 @@
 <ul>
 <li><code>feature</code>：测试集数据，类型为<code>ndarray</code>，数值全为整数。<strong>（PS：feature中有多条数据）</strong></li>
 </ul>
-<h4 id="测试说明-5"><a href="#测试说明-5" class="headerlink" title="测试说明"></a>测试说明</h4><p>只需完成<code>fit</code>与<code>predict</code>函数即可，程序内部会调用您所完成的<code>fit</code>函数构建模型并调用<code>predict</code>函数来对数据进行预测。预测的准确率高于<code>0.935</code>视为过关。(PS:若<code>self.tree is None</code>则会打印<strong>决策树构建失败</strong>)</p>
-<h4 id="参考答案-5"><a href="#参考答案-5" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> copy <span class="hljs-keyword">import</span> deepcopy<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DecisionTree</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 决策树模型</span><br>        self.tree = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">self, feature, label, index</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息增益</span><br><span class="hljs-string">            :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">            :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">            :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">            :return:信息增益，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># 计算熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">feature, label</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br><br>            label_set = <span class="hljs-built_in">set</span>(label)<br>            result = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>                count = <span class="hljs-number">0</span><br>                <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                    <span class="hljs-keyword">if</span> label[j] == l:<br>                        count += <span class="hljs-number">1</span><br>                <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>                p = count / <span class="hljs-built_in">len</span>(label)<br>                <span class="hljs-comment"># 计算熵</span><br>                result -= p * np.log2(p)<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">                :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值分割出的子数据集中的特征和标签</span><br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                    count += <span class="hljs-number">1</span><br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            pHA = count / <span class="hljs-built_in">len</span>(feature)<br>            e = calcInfoEntropy(sub_feature, sub_label)<br>            <span class="hljs-keyword">return</span> pHA * e<br><br>        base_e = calcInfoEntropy(feature, label)<br>        f = np.array(feature)<br>        <span class="hljs-comment"># 得到指定特征列的值的集合</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, index])<br>        sum_HDA = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>            sum_HDA += calcHDA(feature, label, index, value)<br>        <span class="hljs-comment"># 计算信息增益</span><br>        <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br>    <span class="hljs-comment"># 获得信息增益最高的特征</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getBestFeature</span>(<span class="hljs-params">self, feature, label</span>):<br>        max_infogain = <span class="hljs-number">0</span><br>        best_feature = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>])):<br>            infogain = self.calcInfoGain(feature, label, i)<br>            <span class="hljs-keyword">if</span> infogain &gt; max_infogain:<br>                max_infogain = infogain<br>                best_feature = i<br>        <span class="hljs-keyword">return</span> best_feature<br><br>    <span class="hljs-comment"># 计算验证集准确率</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calc_acc_val</span>(<span class="hljs-params">self, the_tree, val_feature, val_label</span>):<br>        result = []<br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            f_value = feature[t_index]<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):<br>                classLabel = classify(tree[t_index][f_value], feature)<br>                <span class="hljs-keyword">return</span> classLabel<br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> val_feature:<br>            result.append(classify(the_tree, f))<br><br>        result = np.array(result)<br>        <span class="hljs-keyword">return</span> np.mean(result == val_label)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">createTree</span>(<span class="hljs-params">self, train_feature, train_label</span>):<br>        <span class="hljs-comment"># 样本里都是同一个label没必要继续分叉了</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(train_label)) == <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> train_label[<span class="hljs-number">0</span>]<br>        <span class="hljs-comment"># 样本中只有一个特征或者所有样本的特征都一样的话就看哪个label的票数高</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(train_feature[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(np.unique(train_feature, axis=<span class="hljs-number">0</span>)) == <span class="hljs-number">1</span>:<br>            vote = &#123;&#125;<br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> train_label:<br>                <span class="hljs-keyword">if</span> l <span class="hljs-keyword">in</span> vote.keys():<br>                    vote[l] += <span class="hljs-number">1</span><br>                <span class="hljs-keyword">else</span>:<br>                    vote[l] = <span class="hljs-number">1</span><br>            max_count = <span class="hljs-number">0</span><br>            vote_label = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vote.items():<br>                <span class="hljs-keyword">if</span> v &gt; max_count:<br>                    max_count = v<br>                    vote_label = k<br>            <span class="hljs-keyword">return</span> vote_label<br><br>        <span class="hljs-comment"># 根据信息增益拿到特征的索引</span><br>        best_feature = self.getBestFeature(train_feature, train_label)<br>        tree = &#123;best_feature: &#123;&#125;&#125;<br>        f = np.array(train_feature)<br>        <span class="hljs-comment"># 拿到bestfeature的所有特征值</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, best_feature])<br>        <span class="hljs-comment"># 构建对应特征值的子样本集sub_feature, sub_label</span><br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> f_set:<br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(train_feature)):<br>                <span class="hljs-keyword">if</span> train_feature[i][best_feature] == v:<br>                    sub_feature.append(train_feature[i])<br>                    sub_label.append(train_label[i])<br><br>            <span class="hljs-comment"># 递归构建决策树</span><br>            tree[best_feature][v] = self.createTree(sub_feature, sub_label)<br><br>        <span class="hljs-keyword">return</span> tree<br><br>    <span class="hljs-comment"># 后剪枝</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">post_cut</span>(<span class="hljs-params">self, val_feature, val_label</span>):<br>        <span class="hljs-comment"># 拿到非叶子节点的数量</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_non_leaf_node_count</span>(<span class="hljs-params">tree</span>):<br>            non_leaf_node_path = []<br><br>            <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">tree, path, all_path</span>):<br>                <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> tree.keys():<br>                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(tree[k], <span class="hljs-built_in">dict</span>):<br>                        path.append(k)<br>                        dfs(tree[k], path, all_path)<br>                        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; <span class="hljs-number">0</span>:<br>                            path.pop()<br>                    <span class="hljs-keyword">else</span>:<br>                        all_path.append(path[:])<br><br>            dfs(tree, [], non_leaf_node_path)<br><br>            unique_non_leaf_node = []<br>            <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> non_leaf_node_path:<br>                isFind = <span class="hljs-literal">False</span><br>                <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> unique_non_leaf_node:<br>                    <span class="hljs-keyword">if</span> path == p:<br>                        isFind = <span class="hljs-literal">True</span><br>                        <span class="hljs-keyword">break</span><br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isFind:<br>                    unique_non_leaf_node.append(path)<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(unique_non_leaf_node)<br><br>        <span class="hljs-comment"># 拿到树中深度最深的从根节点到非叶子节点的路径</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_the_most_deep_path</span>(<span class="hljs-params">tree</span>):<br>            non_leaf_node_path = []<br><br>            <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">tree, path, all_path</span>):<br>                <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> tree.keys():<br>                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(tree[k], <span class="hljs-built_in">dict</span>):<br>                        path.append(k)<br>                        dfs(tree[k], path, all_path)<br>                        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; <span class="hljs-number">0</span>:<br>                            path.pop()<br>                    <span class="hljs-keyword">else</span>:<br>                        all_path.append(path[:])<br><br>            dfs(tree, [], non_leaf_node_path)<br><br>            max_depth = <span class="hljs-number">0</span><br>            result = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> non_leaf_node_path:<br>                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; max_depth:<br>                    max_depth = <span class="hljs-built_in">len</span>(path)<br>                    result = path<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 剪枝</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">set_vote_label</span>(<span class="hljs-params">tree, path, label</span>):<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(path) - <span class="hljs-number">1</span>):<br>                tree = tree[path[i]]<br>            tree[path[<span class="hljs-built_in">len</span>(path) - <span class="hljs-number">1</span>]] = vote_label<br><br>        acc_before_cut = self.calc_acc_val(self.tree, val_feature, val_label)<br>        <span class="hljs-comment"># 遍历所有非叶子节点</span><br>        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(get_non_leaf_node_count(self.tree)):<br>            path = get_the_most_deep_path(self.tree)<br><br>            <span class="hljs-comment"># 备份树</span><br>            tree = deepcopy(self.tree)<br>            step = deepcopy(tree)<br><br>            <span class="hljs-comment"># 跟着路径走</span><br>            <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> path:<br>                step = step[k]<br><br>            <span class="hljs-comment"># 叶子节点中票数最多的标签</span><br>            vote_label = <span class="hljs-built_in">sorted</span>(step.items(), key=<span class="hljs-keyword">lambda</span> item: item[<span class="hljs-number">1</span>], reverse=<span class="hljs-literal">True</span>)[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]<br><br>            <span class="hljs-comment"># 在备份的树上剪枝</span><br>            set_vote_label(tree, path, vote_label)<br><br>            acc_after_cut = self.calc_acc_val(tree, val_feature, val_label)<br><br>            <span class="hljs-comment"># 验证集准确率高于0.9才剪枝</span><br>            <span class="hljs-keyword">if</span> acc_after_cut &gt; acc_before_cut:<br>                set_vote_label(self.tree, path, vote_label)<br>                acc_before_cut = acc_after_cut<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fit</span>(<span class="hljs-params">self, train_feature, train_label, val_feature, val_label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param train_feature:训练集数据，类型为ndarray</span><br><span class="hljs-string">            :param train_label:训练集标签，类型为ndarray</span><br><span class="hljs-string">            :param val_feature:验证集数据，类型为ndarray</span><br><span class="hljs-string">            :param val_label:验证集标签，类型为ndarray</span><br><span class="hljs-string">            :return: None</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        self.tree = self.createTree(train_feature, train_label)<br>        <span class="hljs-comment"># 后剪枝</span><br>        self.post_cut(val_feature, val_label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">self, feature</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature:测试集数据，类型为ndarray</span><br><span class="hljs-string">            :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        result = []<br><br>        <span class="hljs-comment"># 单个样本分类</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            f_value = feature[t_index]<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):<br>                classLabel = classify(tree[t_index][f_value], feature)<br>                <span class="hljs-keyword">return</span> classLabel<br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> feature:<br>            result.append(classify(self.tree, f))<br><br>        <span class="hljs-keyword">return</span> np.array(result)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="第7关：鸢尾花识别"><a href="#第7关：鸢尾花识别" class="headerlink" title="第7关：鸢尾花识别"></a>第7关：鸢尾花识别</h2><h4 id="任务描述-6"><a href="#任务描述-6" class="headerlink" title="任务描述"></a>任务描述</h4><p>本关任务：使用<code>sklearn</code>完成鸢尾花分类任务。</p>
-<h4 id="相关知识-6"><a href="#相关知识-6" class="headerlink" title="相关知识"></a>相关知识</h4><p>为了完成本关任务，你需要掌握如何使用<code>sklearn</code>提供的<code>DecisionTreeClassifier</code>。</p>
-<h5 id="数据简介"><a href="#数据简介" class="headerlink" title="数据简介"></a>数据简介</h5><p><img src="https://data.educoder.net/api/attachments/283552" srcset="/my-blog/img/loading.gif" lazyload alt="img-6"></p>
+<h4 id="测试说明-5">测试说明</h4>
+<p>只需完成<code>fit</code>与<code>predict</code>函数即可，程序内部会调用您所完成的<code>fit</code>函数构建模型并调用<code>predict</code>函数来对数据进行预测。预测的准确率高于<code>0.935</code>视为过关。(PS:若<code>self.tree is None</code>则会打印<strong>决策树构建失败</strong>)</p>
+<h4 id="参考答案-5">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> copy <span class="hljs-keyword">import</span> deepcopy<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DecisionTree</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 决策树模型</span><br>        self.tree = &#123;&#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoGain</span>(<span class="hljs-params">self, feature, label, index</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            计算信息增益</span><br><span class="hljs-string">            :param feature:测试用例中字典里的feature，类型为ndarray</span><br><span class="hljs-string">            :param label:测试用例中字典里的label，类型为ndarray</span><br><span class="hljs-string">            :param index:测试用例中字典里的index，即feature部分特征列的索引。该索引指的是feature中第几个特征，如index:0表示使用第一个特征来计算信息增益。</span><br><span class="hljs-string">            :return:信息增益，类型float</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># 计算熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcInfoEntropy</span>(<span class="hljs-params">feature, label</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br><br>            label_set = <span class="hljs-built_in">set</span>(label)<br>            result = <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> label_set:<br>                count = <span class="hljs-number">0</span><br>                <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(label)):<br>                    <span class="hljs-keyword">if</span> label[j] == l:<br>                        count += <span class="hljs-number">1</span><br>                <span class="hljs-comment"># 计算标签在数据集中出现的概率</span><br>                p = count / <span class="hljs-built_in">len</span>(label)<br>                <span class="hljs-comment"># 计算熵</span><br>                result -= p * np.log2(p)<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">calcHDA</span>(<span class="hljs-params">feature, label, index, value</span>):<br>            <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">                计算信息熵</span><br><span class="hljs-string">                :param feature:数据集中的特征，类型为ndarray</span><br><span class="hljs-string">                :param label:数据集中的标签，类型为ndarray</span><br><span class="hljs-string">                :param index:需要使用的特征列索引，类型为int</span><br><span class="hljs-string">                :param value:index所表示的特征列中需要考察的特征值，类型为int</span><br><span class="hljs-string">                :return:信息熵，类型float</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>            count = <span class="hljs-number">0</span><br>            <span class="hljs-comment"># sub_feature和sub_label表示根据特征列和特征值分割出的子数据集中的特征和标签</span><br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature)):<br>                <span class="hljs-keyword">if</span> feature[i][index] == value:<br>                    count += <span class="hljs-number">1</span><br>                    sub_feature.append(feature[i])<br>                    sub_label.append(label[i])<br>            pHA = count / <span class="hljs-built_in">len</span>(feature)<br>            e = calcInfoEntropy(sub_feature, sub_label)<br>            <span class="hljs-keyword">return</span> pHA * e<br><br>        base_e = calcInfoEntropy(feature, label)<br>        f = np.array(feature)<br>        <span class="hljs-comment"># 得到指定特征列的值的集合</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, index])<br>        sum_HDA = <span class="hljs-number">0</span><br>        <span class="hljs-comment"># 计算条件熵</span><br>        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> f_set:<br>            sum_HDA += calcHDA(feature, label, index, value)<br>        <span class="hljs-comment"># 计算信息增益</span><br>        <span class="hljs-keyword">return</span> base_e - sum_HDA<br><br>    <span class="hljs-comment"># 获得信息增益最高的特征</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getBestFeature</span>(<span class="hljs-params">self, feature, label</span>):<br>        max_infogain = <span class="hljs-number">0</span><br>        best_feature = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(feature[<span class="hljs-number">0</span>])):<br>            infogain = self.calcInfoGain(feature, label, i)<br>            <span class="hljs-keyword">if</span> infogain &gt; max_infogain:<br>                max_infogain = infogain<br>                best_feature = i<br>        <span class="hljs-keyword">return</span> best_feature<br><br>    <span class="hljs-comment"># 计算验证集准确率</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">calc_acc_val</span>(<span class="hljs-params">self, the_tree, val_feature, val_label</span>):<br>        result = []<br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            f_value = feature[t_index]<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):<br>                classLabel = classify(tree[t_index][f_value], feature)<br>                <span class="hljs-keyword">return</span> classLabel<br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> val_feature:<br>            result.append(classify(the_tree, f))<br><br>        result = np.array(result)<br>        <span class="hljs-keyword">return</span> np.mean(result == val_label)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">createTree</span>(<span class="hljs-params">self, train_feature, train_label</span>):<br>        <span class="hljs-comment"># 样本里都是同一个label没必要继续分叉了</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-built_in">set</span>(train_label)) == <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> train_label[<span class="hljs-number">0</span>]<br>        <span class="hljs-comment"># 样本中只有一个特征或者所有样本的特征都一样的话就看哪个label的票数高</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(train_feature[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(np.unique(train_feature, axis=<span class="hljs-number">0</span>)) == <span class="hljs-number">1</span>:<br>            vote = &#123;&#125;<br>            <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> train_label:<br>                <span class="hljs-keyword">if</span> l <span class="hljs-keyword">in</span> vote.keys():<br>                    vote[l] += <span class="hljs-number">1</span><br>                <span class="hljs-keyword">else</span>:<br>                    vote[l] = <span class="hljs-number">1</span><br>            max_count = <span class="hljs-number">0</span><br>            vote_label = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vote.items():<br>                <span class="hljs-keyword">if</span> v &gt; max_count:<br>                    max_count = v<br>                    vote_label = k<br>            <span class="hljs-keyword">return</span> vote_label<br><br>        <span class="hljs-comment"># 根据信息增益拿到特征的索引</span><br>        best_feature = self.getBestFeature(train_feature, train_label)<br>        tree = &#123;best_feature: &#123;&#125;&#125;<br>        f = np.array(train_feature)<br>        <span class="hljs-comment"># 拿到bestfeature的所有特征值</span><br>        f_set = <span class="hljs-built_in">set</span>(f[:, best_feature])<br>        <span class="hljs-comment"># 构建对应特征值的子样本集sub_feature, sub_label</span><br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> f_set:<br>            sub_feature = []<br>            sub_label = []<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(train_feature)):<br>                <span class="hljs-keyword">if</span> train_feature[i][best_feature] == v:<br>                    sub_feature.append(train_feature[i])<br>                    sub_label.append(train_label[i])<br><br>            <span class="hljs-comment"># 递归构建决策树</span><br>            tree[best_feature][v] = self.createTree(sub_feature, sub_label)<br><br>        <span class="hljs-keyword">return</span> tree<br><br>    <span class="hljs-comment"># 后剪枝</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">post_cut</span>(<span class="hljs-params">self, val_feature, val_label</span>):<br>        <span class="hljs-comment"># 拿到非叶子节点的数量</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_non_leaf_node_count</span>(<span class="hljs-params">tree</span>):<br>            non_leaf_node_path = []<br><br>            <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">tree, path, all_path</span>):<br>                <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> tree.keys():<br>                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(tree[k], <span class="hljs-built_in">dict</span>):<br>                        path.append(k)<br>                        dfs(tree[k], path, all_path)<br>                        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; <span class="hljs-number">0</span>:<br>                            path.pop()<br>                    <span class="hljs-keyword">else</span>:<br>                        all_path.append(path[:])<br><br>            dfs(tree, [], non_leaf_node_path)<br><br>            unique_non_leaf_node = []<br>            <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> non_leaf_node_path:<br>                isFind = <span class="hljs-literal">False</span><br>                <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> unique_non_leaf_node:<br>                    <span class="hljs-keyword">if</span> path == p:<br>                        isFind = <span class="hljs-literal">True</span><br>                        <span class="hljs-keyword">break</span><br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isFind:<br>                    unique_non_leaf_node.append(path)<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(unique_non_leaf_node)<br><br>        <span class="hljs-comment"># 拿到树中深度最深的从根节点到非叶子节点的路径</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_the_most_deep_path</span>(<span class="hljs-params">tree</span>):<br>            non_leaf_node_path = []<br><br>            <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">tree, path, all_path</span>):<br>                <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> tree.keys():<br>                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(tree[k], <span class="hljs-built_in">dict</span>):<br>                        path.append(k)<br>                        dfs(tree[k], path, all_path)<br>                        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; <span class="hljs-number">0</span>:<br>                            path.pop()<br>                    <span class="hljs-keyword">else</span>:<br>                        all_path.append(path[:])<br><br>            dfs(tree, [], non_leaf_node_path)<br><br>            max_depth = <span class="hljs-number">0</span><br>            result = <span class="hljs-literal">None</span><br>            <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> non_leaf_node_path:<br>                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) &gt; max_depth:<br>                    max_depth = <span class="hljs-built_in">len</span>(path)<br>                    result = path<br>            <span class="hljs-keyword">return</span> result<br><br>        <span class="hljs-comment"># 剪枝</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">set_vote_label</span>(<span class="hljs-params">tree, path, label</span>):<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(path) - <span class="hljs-number">1</span>):<br>                tree = tree[path[i]]<br>            tree[path[<span class="hljs-built_in">len</span>(path) - <span class="hljs-number">1</span>]] = vote_label<br><br>        acc_before_cut = self.calc_acc_val(self.tree, val_feature, val_label)<br>        <span class="hljs-comment"># 遍历所有非叶子节点</span><br>        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(get_non_leaf_node_count(self.tree)):<br>            path = get_the_most_deep_path(self.tree)<br><br>            <span class="hljs-comment"># 备份树</span><br>            tree = deepcopy(self.tree)<br>            step = deepcopy(tree)<br><br>            <span class="hljs-comment"># 跟着路径走</span><br>            <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> path:<br>                step = step[k]<br><br>            <span class="hljs-comment"># 叶子节点中票数最多的标签</span><br>            vote_label = <span class="hljs-built_in">sorted</span>(step.items(), key=<span class="hljs-keyword">lambda</span> item: item[<span class="hljs-number">1</span>], reverse=<span class="hljs-literal">True</span>)[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]<br><br>            <span class="hljs-comment"># 在备份的树上剪枝</span><br>            set_vote_label(tree, path, vote_label)<br><br>            acc_after_cut = self.calc_acc_val(tree, val_feature, val_label)<br><br>            <span class="hljs-comment"># 验证集准确率高于0.9才剪枝</span><br>            <span class="hljs-keyword">if</span> acc_after_cut &gt; acc_before_cut:<br>                set_vote_label(self.tree, path, vote_label)<br>                acc_before_cut = acc_after_cut<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fit</span>(<span class="hljs-params">self, train_feature, train_label, val_feature, val_label</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param train_feature:训练集数据，类型为ndarray</span><br><span class="hljs-string">            :param train_label:训练集标签，类型为ndarray</span><br><span class="hljs-string">            :param val_feature:验证集数据，类型为ndarray</span><br><span class="hljs-string">            :param val_label:验证集标签，类型为ndarray</span><br><span class="hljs-string">            :return: None</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        self.tree = self.createTree(train_feature, train_label)<br>        <span class="hljs-comment"># 后剪枝</span><br>        self.post_cut(val_feature, val_label)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">self, feature</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">            :param feature:测试集数据，类型为ndarray</span><br><span class="hljs-string">            :return:预测结果，如np.array([0, 1, 2, 2, 1, 0])</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br><br>        <span class="hljs-comment"># ************* Begin ************#</span><br>        result = []<br><br>        <span class="hljs-comment"># 单个样本分类</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">classify</span>(<span class="hljs-params">tree, feature</span>):<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(tree, <span class="hljs-built_in">dict</span>):<br>                <span class="hljs-keyword">return</span> tree<br>            t_index, t_value = <span class="hljs-built_in">list</span>(tree.items())[<span class="hljs-number">0</span>]<br>            f_value = feature[t_index]<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(t_value, <span class="hljs-built_in">dict</span>):<br>                classLabel = classify(tree[t_index][f_value], feature)<br>                <span class="hljs-keyword">return</span> classLabel<br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">return</span> t_value<br><br>        <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> feature:<br>            result.append(classify(self.tree, f))<br><br>        <span class="hljs-keyword">return</span> np.array(result)<br>        <span class="hljs-comment"># ************* End **************#</span><br><br></code></pre></td></tr></table></figure>
+<h2 id="第7关鸢尾花识别">第7关：鸢尾花识别</h2>
+<h4 id="任务描述-6">任务描述</h4>
+<p>本关任务：使用<code>sklearn</code>完成鸢尾花分类任务。</p>
+<h4 id="相关知识-6">相关知识</h4>
+<p>为了完成本关任务，你需要掌握如何使用<code>sklearn</code>提供的<code>DecisionTreeClassifier</code>。</p>
+<h5 id="数据简介">数据简介</h5>
+<figure>
+<img src="https://data.educoder.net/api/attachments/283552" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-6" />
+<figcaption aria-hidden="true">img-6</figcaption>
+</figure>
 <p>鸢尾花数据集是一类多重变量分析的数据集。通过花萼长度，花萼宽度，花瓣长度，花瓣宽度<code>4</code>个属性预测鸢尾花卉属于(<code>Setosa</code>，<code>Versicolour</code>，<code>Virginica</code>)三个种类中的哪一类(其中分别用<code>0</code>，<code>1</code>，<code>2</code>代替)。</p>
 <p>数据集中部分数据与标签如下图所示：</p>
-<p><img src="https://data.educoder.net/api/attachments/317817" srcset="/my-blog/img/loading.gif" lazyload alt="img-7"></p>
-<p><img src="https://data.educoder.net/api/attachments/317819" srcset="/my-blog/img/loading.gif" lazyload alt="img-7"></p>
-<h5 id="DecisionTreeClassifier"><a href="#DecisionTreeClassifier" class="headerlink" title="DecisionTreeClassifier"></a>DecisionTreeClassifier</h5><p><code>DecisionTreeClassifier</code>的构造函数中有两个常用的参数可以设置：</p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/317817" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-7" />
+<figcaption aria-hidden="true">img-7</figcaption>
+</figure>
+<figure>
+<img src="https://data.educoder.net/api/attachments/317819" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-7" />
+<figcaption aria-hidden="true">img-7</figcaption>
+</figure>
+<h5 id="decisiontreeclassifier">DecisionTreeClassifier</h5>
+<p><code>DecisionTreeClassifier</code>的构造函数中有两个常用的参数可以设置：</p>
 <ul>
 <li><code>criterion</code>:划分节点时用到的指标。有<code>gini</code>（<strong>基尼系数</strong>）,<code>entropy</code>(<strong>信息增益</strong>)。若不设置，默认为<code>gini</code></li>
 <li><code>max_depth</code>:决策树的最大深度，如果发现模型已经出现过拟合，可以尝试将该参数调小。若不设置，默认为<code>None</code></li>
@@ -895,15 +993,23 @@
 </ul>
 <p><code>DecisionTreeClassifier</code>的使用代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn.tree <span class="hljs-keyword">import</span> DecisionTreeClassifier<br>clf = tree.DecisionTreeClassifier()<br>clf.fit(X_train, Y_train)<br>result = clf.predict(X_test)<br></code></pre></td></tr></table></figure>
-
 <p>数据文件格式如下图所示:</p>
-<p><img src="https://data.educoder.net/api/attachments/317828" srcset="/my-blog/img/loading.gif" lazyload alt="img-8"></p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/317828" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-8" />
+<figcaption aria-hidden="true">img-8</figcaption>
+</figure>
 <p>标签文件格式如下图所示:</p>
-<p><img src="https://data.educoder.net/api/attachments/317829" srcset="/my-blog/img/loading.gif" lazyload alt="img-9"></p>
+<figure>
+<img src="https://data.educoder.net/api/attachments/317829" srcset="/my-blog/img/loading.gif" lazyload
+alt="img-9" />
+<figcaption aria-hidden="true">img-9</figcaption>
+</figure>
 <p><strong>PS：<code>predict.csv</code>文件的格式必须与标签文件格式一致。</strong></p>
-<h4 id="测试说明-6"><a href="#测试说明-6" class="headerlink" title="测试说明"></a>测试说明</h4><p>只需将结果保存至<code>./step7/predict.csv</code>即可，程序内部会检测您的代码，预测准确率高于<code>0.95</code>视为过关。</p>
-<h4 id="参考答案-6"><a href="#参考答案-6" class="headerlink" title="参考答案"></a>参考答案</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># ********* Begin *********#</span><br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">from</span> sklearn.tree <span class="hljs-keyword">import</span> DecisionTreeClassifier<br><br>train_df = pd.read_csv(<span class="hljs-string">&#x27;./step7/train_data.csv&#x27;</span>).as_matrix()<br>train_label = pd.read_csv(<span class="hljs-string">&#x27;./step7/train_label.csv&#x27;</span>).as_matrix()<br>test_df = pd.read_csv(<span class="hljs-string">&#x27;./step7/test_data.csv&#x27;</span>).as_matrix()<br><br>dt = DecisionTreeClassifier()<br>dt.fit(train_df, train_label)<br>result = dt.predict(test_df)<br><br>result = pd.DataFrame(&#123;<span class="hljs-string">&#x27;target&#x27;</span>: result&#125;)<br>result.to_csv(<span class="hljs-string">&#x27;./step7/predict.csv&#x27;</span>, index=<span class="hljs-literal">False</span>)<br><span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
-
+<h4 id="测试说明-6">测试说明</h4>
+<p>只需将结果保存至<code>./step7/predict.csv</code>即可，程序内部会检测您的代码，预测准确率高于<code>0.95</code>视为过关。</p>
+<h4 id="参考答案-6">参考答案</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># ********* Begin *********#</span><br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">from</span> sklearn.tree <span class="hljs-keyword">import</span> DecisionTreeClassifier<br><br>train_df = pd.read_csv(<span class="hljs-string">&#x27;./step7/train_data.csv&#x27;</span>).as_matrix()<br>train_label = pd.read_csv(<span class="hljs-string">&#x27;./step7/train_label.csv&#x27;</span>).as_matrix()<br>test_df = pd.read_csv(<span class="hljs-string">&#x27;./step7/test_data.csv&#x27;</span>).as_matrix()<br><br>dt = DecisionTreeClassifier()<br>dt.fit(train_df, train_label)<br>result = dt.predict(test_df)<br><br>result = pd.DataFrame(&#123;<span class="hljs-string">&#x27;target&#x27;</span>: result&#125;)<br>result.to_csv(<span class="hljs-string">&#x27;./step7/predict.csv&#x27;</span>, index=<span class="hljs-literal">False</span>)<br><span class="hljs-comment"># ********* End *********#</span><br><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -997,9 +1103,21 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
                   </span>
                 </a>
               
@@ -1018,6 +1136,12 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/my-blog/2023/05/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-01/" title="深度学习代码笔记-01">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深度学习代码笔记-01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -1028,6 +1152,15 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -1074,6 +1207,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -1291,6 +1430,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/my-blog/js/local-search.js" ></script>
 
