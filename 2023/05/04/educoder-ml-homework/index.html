@@ -21,7 +21,7 @@
     <meta name="description" content="【educoder】 机器学习 --- 决策树 第1关：什么是决策树 任务描述 本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识 为了完成本关任务，你需要掌握决策树的相关基础知识。 引例 在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。   im">
 <meta property="og:type" content="article">
 <meta property="og:title" content="头歌 - 机器学习作业">
-<meta property="og:url" content="https://david_deng.gitee.io/my-blog/2023/05/05/educoder-ml-homework/index.html">
+<meta property="og:url" content="https://david_deng.gitee.io/my-blog/2023/05/04/educoder-ml-homework/index.html">
 <meta property="og:site_name" content="David 的博客">
 <meta property="og:description" content="【educoder】 机器学习 --- 决策树 第1关：什么是决策树 任务描述 本关任务：根据本节课所学知识完成本关所设置的选择题。 相关知识 为了完成本关任务，你需要掌握决策树的相关基础知识。 引例 在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。   im">
 <meta property="og:locale" content="zh_CN">
@@ -34,8 +34,8 @@
 <meta property="og:image" content="https://data.educoder.net/api/attachments/317819">
 <meta property="og:image" content="https://data.educoder.net/api/attachments/317828">
 <meta property="og:image" content="https://data.educoder.net/api/attachments/317829">
-<meta property="article:published_time" content="2023-05-05T02:17:47.000Z">
-<meta property="article:modified_time" content="2023-05-05T02:17:47.000Z">
+<meta property="article:published_time" content="2023-05-04T02:17:47.000Z">
+<meta property="article:modified_time" content="2023-05-04T02:17:47.000Z">
 <meta property="article:author" content="David">
 <meta property="article:tag" content="educoder">
 <meta property="article:tag" content="头歌">
@@ -133,7 +133,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -259,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-05 10:17" pubdate>
-          2023年5月5日 上午
+        <time datetime="2023-05-04 10:17" pubdate>
+          2023年5月4日 上午
         </time>
       </span>
     
@@ -335,8 +335,7 @@
 <h5 id="引例">引例</h5>
 <p>在炎热的夏天，没有什么比冰镇后的西瓜更能令人感到心旷神怡的了。现在我要去水果店买西瓜，但什么样的西瓜能入我法眼呢？那根据我的个人习惯，在挑西瓜时可能就有这样的脑回路。</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-1" />
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-1">
 <figcaption aria-hidden="true">img-1</figcaption>
 </figure>
 <p>假设现在水果店里有<code>3</code>个西瓜，它们的属性如下：</p>
@@ -541,25 +540,19 @@ alt="img-1" />
 </tbody>
 </table>
 <p>假如要算性别和活跃度这两个特征的信息增益的话，首先要先算总的熵和条件熵。总的熵其实非常好算，就是把标签作为随机变量<code>X</code>。上表中标签只有两种（<code>0</code>和<code>1</code>）因此随机变量<code>X</code>的取值只有<code>0</code>或者<code>1</code>。所以要计算熵就需要先分别计算标签为<code>0</code>的概率和标签为<code>1</code>的概率。从表中能看出标签为<code>0</code>的数据有<code>10</code>条，所以标签为<code>0</code>的概率等于<code>2/3</code>。标签为<code>1</code>的概率为<code>1/3</code>。所以熵为：</p>
-<p><span
-class="math display">\[−(1/3)log(1/3)−(2/3)log(2/3)=0.9182\]</span></p>
+<p><span class="math display">\[−(1/3)log(1/3)−(2/3)log(2/3)=0.9182\]</span></p>
 <p>接下来就是条件熵的计算，以性别为男的熵为例。表格中性别为男的数据有<code>8</code>条，这<code>8</code>条数据中有<code>3</code>条数据的标签为<code>1</code>，有<code>5</code>条数据的标签为<code>0</code>。所以根据条件熵的计算公式能够得出该条件熵为：</p>
-<p><span
-class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
+<p><span class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
 <p>根据上述的计算方法可知，总熵为：</p>
-<p><span
-class="math display">\[−(5/15)log(5/15)−(10/15)log(10/15)=0.9182\]</span></p>
+<p><span class="math display">\[−(5/15)log(5/15)−(10/15)log(10/15)=0.9182\]</span></p>
 <p>性别为男的熵为：</p>
-<p><span
-class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
+<p><span class="math display">\[−(3/8)log(3/8)−(5/8)log(5/8)=0.9543\]</span></p>
 <p>性别为女的熵为：</p>
-<p><span
-class="math display">\[−(2/7)log(2/7)−(5/7)log(5/7)=0.8631\]</span></p>
+<p><span class="math display">\[−(2/7)log(2/7)−(5/7)log(5/7)=0.8631\]</span></p>
 <p>活跃度为低的熵为：</p>
 <p><span class="math display">\[−(4/4)log(4/4)−0=0\]</span></p>
 <p>活跃度为中的熵为：</p>
-<p><span
-class="math display">\[−(1/5)log(1/5)−(4/5)log(4/5)=0.7219\]</span></p>
+<p><span class="math display">\[−(1/5)log(1/5)−(4/5)log(4/5)=0.7219\]</span></p>
 <p>活跃度为高的熵为：</p>
 <p><span class="math display">\[−0−(6/6)log(6/6)=0\]</span></p>
 <p>现在有了总的熵和条件熵之后就能算出性别和活跃度这两个特征的信息增益了。</p>
@@ -599,8 +592,7 @@ class="math display">\[−(1/5)log(1/5)−(4/5)log(4/5)=0.7219\]</span></p>
 <h5 id="使用决策树进行预测">使用决策树进行预测</h5>
 <p>决策树的预测思想非常简单，假设现在已经构建出了一棵用来决策是否买西瓜的决策树。</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-2" />
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-2">
 <figcaption aria-hidden="true">img-2</figcaption>
 </figure>
 <p>并假设现在在水果店里有这样一个西瓜，其属性如下：</p>
@@ -647,8 +639,7 @@ alt="img-2" />
 <h5 id="信息增益率">信息增益率</h5>
 <p>由于在使用信息增益这一指标进行划分时，更喜欢可取值数量较多的特征。为了减少这种<strong>偏好</strong>可能带来的不利影响，<code>Ross Quinlan</code>使用了<strong>信息增益率</strong>这一指标来选择最优划分属性。</p>
 <p>信息增益率的数学定义为如下，其中<em>D</em>表示数据集，<em>a</em>表示数据集中的某一列，<em>G<strong>a</strong>i<strong>n<em>(</em>D<em>,</em>a<em>)表示</em>D<em>中</em>a<em>的信息增益，</em>V<em>表示</em>a<em>这一列中取值的集合，</em>v<em>表示</em>V<em>中的某种取值，∣</em>D<em>∣表示</em>D<em>中样本的数量，∣</em>D</strong>v</em>∣表示<em>D</em>中<em>a</em>这一列中值等于<em>v</em>的数量。</p>
-<p><span
-class="math display">\[Gain\_ratio(D,a)=\frac{Gain(D,a)}{-\sum_{v=1}^{V}\log_{2}{\frac{|D^v|}{|D|}}}
+<p><span class="math display">\[Gain\_ratio(D,a)=\frac{Gain(D,a)}{-\sum_{v=1}^{V}\log_{2}{\frac{|D^v|}{|D|}}}
 \tag5\]</span></p>
 <p>从公式可以看出，信息增益率很好算，只是用信息增益除以另一个分母，该分母通常称为<strong>固有值</strong>。举个例子，还是使用<strong>第二关</strong>中提到过的数据集，第一列是编号，第二列是性别，第三列是活跃度，第四列是客户是否流失的标签（<code>0</code>表示未流失，<code>1</code>表示流失）。</p>
 <table>
@@ -922,14 +913,12 @@ Gini(D,a)=\sum_{v=1}^{V}\frac{|D^v|}{|D|}Gini(D^v) \tag6 \]</span></p>
 <p>想要评估决策树算法的泛化性能如何，方法很简单。可以将训练数据集中随机取出一部分作为验证数据集，然后在用训练数据集对每个结点进行划分之前用当前状态的决策树计算出在验证数据集上的正确率。正确率越高说明决策树的泛化性能越好，如果在划分结点的时候发现泛化性能有所下降或者没有提升时，说明应该停止划分，并用投票计数的方式将当前结点标记成叶子结点。</p>
 <p>举个例子，假如上一关中所提到的用来决定是否买西瓜的决策树模型已经出现过拟合的情况，模型如下：</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-3" />
+<img src="https://data.educoder.net/api/attachments/283157" srcset="/my-blog/img/loading.gif" lazyload alt="img-3">
 <figcaption aria-hidden="true">img-3</figcaption>
 </figure>
 <p>假设当模型在划分<code>是否便宜</code>这个结点前，模型在验证数据集上的正确率为<code>0.81</code>。但在划分后，模型在验证数据集上的正确率降为<code>0.67</code>。此时就不应该划分<code>是否便宜</code>这个结点。所以预剪枝后的模型如下：</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/283551" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-4" />
+<img src="https://data.educoder.net/api/attachments/283551" srcset="/my-blog/img/loading.gif" lazyload alt="img-4">
 <figcaption aria-hidden="true">img-4</figcaption>
 </figure>
 <p>从上图可以看出，<strong>预剪枝能够降低决策树的复杂度。这种预剪枝处理属于贪心思想，但是贪心有一定的缺陷，就是可能当前划分会降低泛化性能，但在其基础上进行的后续划分却有可能导致性能显著提高。所以有可能会导致决策树出现欠拟合的情况。</strong></p>
@@ -960,20 +949,17 @@ alt="img-4" />
 <p>为了完成本关任务，你需要掌握如何使用<code>sklearn</code>提供的<code>DecisionTreeClassifier</code>。</p>
 <h5 id="数据简介">数据简介</h5>
 <figure>
-<img src="https://data.educoder.net/api/attachments/283552" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-6" />
+<img src="https://data.educoder.net/api/attachments/283552" srcset="/my-blog/img/loading.gif" lazyload alt="img-6">
 <figcaption aria-hidden="true">img-6</figcaption>
 </figure>
 <p>鸢尾花数据集是一类多重变量分析的数据集。通过花萼长度，花萼宽度，花瓣长度，花瓣宽度<code>4</code>个属性预测鸢尾花卉属于(<code>Setosa</code>，<code>Versicolour</code>，<code>Virginica</code>)三个种类中的哪一类(其中分别用<code>0</code>，<code>1</code>，<code>2</code>代替)。</p>
 <p>数据集中部分数据与标签如下图所示：</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/317817" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-7" />
+<img src="https://data.educoder.net/api/attachments/317817" srcset="/my-blog/img/loading.gif" lazyload alt="img-7">
 <figcaption aria-hidden="true">img-7</figcaption>
 </figure>
 <figure>
-<img src="https://data.educoder.net/api/attachments/317819" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-7" />
+<img src="https://data.educoder.net/api/attachments/317819" srcset="/my-blog/img/loading.gif" lazyload alt="img-7">
 <figcaption aria-hidden="true">img-7</figcaption>
 </figure>
 <h5 id="decisiontreeclassifier">DecisionTreeClassifier</h5>
@@ -995,14 +981,12 @@ alt="img-7" />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn.tree <span class="hljs-keyword">import</span> DecisionTreeClassifier<br>clf = tree.DecisionTreeClassifier()<br>clf.fit(X_train, Y_train)<br>result = clf.predict(X_test)<br></code></pre></td></tr></table></figure>
 <p>数据文件格式如下图所示:</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/317828" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-8" />
+<img src="https://data.educoder.net/api/attachments/317828" srcset="/my-blog/img/loading.gif" lazyload alt="img-8">
 <figcaption aria-hidden="true">img-8</figcaption>
 </figure>
 <p>标签文件格式如下图所示:</p>
 <figure>
-<img src="https://data.educoder.net/api/attachments/317829" srcset="/my-blog/img/loading.gif" lazyload
-alt="img-9" />
+<img src="https://data.educoder.net/api/attachments/317829" srcset="/my-blog/img/loading.gif" lazyload alt="img-9">
 <figcaption aria-hidden="true">img-9</figcaption>
 </figure>
 <p><strong>PS：<code>predict.csv</code>文件的格式必须与标签文件格式一致。</strong></p>
@@ -1080,7 +1064,7 @@ alt="img-9" />
   <div class="license-box my-3">
     <div class="license-title">
       <div>头歌 - 机器学习作业</div>
-      <div>https://david_deng.gitee.io/my-blog/2023/05/05/educoder-ml-homework/</div>
+      <div>https://david_deng.gitee.io/my-blog/2023/05/04/educoder-ml-homework/</div>
     </div>
     <div class="license-meta">
       
@@ -1092,7 +1076,7 @@ alt="img-9" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月5日</div>
+          <div>2023年5月4日</div>
         </div>
       
       
