@@ -1,0 +1,21 @@
+/* 自定义的 css 文件 */
+*{
+    /* 清除浏览器默认样式 */
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+}
+hr {
+    border: none !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 10px 0 !important
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none !important;
+    color: inherit; 
+}
