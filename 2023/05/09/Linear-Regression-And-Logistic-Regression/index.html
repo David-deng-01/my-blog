@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>线性回归和逻辑回归 | David 的博客</title><meta name="author" content="David"><meta name="copyright" content="David"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="线性回归和逻辑回归1. 线性回归(Linear Regression)什么是回归（Regression）回归分析是一种统计方法,于对具有一个或多个自变量的因变量(目标变量)和自变量(预测变量)之间的关系进行建模。具体地说，回归分析有助于我们理解在其他自变量保持固定的情况下，自变量的值对应于自变量的变化方式。它可以预测连续&#x2F;实际值,例如温度,年龄,工资,价格等。 通俗理解：越来越接近期望值的过程，回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性回归和逻辑回归">
+<meta property="og:url" content="https://david-deng.cn/my-blog/2023/05/09/Linear-Regression-And-Logistic-Regression/index.html">
+<meta property="og:site_name" content="David 的博客">
+<meta property="og:description" content="线性回归和逻辑回归1. 线性回归(Linear Regression)什么是回归（Regression）回归分析是一种统计方法,于对具有一个或多个自变量的因变量(目标变量)和自变量(预测变量)之间的关系进行建模。具体地说，回归分析有助于我们理解在其他自变量保持固定的情况下，自变量的值对应于自变量的变化方式。它可以预测连续&#x2F;实际值,例如温度,年龄,工资,价格等。 通俗理解：越来越接近期望值的过程，回">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png">
+<meta property="article:published_time" content="2023-05-09T14:50:47.000Z">
+<meta property="article:modified_time" content="2023-11-16T13:33:12.000Z">
+<meta property="article:author" content="David">
+<meta property="article:tag" content="Educoder">
+<meta property="article:tag" content="ML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png"><link rel="shortcut icon" href="/my-blog/img/favicon.svg"><link rel="canonical" href="https://david-deng.cn/my-blog/2023/05/09/Linear-Regression-And-Logistic-Regression/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/my-blog/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/my-blog/',
+  algolia: undefined,
+  localSearch: {"path":"/my-blog/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"文章距离最近一次更新已经","messageNext":"天，文章的内容可能已经过期。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: David","link":"链接: ","source":"来源: David 的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '线性回归和逻辑回归',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-16 21:33:12'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/my-blog/img/avatar.png" onerror="onerror=null;src='/img/loading.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/my-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/my-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/my-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/my-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/my-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png')"><nav id="nav"><span id="blog-info"><a href="/my-blog/" title="David 的博客"><span class="site-name">David 的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/my-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/my-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/my-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/my-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/my-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">线性回归和逻辑回归</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-09T14:50:47.000Z" title="发表于 2023-05-09 22:50:47">2023-05-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-16T13:33:12.000Z" title="更新于 2023-11-16 21:33:12">2023-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/my-blog/categories/Educoder/">Educoder</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/my-blog/categories/Educoder/ML/">ML</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="线性回归和逻辑回归"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="线性回归和逻辑回归"><a href="#线性回归和逻辑回归" class="headerlink" title="线性回归和逻辑回归"></a>线性回归和逻辑回归</h1><h2 id="1-线性回归-Linear-Regression"><a href="#1-线性回归-Linear-Regression" class="headerlink" title="1. 线性回归(Linear Regression)"></a>1. 线性回归(Linear Regression)</h2><h3 id="什么是回归（Regression）"><a href="#什么是回归（Regression）" class="headerlink" title="什么是回归（Regression）"></a>什么是回归（Regression）</h3><p><strong>回归分析</strong>是一种统计方法,于对具有一个或多个自变量的因变量(目标变量)和自变量(预测变量)之间的关系进行建模。具体地说，回归分析有助于我们理解在其他自变量保持固定的情况下，自变量的值对应于自变量的变化方式。它可以预测连续/实际值,例如温度,年龄,工资,价格等。</p>
+<p>通俗理解：越来越接近期望值的过程，回归于事物本来的面目。</p>
+<p>回归是一种有监督的学习技术，有助于发现变量之间的相关性,并使我们能够基于一个或多个预测变量来预测连续输出变量。它主要用于预测，时间序列建模以及确定变量之间的因果关系。</p>
+<p>在回归中，我们在最适合给定数据点的变量之间绘制图形,使用此图形，机器学习模型可以对数据进行预测。用简单的话说，回归显示一条线或曲线， 它穿过目标预测图上的所有数据点，以使数据点和回归线之间的垂直距离最小。数据点和线之间的距离表明模型是否已捕获牢固的关系。</p>
+<p>主要用于预测数值型数据，典型的回归例子：数据拟合曲线</p>
+<h3 id="什么是线性回归（Linear-Regression）"><a href="#什么是线性回归（Linear-Regression）" class="headerlink" title="什么是线性回归（Linear Regression）"></a>什么是线性回归（Linear Regression）</h3><p>在统计学中，线性回归（Linear Regression）是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。只有一个自变量的情况称为<strong>简单回归</strong>，大于一个自变量情况的叫做<strong>多元回归</strong>。（这反过来又应当由多个相关的因变量预测的多元线性回归区别，而不是一个单一的标量变量。）</p>
+<p>在线性回归中，数据使用线性预测函数来建模，并且未知的模型参数也是通过数据来估计。这些模型被叫做<strong>线性模型</strong>。最常用的线性回归建模是给定X值的y的条件均值是X的仿射函数。不太一般的情况，线性回归模型可以是一个中位数或一些其他的给定X的条件下y的条件分布的分位数作为X的线性函数表示。像所有形式的回归分析一样，线性回归也把焦点放在给定X值的y的条件概率分布，而不是X和y的联合概率分布（多元分析领域）。</p>
+<p>线性回归是回归分析中第一种经过严格研究并在实际应用中广泛使用的类型。这是因为线性依赖于其未知参数的模型比非线性依赖于其未知参数的模型更容易拟合，而且产生的估计的统计特性也更容易确定。</p>
+<p>线性回归模型经常用<strong>最小二乘</strong>逼近来拟合，但他们也可能用别的方法来拟合，比如用最小化“拟合缺陷”在一些其他规范里（比如最小绝对误差回归），或者在桥回归中最小化最小二乘损失函数的惩罚.相反,最小二乘逼近可以用来拟合那些非线性的模型.因此，尽管“最小二乘法”和“线性模型”是紧密相连的，但他们是不能划等号的。</p>
+<blockquote>
+<p>最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。</p>
+<p>最小二乘法还可用于曲线拟合，其他一些优化问题也可通过最小化能量或最大化熵用最小二乘法来表达 。</p>
+</blockquote>
+<p>线性回归假设输出变量是若干输出变量的线性组合，并根据这一关系求解线性组合中的最优系数。</p>
+<p>通俗理解：输出一个线性函数，例如</p>
+<img src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/image-20230511231459904.png" alt="image-20230511231459904" style="zoom:100%;" />
+
+<p>假定一个实例可以用列向量表示，每个代表实例在第i个属性上的取值，线性回归就是都求出一组参数，使预测输出可以表示为以这组参数为权重的实例属性的线性组合。例如引入常量，线性回归试图学习的模型就是</p>
+<ul>
+<li>当实例只有一个属性时，输入输出之间关系就是二维平面的一条直线</li>
+<li>当实例属性数目较多时，得到的是n+1维空间的一个超平面，对应一个维度等于于n的线性子空间</li>
+</ul>
+<h3 id="什么是一元线性回归（Unary-Linear-Regression）"><a href="#什么是一元线性回归（Unary-Linear-Regression）" class="headerlink" title="什么是一元线性回归（Unary Linear Regression）"></a>什么是一元线性回归（Unary Linear Regression）</h3><p>一元线性回归也叫单变量线性回归，一元线性回归是分析只有一个自变量。从一个输入值预测一个输出值，输入/输出的对应关系就是一个线性函数。例如：一个经济指标的数值往往受许多因素影响，若其中只有一个因素是主要的，起决定性作用，则可用一元线性回归进行预测分析。</p>
+<img src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/image-20230511231831139.png" alt="image-20230511231831139" style="zoom:100%;" />
+
+<h3 id="什么是多元线性回归（Multiple-Linear-Regression）"><a href="#什么是多元线性回归（Multiple-Linear-Regression）" class="headerlink" title="什么是多元线性回归（Multiple Linear Regression）"></a>什么是多元线性回归（Multiple Linear Regression）</h3><p>在回归分析中，如果有两个或两个以上的自变量，就称为多元回归。当样本的描述涉及多个属性时，这类问题就被称为多元线性回归。。事实上，一种现象常常是与多个因素相联系的，由多个自变量的最优组合共同来预测或估计因变量，比只用一个自变量进行预测或估计更有效，更符合实际。因此多元线性回归比一元线性回归的实用意义更大。例如，肌肉是睡眠、饮食、训练多种因素共同作用的结果。</p>
+<img src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/image-20230511232444558.png" alt="image-20230511232444558" style="zoom:100%;" />
+
+<h2 id="2-逻辑回归-Logistic-Regression"><a href="#2-逻辑回归-Logistic-Regression" class="headerlink" title="2. 逻辑回归(Logistic Regression)"></a>2. 逻辑回归(Logistic Regression)</h2><h3 id="什么是逻辑回归（Logistic-Regression）"><a href="#什么是逻辑回归（Logistic-Regression）" class="headerlink" title="什么是逻辑回归（Logistic Regression）"></a>什么是逻辑回归（Logistic Regression）</h3><p>线性回归能对连续值进行预测，而现实中学常见的另一类问题是分类，逻辑回归解决的就是分类问题。逻辑回归输出的实例属于每个类别的似然概率，似然概率最大的类别就是分类结果。通俗理解：逻辑就是True或False，判断出是True还是False，相当于分类了。在二分类任务中，逻辑回归可以视为在平面直角坐标系上划定一条数据分类的判定边界。</p>
+<p>逻辑回归就是这样的一个过程：面对一个回归或者分类问题，建立代价函数，然后通过优化方法迭代求解出最优的模型参数，然后测试验证我们这个求解的模型的好坏。Logistic回归虽然名字里带“回归”，但是它实际上是一种分类方法，主要用于两分类问题（即输出只有两种，分别代表两个类别）回归模型中，y是一个定性变量，比如y=0或1，逻辑回归方法主要应用于研究某些事件发生的概率。</p>
+<img src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/image-20230511233440196.png" alt="image-20230511233440196" style="zoom:100%;" />
+
+
+
+<h2 id="3-线性回归和逻辑回归的区别"><a href="#3-线性回归和逻辑回归的区别" class="headerlink" title="3. 线性回归和逻辑回归的区别"></a>3. 线性回归和逻辑回归的区别</h2><p>线性回归和逻辑回归的性质不同、任务定位不同、输出值不同、损失函数不同等。下面简单描述两种机器学习方法的不同点。</p>
+<h3 id="性质不同"><a href="#性质不同" class="headerlink" title="性质不同"></a>性质不同</h3><ol>
+<li>线性回归模型一般用于预测，用于对连续值进行预测，例如预测房价走势。逻辑回归一般用于分类，用于对离散值进行预测，例如：是否是乳腺癌预测</li>
+<li>逻辑回归是一种广义的线性回归分析模型；线性回归是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法。</li>
+<li>逻辑回归常用于数据挖掘，疾病自动诊断，经济预测等领域；线性回归常运用于数学、金融、趋势线、经济学等领域。</li>
+</ol>
+<h3 id="任务定位不同"><a href="#任务定位不同" class="headerlink" title="任务定位不同"></a>任务定位不同</h3><ol>
+<li>线性回归用于回归任务；逻辑回归用于分类任务。</li>
+</ol>
+<h3 id="输出值不同"><a href="#输出值不同" class="headerlink" title="输出值不同"></a>输出值不同</h3><ol>
+<li>线性回归输出连续值；</li>
+<li>逻辑回归输出概率值；</li>
+</ol>
+<h3 id="损失函数不同"><a href="#损失函数不同" class="headerlink" title="损失函数不同"></a>损失函数不同</h3><ol>
+<li>线性回归一般采用Mean Square Error Loss(均方误差损失)函数</li>
+<li>逻辑回归采用Cross Entropy Loss(交叉熵损失)函数</li>
+</ol>
+<h2 id="4-线性回归和逻辑回归的联系"><a href="#4-线性回归和逻辑回归的联系" class="headerlink" title="4. 线性回归和逻辑回归的联系"></a>4. 线性回归和逻辑回归的联系</h2><p>本质上，逻辑回归是将线性回归的结果通过 <code>sigmod</code> 函数进行了映射，将值域映射到(0,1)，在二类任务中，若大于0.5，则为某个类，小于0.5，为另一类。</p>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h2><p>线性回归和逻辑回归都是总要的机器学习方法，两种方法既有区别又有联系。它们适用于不同的任务，有不同的效果。但是本质上两种回归方法是一致的，只是逻辑回归方法在线性回归方法的基础上，对线性回归方法的结果进行了映射。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://david-deng.cn/my-blog">David</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://david-deng.cn/my-blog/2023/05/09/Linear-Regression-And-Logistic-Regression/">https://david-deng.cn/my-blog/2023/05/09/Linear-Regression-And-Logistic-Regression/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://david-deng.cn/my-blog" target="_blank">David 的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/my-blog/tags/Educoder/">Educoder</a><a class="post-meta__tags" href="/my-blog/tags/ML/">ML</a></div><div class="post_share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/WeChatPay.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/WeChatPay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/Alipay.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/Alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/my-blog/2023/05/06/typora-shortcut-keys/" title="typora 快捷键"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" onerror="onerror=null;src='/my-blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">typora 快捷键</div></div></a></div><div class="next-post pull-right"><a href="/my-blog/2023/05/10/MarkDown-Formula-Guide-Manual/" title="Cmd Markdown 公式指导手册"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="onerror=null;src='/my-blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cmd Markdown 公式指导手册</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/my-blog/2023/05/04/educoder-ml-homework/" title="头歌 - 机器学习 - 决策树"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-04</div><div class="title">头歌 - 机器学习 - 决策树</div></div></a></div><div><a href="/my-blog/2023/05/11/educoder-ml-homework/" title="头歌 - 机器学习 - 逻辑回归"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="title">头歌 - 机器学习 - 逻辑回归</div></div></a></div><div><a href="/my-blog/2023/05/25/educoder-ml-homework/" title="头歌 - 机器学习 - Adaboost"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-25</div><div class="title">头歌 - 机器学习 - Adaboost</div></div></a></div><div><a href="/my-blog/2023/05/26/educoder-ml-homework/" title="头歌 - 机器学习 - 随机森林"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-26</div><div class="title">头歌 - 机器学习 - 随机森林</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/my-blog/img/avatar.png" onerror="this.onerror=null;this.src='/my-blog/img/loading.gif'" alt="avatar"/></div><div class="author-info__name">David</div><div class="author-info__description">Welcome to David's Blog</div></div><div class="card-info-data site-data is-center"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/david-deng-01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/david-deng-01" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/David_0925" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=635647792&amp;website=www.oicqzone.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:david-deng-0925@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">1.</span> <span class="toc-text">线性回归和逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-Linear-Regression"><span class="toc-number">1.1.</span> <span class="toc-text">1. 线性回归(Linear Regression)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E5%BD%92%EF%BC%88Regression%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是回归（Regression）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88Linear-Regression%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">什么是线性回归（Linear Regression）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88Unary-Linear-Regression%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">什么是一元线性回归（Unary Linear Regression）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88Multiple-Linear-Regression%EF%BC%89"><span class="toc-number">1.1.4.</span> <span class="toc-text">什么是多元线性回归（Multiple Linear Regression）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92-Logistic-Regression"><span class="toc-number">1.2.</span> <span class="toc-text">2. 逻辑回归(Logistic Regression)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%88Logistic-Regression%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">什么是逻辑回归（Logistic Regression）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">3. 线性回归和逻辑回归的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%E4%B8%8D%E5%90%8C"><span class="toc-number">1.3.1.</span> <span class="toc-text">性质不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E5%AE%9A%E4%BD%8D%E4%B8%8D%E5%90%8C"><span class="toc-number">1.3.2.</span> <span class="toc-text">任务定位不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%80%BC%E4%B8%8D%E5%90%8C"><span class="toc-number">1.3.3.</span> <span class="toc-text">输出值不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8D%E5%90%8C"><span class="toc-number">1.3.4.</span> <span class="toc-text">损失函数不同</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">1.4.</span> <span class="toc-text">4. 线性回归和逻辑回归的联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">4. 总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="LeetCode刷题400道打卡"/></a><div class="content"><a class="title" href="/my-blog/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡">LeetCode刷题400道打卡</a><time datetime="2024-03-17T16:00:00.000Z" title="发表于 2024-03-18 00:00:00">2024-03-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="多模态基础模型：从专家到通用助理"/></a><div class="content"><a class="title" href="/my-blog/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理">多模态基础模型：从专家到通用助理</a><time datetime="2024-01-04T14:42:08.000Z" title="发表于 2024-01-04 22:42:08">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="校园网自动登录脚本"/></a><div class="content"><a class="title" href="/my-blog/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本">校园网自动登录脚本</a><time datetime="2023-12-30T09:21:30.000Z" title="发表于 2023-12-30 17:21:30">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-5.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="多模态讽刺识别基线模型复现"/></a><div class="content"><a class="title" href="/my-blog/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现">多模态讽刺识别基线模型复现</a><time datetime="2023-11-24T08:51:18.000Z" title="发表于 2023-11-24 16:51:18">2023-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="宝塔面板失效"/></a><div class="content"><a class="title" href="/my-blog/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效">宝塔面板失效</a><time datetime="2023-11-24T08:19:27.000Z" title="发表于 2023-11-24 16:19:27">2023-11-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By David</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="http://www.beian.gov.cn/portal/registerSystemInfo" rel="external nofollow noreferrer" target="_blank"> <img style="vertical-align:middle; width:20px; " src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/icp.png"> 赣公网安备36082302000135号</a> <a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" id="beian"  target="_blank">赣ICP备2023013705号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/my-blog/js/utils.js?v=4.13.0"></script><script src="/my-blog/js/main.js?v=4.13.0"></script><script src="/my-blog/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/my-blog/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

@@ -1,0 +1,1475 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cmd Markdown 公式指导手册 | David 的博客</title><meta name="author" content="David"><meta name="copyright" content="David"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、公式使用参考1．如何插入公式$\TeX$ 可使用行中公式放在文中与其它文字混编，或单独成行的独立公式。 行中公式可以用如下方法表示： 1$ 表达式 $  独立公式可以用如下方法表示： 1$$ 表达式 $$  自动编号的公式可以用如下方法表示：若需要手动编号，可在公式后使用 \tag&amp;#123;编号&amp;#125; 语句。1234\begin&amp;#123;equation&amp;#125;    表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cmd Markdown 公式指导手册">
+<meta property="og:url" content="https://david-deng.cn/my-blog/2023/05/10/MarkDown-Formula-Guide-Manual/index.html">
+<meta property="og:site_name" content="David 的博客">
+<meta property="og:description" content="一、公式使用参考1．如何插入公式$\TeX$ 可使用行中公式放在文中与其它文字混编，或单独成行的独立公式。 行中公式可以用如下方法表示： 1$ 表达式 $  独立公式可以用如下方法表示： 1$$ 表达式 $$  自动编号的公式可以用如下方法表示：若需要手动编号，可在公式后使用 \tag&amp;#123;编号&amp;#125; 语句。1234\begin&amp;#123;equation&amp;#125;    表达式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png">
+<meta property="article:published_time" content="2023-05-10T10:01:23.000Z">
+<meta property="article:modified_time" content="2023-11-16T13:33:22.000Z">
+<meta property="article:author" content="David">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png"><link rel="shortcut icon" href="/my-blog/img/favicon.svg"><link rel="canonical" href="https://david-deng.cn/my-blog/2023/05/10/MarkDown-Formula-Guide-Manual/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/my-blog/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/my-blog/',
+  algolia: undefined,
+  localSearch: {"path":"/my-blog/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"文章距离最近一次更新已经","messageNext":"天，文章的内容可能已经过期。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: David","link":"链接: ","source":"来源: David 的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cmd Markdown 公式指导手册',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-16 21:33:22'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/my-blog/img/avatar.png" onerror="onerror=null;src='/img/loading.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/my-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/my-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/my-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/my-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/my-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png')"><nav id="nav"><span id="blog-info"><a href="/my-blog/" title="David 的博客"><span class="site-name">David 的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/my-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/my-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/my-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/my-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/my-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cmd Markdown 公式指导手册</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-10T10:01:23.000Z" title="发表于 2023-05-10 18:01:23">2023-05-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-16T13:33:22.000Z" title="更新于 2023-11-16 21:33:22">2023-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/my-blog/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/my-blog/categories/%E6%95%99%E7%A8%8B/markdown/">markdown</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">11.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>58分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cmd Markdown 公式指导手册"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、公式使用参考"><a href="#一、公式使用参考" class="headerlink" title="一、公式使用参考"></a>一、公式使用参考</h1><h2 id="1．如何插入公式"><a href="#1．如何插入公式" class="headerlink" title="1．如何插入公式"></a>1．如何插入公式</h2><p>$\TeX$ 可使用行中公式放在文中与其它文字混编，或单独成行的独立公式。</p>
+<p>行中公式可以用如下方法表示：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> 表达式 <span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<p>独立公式可以用如下方法表示：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> 表达式 <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<dl><dt>自动编号的公式可以用如下方法表示：</dt><dd>若需要手动编号，可在公式后使用 <code>\tag&#123;编号&#125;</code> 语句。</dd></dl><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">\begin</span><span class="template-variable">&#123;equation&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    表达式</span></span><br><span class="line"><span class="language-xml">    \label</span><span class="template-variable">&#123;<span class="keyword">eq</span>:当前公式名&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\end</span><span class="template-variable">&#123;equation&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>: 自动编号后的公式可在全文任意处使用 <code>\eqref&#123;eq:公式名&#125;</code> 语句引用。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ J_<span class="string">\alpha(x)</span> = <span class="string">\sum_&#123;m=0&#125;^\infty</span> <span class="string">\frac&#123;(-1)^m&#125;&#123;m!</span> <span class="string">\Gamma</span> (m + <span class="string">\alpha</span> + <span class="number">1</span>)&#125; &#123;<span class="string">\left(&#123;</span> <span class="string">\frac&#123;x&#125;&#123;2&#125;</span> &#125;<span class="string">\right)&#125;^&#123;2m</span> + <span class="string">\alpha&#125;</span> <span class="string">\text</span> &#123;，行内公式示例&#125; $</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示： $ J<em>\alpha(x) = \sum</em>{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，行内公式示例} $</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ J_<span class="string">\alpha(x)</span> = <span class="string">\sum_&#123;m=0&#125;^\infty</span> <span class="string">\frac&#123;(-1)^m&#125;&#123;m!</span> <span class="string">\Gamma</span> (m + <span class="string">\alpha</span> + <span class="number">1</span>)&#125; &#123;<span class="string">\left(&#123;</span> <span class="string">\frac&#123;x&#125;&#123;2&#125;</span> &#125;<span class="string">\right)&#125;^&#123;2m</span> + <span class="string">\alpha&#125;</span> <span class="string">\text&#123;，独立公式示例，使用</span> <span class="string">\tag</span> 手动编号&#125; <span class="string">\tag&#123;0.1&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示： $$ J<em>\alpha(x) = \sum</em>{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">$$ 在公式 \eqref</span><span class="template-variable">&#123;<span class="keyword">eq</span>:sample&#125;</span><span class="language-xml"> 中，我们看到了这个被自动编号的公式。$$</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\begin</span><span class="template-variable">&#123;equation&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    E=mc^2 \text</span><span class="template-variable">&#123;，自动编号公式示例&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    \label</span><span class="template-variable">&#123;<span class="keyword">eq</span>:sample&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\end</span><span class="template-variable">&#123;equation&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$ 在公式 \eqref{eq:sample} 中，我们看到了这个被自动编号的公式。$$</p>
+<p>$$<br>\begin{equation}<br>    E=mc^2 \text{，自动编号公式示例}<br>    \label{eq:sample}<br>\end{equation}<br>$$</p>
+<p>不自动编号的公式可以用如下方法表示：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\<span class="keyword">begin</span>&#123;equation*&#125;</span><br><span class="line">    表达式</span><br><span class="line">\<span class="keyword">end</span>&#123;equation*&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2．如何输入上下标"><a href="#2．如何输入上下标" class="headerlink" title="2．如何输入上下标"></a>2．如何输入上下标</h2><p><code>^</code> 表示上标，<code>_</code> 表示下标。如果上下标的内容多于一个字符，需要用 <code>&#123;&#125;</code> 将这些内容括成一个整体。<br>上下标可以嵌套，也可以同时使用。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> x^&#123;y^z&#125;=(<span class="number">1</span>+&#123;\rm e&#125;^x)^&#123;<span class="number">-2</span>xy^w&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$</li>
+</ul>
+<p>如果要在左右两边都有上下标，可以使用 <code>\sideset</code> 命令；也可以简单地在符号前面多打一个上下标，此时会以行内公式渲染。<br>本例内 <code>\quad</code> 均为空格符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">$$ \sideset</span><span class="template-variable">&#123;^1_2&#125;</span><span class="template-variable">&#123;^3_4&#125;</span><span class="language-xml">\bigotimes \quad or \quad </span><span class="template-variable">&#123;^1_2&#125;</span><span class="language-xml">\bigotimes </span><span class="template-variable">&#123;^3_4&#125;</span><span class="language-xml"> $$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>\sideset{^1_2}{^3_4}\bigotimes \quad or \quad {^1_2}\bigotimes {^3_4}<br>$$</li>
+</ul>
+<p>##3．如何输入括号和分隔符</p>
+<p><code>()</code>、<code>[]</code> 和 <code>|</code> 表示符号本身，使用 <code>\&#123;\&#125;</code> 来表示 <code>&#123;&#125;</code> 。当要显示大号的括号或分隔符时，要用 <code>\left</code> 和 <code>\right</code> 命令。</p>
+<p>一些特殊的括号：</p>
+<table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\langle</td>
+<td align="left">$\langle$</td>
+<td align="right">\rangle</td>
+<td align="left">$\rangle$</td>
+</tr>
+<tr>
+<td align="right">\lceil</td>
+<td align="left">$\lceil$</td>
+<td align="right">\rceil</td>
+<td align="left">$\rceil$</td>
+</tr>
+<tr>
+<td align="right">\lfloor</td>
+<td align="left">$\lfloor$</td>
+<td align="right">\rfloor</td>
+<td align="left">$\rfloor$</td>
+</tr>
+<tr>
+<td align="right">\lbrace</td>
+<td align="left">$\lbrace$</td>
+<td align="right">\rbrace</td>
+<td align="left">$\rbrace$</td>
+</tr>
+<tr>
+<td align="right">\lvert</td>
+<td align="left">$\lvert$</td>
+<td align="right">\rvert</td>
+<td align="left">$\rvert$</td>
+</tr>
+<tr>
+<td align="right">\lVert</td>
+<td align="left">$\lVert$</td>
+<td align="right">\rVert</td>
+<td align="left">$\rVert$</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>@lymd</strong> 有时，我们需要在行内使用两个竖杠表示向量间的某种空间距离，可以这样写<br><span style="text-align: center; display: block"> <code>\lVert \boldsymbol&#123;X&#125;_i - \boldsymbol&#123;S&#125;_j \rVert^2</code> → $\lVert \boldsymbol{X}_i - \boldsymbol{S}_j \rVert^2$ </span></p>
+</blockquote>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> f(x,y,z) = <span class="number">3</span>y^<span class="number">2</span>z \left( <span class="number">3</span>+\<span class="built_in">frac</span>&#123;<span class="number">7</span>x+<span class="number">5</span>&#125;&#123;<span class="number">1</span>+y^<span class="number">2</span>&#125; \right) <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>  f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</li>
+</ul>
+<p>有时要用 <code>\left.</code> 或 <code>\right.</code> 进行匹配而不显示本身。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">$$</span></span><br><span class="line"><span class="language-xml">  \left. \frac</span><span class="template-variable">&#123;&#123;\<span class="name">rm</span> d&#125;u&#125;&#123;&#123;\rm d&#125;x&#125; \right| _&#123;<span class="attr">x</span>=<span class="number">0</span>&#125;</span></span><br><span class="line"><span class="template-variable">$$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br> \left. \frac{ { \rm d } u }{ { \rm d } x } \right| _{ x=0 }<br>$$</p>
+<h2 id="4．如何输入分数"><a href="#4．如何输入分数" class="headerlink" title="4．如何输入分数"></a>4．如何输入分数</h2><p>通常使用 <code>\frac &#123;分子&#125; &#123;分母&#125;</code> 来生成一个分数，分数可多层嵌套。<br>若分数只有一层，也可使用 <code>分子 \over 分母</code> 命令。<br>例内 <code>\quad</code> <code>\mid</code> <code>\,</code> 等均为空格或分隔符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \<span class="built_in">frac</span>&#123;a<span class="number">-1</span>&#125;&#123;b<span class="number">-1</span>&#125; \quad <span class="keyword">or</span> \quad &#123;a+<span class="number">1</span> \over b+<span class="number">1</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ \frac{a-1}{b-1} \quad or \quad {a+1 \over b+1} $$</li>
+</ul>
+<p>当分式 <strong>仅有两个字符时</strong> 可直接输入 <code>\frac ab</code> 来快速生成一个 $\Large\frac ab$ 。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ <span class="string">\frac</span> <span class="number">12</span>,<span class="string">\frac</span> <span class="number">1a</span>,<span class="string">\frac</span> a2 <span class="string">\quad</span> <span class="string">\mid</span> <span class="string">\quad</span> <span class="string">\text&#123;2</span> letters only:&#125; <span class="string">\quad</span> <span class="string">\frac</span> <span class="number">12a</span> <span class="string">\,,</span> k<span class="string">\frac</span> q&#123;r^<span class="number">2</span>&#125; $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ \frac 12,\frac 1a,\frac a2 \quad \mid \quad \text{2 letters only:} \quad \frac 12a ,, k\frac q{r^2} $$</li>
+</ul>
+<h2 id="5．如何输入开方"><a href="#5．如何输入开方" class="headerlink" title="5．如何输入开方"></a>5．如何输入开方</h2><p>使用 <code>\sqrt [根指数，省略时为2] &#123;被开方数&#125;</code> 命令输入开方。<br>本例内 <code>\quad</code> 均为空格符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \<span class="built_in">sqrt</span>&#123;<span class="number">2</span>&#125; \quad <span class="keyword">or</span> \quad \<span class="built_in">sqrt</span>[n]&#123;<span class="number">3</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ \sqrt{2} \quad or \quad \sqrt[n]{3} $$</li>
+</ul>
+<h2 id="6．如何输入省略号"><a href="#6．如何输入省略号" class="headerlink" title="6．如何输入省略号"></a>6．如何输入省略号</h2><p>数学公式中常见的省略号有两种，<code>\ldots</code> 表示与 <strong>文本底线</strong> 对齐的省略号，<code>\cdots</code> 表示与 <strong>文本中线</strong> 对齐的省略号。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">$$ f(x_1,x_2,\underbrace</span><span class="template-variable">&#123;\ldots&#125;</span><span class="language-xml">_</span><span class="template-variable">&#123;\rm ldots&#125;</span><span class="language-xml"> ,x_n) = x_1^2 + x_2^2 + \underbrace</span><span class="template-variable">&#123;\cdots&#125;</span><span class="language-xml">_</span><span class="template-variable">&#123;\rm cdots&#125;</span><span class="language-xml"> + x_n^2 $$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ f(x<em>1,x_2,\underbrace{\ldots}</em>{\rm ldots} ,x<em>n) = x_1^2 + x_2^2 + \underbrace{\cdots}</em>{\rm cdots} + x_n^2 $$</li>
+</ul>
+<h2 id="7．如何输入向量"><a href="#7．如何输入向量" class="headerlink" title="7．如何输入向量"></a>7．如何输入向量</h2><p>使用 <code>\vec&#123;向量&#125;</code> 来自动产生一个向量。也可以使用 <code>\overrightarrow</code> 等命令自定义字母上方的符号。<br>例内 <code>\quad</code> <code>\mid</code> <code>\,</code> 等均为空格或分隔符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \vec&#123;a&#125; \cdot \vec&#123;b&#125;=<span class="number">0</span> <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示：$$ \vec{a} \cdot \vec{b}=0 $$</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ xy <span class="string">\text&#123;</span> <span class="keyword">with</span> arrows:&#125; <span class="string">\quad</span> <span class="string">\overleftarrow&#123;xy&#125;</span> <span class="string">\;</span> <span class="string">\mid</span> <span class="string">\;</span> <span class="string">\overleftrightarrow&#123;xy&#125;</span> <span class="string">\;</span> <span class="string">\mid</span> <span class="string">\;</span> <span class="string">\overrightarrow&#123;xy&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ xy \text{ with arrows:} \quad \overleftarrow{xy} ; \mid ; \overleftrightarrow{xy} ; \mid ; \overrightarrow{xy} $$</li>
+</ul>
+<h2 id="8．如何输入积分"><a href="#8．如何输入积分" class="headerlink" title="8．如何输入积分"></a>8．如何输入积分</h2><p>使用 <code>\int_积分下限^积分上限 &#123;被积表达式&#125;</code> 来输入一个积分。</p>
+<p>例子：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \int_0^<span class="number">1</span> &#123;x^<span class="number">2</span>&#125; \,&#123;\rm d&#125;x <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<p>显示：$$ \int_0^1 {x^2} ,{\rm d}x $$</p>
+<p>本例中 <code>\,</code> 和 <code>&#123;\rm d&#125;</code> 部分可省略，但加入能使式子更美观，详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>及<a href="#13%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%AD%97%E4%BD%93%E8%BD%AC%E6%8D%A2">如何进行字体转换</a>。</p>
+<h2 id="9．如何输入极限运算"><a href="#9．如何输入极限运算" class="headerlink" title="9．如何输入极限运算"></a>9．如何输入极限运算</h2><p>使用 <code>\lim_&#123;变量 \to 表达式&#125; 表达式</code> 来输入一个极限。如有需求，可以更改 <code>\to</code> 符号至任意符号。</p>
+<p>例子：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ <span class="string">\lim_&#123;n</span> <span class="string">\to</span> <span class="string">\infty&#125;</span> <span class="string">\frac&#123;1&#125;&#123;n(n+1)&#125;</span> <span class="string">\quad</span> <span class="keyword">and</span> <span class="string">\quad</span> <span class="string">\lim_&#123;x\leftarrow&#123;示例&#125;&#125;</span> <span class="string">\frac&#123;1&#125;&#123;n(n+1)&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<p>显示：$$ \lim*{n \to \infty} \frac{1}{n(n+1)} \quad and \quad \lim*{x\leftarrow{示例}} \frac{1}{n(n+1)} $$</p>
+<h2 id="10．如何输入累加、累乘运算"><a href="#10．如何输入累加、累乘运算" class="headerlink" title="10．如何输入累加、累乘运算"></a>10．如何输入累加、累乘运算</h2><p>使用 <code>\sum_&#123;下标表达式&#125;^&#123;上标表达式&#125; &#123;累加表达式&#125;</code> 来输入一个累加。与之类似，使用 <code>\prod</code> <code>\bigcup</code> <code>\bigcap</code> 来分别输入累乘、并集和交集，更多符号可参考“<a href="#12%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%85%B6%E5%AE%83%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6">其它特殊字符</a>”。</p>
+<p>此类符号在行内显示时上下标表达式将会移至右上角和右下角，如 <code>\sum_&#123;i=1&#125;^n \frac&#123;1&#125;&#123;i^2&#125;</code> 显示为 $\sum_{i=1}^n \frac{1}{i^2}$ ；</p>
+<p>或：</p>
+<blockquote>
+<p><strong>@woria</strong> 在行内可使用 <code>\sum\limits_&#123;下标表达式&#125;^&#123;上标表达式&#125; &#123;累加表达式&#125;</code> 使上下标仍在正上正下方。<br><span style="text-align: center; display: block;"> 如 <code>\sum\limits_&#123;i=1&#125;^n \frac&#123;1&#125;&#123;i^2&#125;</code> 显示为 $\sum\limits_{i=1}^n \frac{1}{i^2}$ 。</span></p>
+</blockquote>
+<p>本例内 <code>\quad</code> 均为空格符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ <span class="string">\sum_&#123;i=1&#125;^n</span> <span class="string">\frac&#123;1&#125;&#123;i^2&#125;</span> <span class="string">\quad</span> <span class="keyword">and</span> <span class="string">\quad</span> <span class="string">\prod_&#123;i=1&#125;^n</span> <span class="string">\frac&#123;1&#125;&#123;i^2&#125;</span> <span class="string">\quad</span> <span class="keyword">and</span> <span class="string">\quad</span> <span class="string">\bigcup_&#123;i=1&#125;^&#123;2&#125;</span> <span class="string">\Bbb&#123;R&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：$$ \sum*{i=1}^n \frac{1}{i^2} \quad and \quad \prod*{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} \Bbb{R} $$</li>
+</ul>
+<h2 id="11．如何输入希腊字母"><a href="#11．如何输入希腊字母" class="headerlink" title="11．如何输入希腊字母"></a>11．如何输入希腊字母</h2><p>输入 <code>\小写希腊字母英文全称</code> 和 <code>\首字母大写希腊字母英文全称</code> 来分别输入小写和大写希腊字母。<br><strong>对于大写希腊字母与现有字母相同的，直接输入大写字母即可。</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\alpha</td>
+<td align="left">$\alpha$</td>
+<td align="right">A</td>
+<td align="left">$A$</td>
+<td align="right">\beta</td>
+<td align="left">$\beta$</td>
+<td align="right">B</td>
+<td align="left">$B$</td>
+</tr>
+<tr>
+<td align="right">\gamma</td>
+<td align="left">$\gamma$</td>
+<td align="right">\Gamma</td>
+<td align="left">$\Gamma$</td>
+<td align="right">\delta</td>
+<td align="left">$\delta$</td>
+<td align="right">\Delta</td>
+<td align="left">$\Delta$</td>
+</tr>
+<tr>
+<td align="right">\epsilon</td>
+<td align="left">$\epsilon$</td>
+<td align="right">E</td>
+<td align="left">$E$</td>
+<td align="right">\zeta</td>
+<td align="left">$\zeta$</td>
+<td align="right">Z</td>
+<td align="left">$Z$</td>
+</tr>
+<tr>
+<td align="right">\eta</td>
+<td align="left">$\eta$</td>
+<td align="right">H</td>
+<td align="left">$H$</td>
+<td align="right">\theta</td>
+<td align="left">$\theta$</td>
+<td align="right">\Theta</td>
+<td align="left">$\Theta$</td>
+</tr>
+<tr>
+<td align="right">\iota</td>
+<td align="left">$\iota$</td>
+<td align="right">I</td>
+<td align="left">$I$</td>
+<td align="right">\kappa</td>
+<td align="left">$\kappa$</td>
+<td align="right">K</td>
+<td align="left">$K$</td>
+</tr>
+<tr>
+<td align="right">\lambda</td>
+<td align="left">$\lambda$</td>
+<td align="right">\Lambda</td>
+<td align="left">$\Lambda$</td>
+<td align="right">\mu</td>
+<td align="left">$\mu$</td>
+<td align="right">M</td>
+<td align="left">$M$</td>
+</tr>
+<tr>
+<td align="right">\nu</td>
+<td align="left">$\nu$</td>
+<td align="right">N</td>
+<td align="left">$N$</td>
+<td align="right">\xi</td>
+<td align="left">$\xi$</td>
+<td align="right">\Xi</td>
+<td align="left">$\Xi$</td>
+</tr>
+<tr>
+<td align="right">o</td>
+<td align="left">$o$</td>
+<td align="right">O</td>
+<td align="left">$O$</td>
+<td align="right">\pi</td>
+<td align="left">$\pi$</td>
+<td align="right">\Pi</td>
+<td align="left">$\Pi$</td>
+</tr>
+<tr>
+<td align="right">\rho</td>
+<td align="left">$\rho$</td>
+<td align="right">P</td>
+<td align="left">$P$</td>
+<td align="right">\sigma</td>
+<td align="left">$\sigma$</td>
+<td align="right">\Sigma</td>
+<td align="left">$\Sigma$</td>
+</tr>
+<tr>
+<td align="right">\tau</td>
+<td align="left">$\tau$</td>
+<td align="right">T</td>
+<td align="left">$T$</td>
+<td align="right">\upsilon</td>
+<td align="left">$\upsilon$</td>
+<td align="right">\Upsilon</td>
+<td align="left">$\Upsilon$</td>
+</tr>
+<tr>
+<td align="right">\phi</td>
+<td align="left">$\phi$</td>
+<td align="right">\Phi</td>
+<td align="left">$\Phi$</td>
+<td align="right">\chi</td>
+<td align="left">$\chi$</td>
+<td align="right">X</td>
+<td align="left">$X$</td>
+</tr>
+<tr>
+<td align="right">\psi</td>
+<td align="left">$\psi$</td>
+<td align="right">\Psi</td>
+<td align="left">$\Psi$</td>
+<td align="right">\omega</td>
+<td align="left">$\omega$</td>
+<td align="right">\Omega</td>
+<td align="left">$\Omega$</td>
+</tr>
+</tbody></table>
+<p><strong>部分字母有变量专用形式，以 <code>\var-</code> 开头。</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">小写形式</th>
+<th align="center">大写形式</th>
+<th align="center">变量形式</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\epsilon</td>
+<td align="center">E</td>
+<td align="center">\varepsilon</td>
+<td align="center">$\epsilon \mid E \mid \varepsilon$</td>
+</tr>
+<tr>
+<td align="center">\theta</td>
+<td align="center">\Theta</td>
+<td align="center">\vartheta</td>
+<td align="center">$\theta \mid \Theta \mid \vartheta$</td>
+</tr>
+<tr>
+<td align="center">\rho</td>
+<td align="center">P</td>
+<td align="center">\varrho</td>
+<td align="center">$\rho \mid P \mid \varrho$</td>
+</tr>
+<tr>
+<td align="center">\sigma</td>
+<td align="center">\Sigma</td>
+<td align="center">\varsigma</td>
+<td align="center">$\sigma \mid \Sigma \mid \varsigma$</td>
+</tr>
+<tr>
+<td align="center">\phi</td>
+<td align="center">\Phi</td>
+<td align="center">\varphi</td>
+<td align="center">$\phi \mid \Phi \mid \varphi$</td>
+</tr>
+</tbody></table>
+<h2 id="12．如何输入其它特殊字符"><a href="#12．如何输入其它特殊字符" class="headerlink" title="12．如何输入其它特殊字符"></a>12．如何输入其它特殊字符</h2><blockquote>
+<p><strong>完整的 $\LaTeX$ 可用符号列表可以在 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://mirror.its.dal.ca/ctan/info/symbols/comprehensive/symbols-a4.pdf">这份文档</a> 中查阅（极长，共 348 页），大部分常用符号可以参阅 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://pic.plover.com/MISC/symbols.pdf">这份精简版文档</a> 查询。</strong>需要注意的是，$\LaTeX$ 符号并不保证在 MathJax v2.2 中可用，即在 Cmd Markdown 编辑阅读器中可能并不支持所输入的特定命令。</p>
+</blockquote>
+<blockquote>
+<p>若需要显示更大或更小的字符，在符号前插入 <code>\large</code> 或 <code>\small</code> 命令。<br>MathJax 针对任意元素均提供从小至大 <code>\tiny</code> <code>\Tiny</code> <code>\scriptsize</code> <code>\small</code> <code>*默认值 \normalsize</code> <code>\large</code> <code>\Large</code> <code>\LARGE</code> <code>\huge</code> <code>\Huge</code> 共十种渲染大小，详见<a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.mathjax.org/en/latest/input/tex/extensions/textmacros.html#size-control">官方文档</a>。</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://detexify.kirelabs.org/classify.html">若找不到需要的符号，推荐使用 $\large\rm{Detexify}$ 来画出想要的符号</a> &gt; <span style="text-align: center; display: block"> &gt; <img src="https://cdn.ericp.cn/img/202009/b0fe4b234a3fc.png" alt="detexify_t"></span></p>
+</blockquote>
+<h3 id="1-．关系运算符"><a href="#1-．关系运算符" class="headerlink" title="(1)．关系运算符"></a>(1)．关系运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\pm</td>
+<td align="left">$\pm$</td>
+<td align="right">\times</td>
+<td align="left">$\times$</td>
+<td align="right">\div</td>
+<td align="left">$\div$</td>
+<td align="right">\mid</td>
+<td align="left">$\mid$</td>
+</tr>
+<tr>
+<td align="right">\nmid</td>
+<td align="left">$\nmid$</td>
+<td align="right">\cdot</td>
+<td align="left">$\cdot$</td>
+<td align="right">\circ</td>
+<td align="left">$\circ$</td>
+<td align="right">\ast</td>
+<td align="left">$\ast$</td>
+</tr>
+<tr>
+<td align="right">\odot</td>
+<td align="left">$\odot$</td>
+<td align="right">\otimes</td>
+<td align="left">$\otimes$</td>
+<td align="right">\oplus</td>
+<td align="left">$\oplus$</td>
+<td align="right">\leq</td>
+<td align="left">$\leq$</td>
+</tr>
+<tr>
+<td align="right">\geq</td>
+<td align="left">$\geq$</td>
+<td align="right">\neq</td>
+<td align="left">$\neq$</td>
+<td align="right">\approx</td>
+<td align="left">$\approx$</td>
+<td align="right">\equiv</td>
+<td align="left">$\equiv$</td>
+</tr>
+<tr>
+<td align="right">\sum</td>
+<td align="left">$\sum$</td>
+<td align="right">\prod</td>
+<td align="left">$\prod$</td>
+<td align="right">\coprod</td>
+<td align="left">$\coprod$</td>
+<td align="right">\backslash</td>
+<td align="left">$\backslash$</td>
+</tr>
+</tbody></table>
+<h3 id="2-．集合运算符"><a href="#2-．集合运算符" class="headerlink" title="(2)．集合运算符"></a>(2)．集合运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\emptyset</td>
+<td align="left">$\emptyset$</td>
+<td align="right">\in</td>
+<td align="left">$\in$</td>
+<td align="right">\notin</td>
+<td align="left">$\notin$</td>
+</tr>
+<tr>
+<td align="right">\subset</td>
+<td align="left">$\subset$</td>
+<td align="right">\supset</td>
+<td align="left">$\supset$</td>
+<td align="right">\subseteq</td>
+<td align="left">$\subseteq$</td>
+</tr>
+<tr>
+<td align="right">\supseteq</td>
+<td align="left">$\supseteq$</td>
+<td align="right">\cap</td>
+<td align="left">$\cap$</td>
+<td align="right">\cup</td>
+<td align="left">$\cup$</td>
+</tr>
+<tr>
+<td align="right">\vee</td>
+<td align="left">$\vee$</td>
+<td align="right">\wedge</td>
+<td align="left">$\wedge$</td>
+<td align="right">\uplus</td>
+<td align="left">$\uplus$</td>
+</tr>
+<tr>
+<td align="right">\top</td>
+<td align="left">$\top$</td>
+<td align="right">\bot</td>
+<td align="left">$\bot$</td>
+<td align="right">\complement</td>
+<td align="left">$\complement$</td>
+</tr>
+</tbody></table>
+<h3 id="3-．对数运算符"><a href="#3-．对数运算符" class="headerlink" title="(3)．对数运算符"></a>(3)．对数运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\log</td>
+<td align="left">$\log$</td>
+<td align="right">\lg</td>
+<td align="left">$\lg$</td>
+<td align="right">\ln</td>
+<td align="left">$\ln$</td>
+</tr>
+</tbody></table>
+<h3 id="4-．三角运算符"><a href="#4-．三角运算符" class="headerlink" title="(4)．三角运算符"></a>(4)．三角运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\backsim</td>
+<td align="left">$\backsim$</td>
+<td align="right">\cong</td>
+<td align="left">$\cong$</td>
+<td align="right">\angle A</td>
+<td align="left">$\angle A$</td>
+</tr>
+<tr>
+<td align="right">\sin</td>
+<td align="left">$\sin$</td>
+<td align="right">\cos</td>
+<td align="left">$\cos$</td>
+<td align="right">\tan</td>
+<td align="left">$\tan$</td>
+</tr>
+<tr>
+<td align="right">\csc</td>
+<td align="left">$\csc$</td>
+<td align="right">\sec</td>
+<td align="left">$\sec$</td>
+<td align="right">\cot</td>
+<td align="left">$\cot$</td>
+</tr>
+</tbody></table>
+<h3 id="5-．微积分运算符"><a href="#5-．微积分运算符" class="headerlink" title="(5)．微积分运算符"></a>(5)．微积分运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\int</td>
+<td align="left">$\int$</td>
+<td align="right">\iint</td>
+<td align="left">$\iint$</td>
+<td align="right">\iiint</td>
+<td align="left">$\iiint$</td>
+</tr>
+<tr>
+<td align="right">\partial</td>
+<td align="left">$\partial$</td>
+<td align="right">\oint</td>
+<td align="left">$\oint$</td>
+<td align="right">\prime</td>
+<td align="left">$\prime$</td>
+</tr>
+<tr>
+<td align="right">\lim</td>
+<td align="left">$\lim$</td>
+<td align="right">\infty</td>
+<td align="left">$\infty$</td>
+<td align="right">\nabla</td>
+<td align="left">$\nabla$</td>
+</tr>
+</tbody></table>
+<h3 id="6-．逻辑运算符"><a href="#6-．逻辑运算符" class="headerlink" title="(6)．逻辑运算符"></a>(6)．逻辑运算符</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\because</td>
+<td align="left">$\because$</td>
+<td align="right">\therefore</td>
+<td align="left">$\therefore$</td>
+<td align="right">\neg</td>
+<td align="left">$\neg$</td>
+</tr>
+<tr>
+<td align="right">\forall</td>
+<td align="left">$\forall$</td>
+<td align="right">\exists</td>
+<td align="left">$\exists$</td>
+<td align="right">\not\subset</td>
+<td align="left">$\not\subset$</td>
+</tr>
+<tr>
+<td align="right">\not&lt;</td>
+<td align="left">$\not&lt;$</td>
+<td align="right">\not&gt;</td>
+<td align="left">$\not&gt;$</td>
+<td align="right">\not=</td>
+<td align="left">$\not=$</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>@xiaobanni</strong><br><span style="text-align: center; display: block"> <code>\vdash</code> 显示为 $\vdash$ </span></p>
+</blockquote>
+<h3 id="7-．戴帽符号"><a href="#7-．戴帽符号" class="headerlink" title="(7)．戴帽符号"></a>(7)．戴帽符号</h3><table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\hat{xy}</td>
+<td align="left">$\hat{xy}$</td>
+<td align="right">\widehat{xyz}</td>
+<td align="left">$\widehat{xyz}$</td>
+<td align="right">\bar{y}</td>
+<td align="left">$\bar{y}$</td>
+</tr>
+<tr>
+<td align="right">\tilde{xy}</td>
+<td align="left">$\tilde{xy}$</td>
+<td align="right">\widetilde{xyz}</td>
+<td align="left">$\widetilde{xyz}$</td>
+<td align="right">\acute{y}</td>
+<td align="left">$\acute{y}$</td>
+</tr>
+<tr>
+<td align="right">\breve{y}</td>
+<td align="left">$\breve{y}$</td>
+<td align="right">\check{y}</td>
+<td align="left">$\check{y}$</td>
+<td align="right">\grave{y}</td>
+<td align="left">$\grave{y}$</td>
+</tr>
+<tr>
+<td align="right">\dot{x}</td>
+<td align="left">$\dot{x}$</td>
+<td align="right">\ddot{x}</td>
+<td align="left">$\ddot{x}$</td>
+<td align="right">\dddot{x}</td>
+<td align="left">$\dddot{x}$</td>
+</tr>
+</tbody></table>
+<p>若需要在特定文字顶部\底部放置内容，可使用 <code>\overset&#123;顶部内容&#125;&#123;正常内容&#125;</code> 和 <code>\underset&#123;底部内容&#125;&#123;正常内容&#125;</code> 命令。<br>例内 <code>\qquad</code> <code>\quad</code> <code>\mid</code> <code>\;</code> <code>\,</code> 等均为空格或分隔符号，为方便公式格式对比而添加，请注意辨别。详见<a href="#3%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC">在字符间加入空格</a>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ <span class="string">\verb+\overset&#123;above&#125;&#123;level&#125;+</span> <span class="string">\qquad</span> <span class="string">\overset&#123;xx&#125;&#123;ABC&#125;</span> <span class="string">\;\;</span> <span class="string">\mid</span> <span class="string">\quad</span> <span class="string">\overset&#123;x^2&#125;&#123;\longmapsto&#125;\</span> <span class="string">\,</span> <span class="string">\mid</span> <span class="string">\quad</span> <span class="string">\overset&#123;\bullet\circ\circ\bullet&#125;&#123;T&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示：<br>$$ \verb+\overset{above}{level}+ \qquad \overset{xx}{ABC} ;; \mid \quad \overset{x^2}{\longmapsto}\ , \mid \quad \overset{\bullet\circ\circ\bullet}{T} $$</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ <span class="string">\verb+\underset&#123;below&#125;&#123;level&#125;+</span> <span class="string">\qquad</span> <span class="string">\underset&#123;xx&#125;&#123;ABC&#125;</span> <span class="string">\;\;</span> <span class="string">\mid</span> <span class="string">\quad</span> <span class="string">\underset&#123;x^2&#125;&#123;\longmapsto&#125;\</span> <span class="string">\,</span> <span class="string">\mid</span> <span class="string">\quad</span> <span class="string">\underset&#123;\bullet\circ\circ\bullet&#125;&#123;T&#125;</span> $$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$ \verb+\underset{below}{level}+ \qquad \underset{xx}{ABC} ;; \mid \quad \underset{x^2}{\longmapsto}\ , \mid \quad \underset{\bullet\circ\circ\bullet}{T} $$</li>
+</ul>
+<p>此命令可叠加嵌套使用，生成类似化学反应式的多重条件符号，<br>如 <code>\overset&#123;H_2&#125;&#123;\underset&#123;1300℃&#125;&#123;\Longleftrightarrow&#125;&#125;</code>：<br>$$ \rm{SrO+V^{&#39;&#39;}<em>{Sr} \overset{H_2}{\underset{1300℃}{\Longleftrightarrow}} Sr^{\times}_{Sr}+2e^{&#39;}+\frac 12O<em>2(g)} $$ 和 <code>\overset&#123;Surface/bulk&#125;&#123;\underset&#123;diffusion&#125;&#123;\longleftrightarrow&#125;&#125;</code>：<br>$$ \rm{2OH^{\circ}</em>{O(STN)}+2O^{\times}</em>{O(YSZ)} ; \overset{Surface/bulk}{\underset{diffusion}{\longleftrightarrow}} ;; 2OH^{\circ}<em>{O(YSZ)}+2O^{\times}\</em>{O(STN)}} $$</p>
+<p>在书写化学方程式时可声明 <code>\require&#123;AMDcd&#125;</code> 语句，使用 MathJax 内置的交换图表功能，具体例子可<a href="#1%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E4%BA%A4%E6%8D%A2%E5%9B%BE%E8%A1%A8">参见下文</a>。</p>
+<h3 id="8-．连线符号"><a href="#8-．连线符号" class="headerlink" title="(8)．连线符号"></a>(8)．连线符号</h3><p>其它可用的文字修饰符可参见官方文档 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference#answer-13081">&quot;Additional decorations&quot;</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="center">输入</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\fbox{a+b+c+d} <span style="display: block"><strong>高级框选需<a href="#5%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF">声明 <code>enclose</code> 标签</a></strong></span></td>
+<td align="center">$\fbox{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\overleftarrow{a+b+c+d}</td>
+<td align="center">$\overleftarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\overrightarrow{a+b+c+d}</td>
+<td align="center">$\overrightarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\overleftrightarrow{a+b+c+d}</td>
+<td align="center">$\overleftrightarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\underleftarrow{a+b+c+d}</td>
+<td align="center">$\underleftarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\underrightarrow{a+b+c+d}</td>
+<td align="center">$\underrightarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\underleftrightarrow{a+b+c+d}</td>
+<td align="center">$\underleftrightarrow{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\overline{a+b+c+d}</td>
+<td align="center">$\overline{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\underline{a+b+c+d}</td>
+<td align="center">$\underline{a+b+c+d}$</td>
+</tr>
+<tr>
+<td align="center">\overbrace{a+b+c+d}^{Sample}</td>
+<td align="center">$\overbrace{a+b+c+d}^{Sample}$</td>
+</tr>
+<tr>
+<td align="center">\underbrace{a+b+c+d}_{Sample}</td>
+<td align="center">$\underbrace{a+b+c+d}_{Sample}$</td>
+</tr>
+<tr>
+<td align="center">\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}</td>
+<td align="center">$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$</td>
+</tr>
+<tr>
+<td align="center">\underbrace{a\cdot a\cdots a}_{b\text{ times}}</td>
+<td align="center">$\underbrace{a\cdot a\cdots a}_{b\text{ times}}$</td>
+</tr>
+</tbody></table>
+<h3 id="9-．箭头符号"><a href="#9-．箭头符号" class="headerlink" title="(9)．箭头符号"></a>(9)．箭头符号</h3><ul>
+<li>推荐使用符号：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">输入</th>
+<th align="center">显示</th>
+<th align="center">输入</th>
+<th align="center">显示</th>
+<th align="center">输入</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\to</td>
+<td align="center">$\to$</td>
+<td align="center">\mapsto</td>
+<td align="center">$\mapsto$</td>
+<td align="center">\underrightarrow{1℃/min}</td>
+<td align="center">$\underrightarrow{1℃/min}$</td>
+</tr>
+<tr>
+<td align="center">\implies</td>
+<td align="center">$\implies$</td>
+<td align="center">\iff</td>
+<td align="center">$\iff$</td>
+<td align="center">\impliedby</td>
+<td align="center">$\impliedby$</td>
+</tr>
+</tbody></table>
+<ul>
+<li>其它可用符号：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">输入</th>
+<th align="center">显示</th>
+<th align="center">输入</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\uparrow</td>
+<td align="center">$\uparrow$</td>
+<td align="center">\Uparrow</td>
+<td align="center">$\Uparrow$</td>
+</tr>
+<tr>
+<td align="center">\downarrow</td>
+<td align="center">$\downarrow$</td>
+<td align="center">\Downarrow</td>
+<td align="center">$\Downarrow$</td>
+</tr>
+<tr>
+<td align="center">\leftarrow</td>
+<td align="center">$\leftarrow$</td>
+<td align="center">\Leftarrow</td>
+<td align="center">$\Leftarrow$</td>
+</tr>
+<tr>
+<td align="center">\rightarrow</td>
+<td align="center">$\rightarrow$</td>
+<td align="center">\Rightarrow</td>
+<td align="center">$\Rightarrow$</td>
+</tr>
+<tr>
+<td align="center">\leftrightarrow</td>
+<td align="center">$\leftrightarrow$</td>
+<td align="center">\Leftrightarrow</td>
+<td align="center">$\Leftrightarrow$</td>
+</tr>
+<tr>
+<td align="center">\longleftarrow</td>
+<td align="center">$\longleftarrow$</td>
+<td align="center">\Longleftarrow</td>
+<td align="center">$\Longleftarrow$</td>
+</tr>
+<tr>
+<td align="center">\longrightarrow</td>
+<td align="center">$\longrightarrow$</td>
+<td align="center">\Longrightarrow</td>
+<td align="center">$\Longrightarrow$</td>
+</tr>
+<tr>
+<td align="center">\longleftrightarrow</td>
+<td align="center">$\longleftrightarrow$</td>
+<td align="center">\Longleftrightarrow</td>
+<td align="center">$\Longleftrightarrow$</td>
+</tr>
+</tbody></table>
+<h2 id="13．如何进行字体转换"><a href="#13．如何进行字体转换" class="headerlink" title="13．如何进行字体转换"></a>13．如何进行字体转换</h2><p>若要对公式的某一部分字符进行字体转换，可以用 <code>&#123;\字体 &#123;需转换的部分字符&#125;&#125;</code> 命令，其中 <code>\字体</code> 部分可以参照下表选择合适的字体。一般情况下，公式默认为斜体字 $italic$ 。</p>
+<p>示例中 <strong>全部大写</strong> 的字体仅大写可用。</p>
+<table>
+<thead>
+<tr>
+<th align="right">输入</th>
+<th align="center">全字母可用</th>
+<th align="left">显示</th>
+<th align="right">输入</th>
+<th align="center">仅大写可用</th>
+<th align="left">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">\rm</td>
+<td align="center">罗马体</td>
+<td align="left">$\rm{Sample}$</td>
+<td align="right"><strong>\mathcal</strong></td>
+<td align="center"><strong>花体（数学符号等）</strong></td>
+<td align="left">$\mathcal{SAMPLE}$</td>
+</tr>
+<tr>
+<td align="right">\it</td>
+<td align="center">斜体</td>
+<td align="left">$\it{Sample}$</td>
+<td align="right"><strong>\mathbb</strong></td>
+<td align="center"><strong>黑板粗体（定义域等）</strong></td>
+<td align="left">$\mathbb{SAMPLE}$</td>
+</tr>
+<tr>
+<td align="right">\bf</td>
+<td align="center">粗体</td>
+<td align="left">$\bf{Sample}$</td>
+<td align="right">\mit</td>
+<td align="center">数学斜体</td>
+<td align="left">$\mit{SAMPLE}$</td>
+</tr>
+<tr>
+<td align="right">\sf</td>
+<td align="center">等线体</td>
+<td align="left">$\sf{Sample}$</td>
+<td align="right">\scr</td>
+<td align="center">手写体</td>
+<td align="left">$\scr{SAMPLE}$</td>
+</tr>
+<tr>
+<td align="right">\tt</td>
+<td align="center">打字机体</td>
+<td align="left">$\tt{Sample}$</td>
+<td align="right">\cal</td>
+<td align="center">等同于 <code>\mathcal</code></td>
+<td align="left">$\cal{ABCXYZ}$</td>
+</tr>
+<tr>
+<td align="right">\frak</td>
+<td align="center">旧德式字体</td>
+<td align="left">$\frak{Sample}$</td>
+<td align="right">\Bbb</td>
+<td align="center">等同于 <code>\mathbb</code></td>
+<td align="left">$\Bbb{ABCXYZ}$</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>@lymd</strong> <code>\boldsymbol&#123;\alpha&#125;</code> 用来表示向量或者矩阵的加粗斜体，如向量 $\boldsymbol{\vec\alpha}$ 。</p>
+</blockquote>
+<p>转换字体十分常用，例如在积分中：</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;array&#125;&#123;cc&#125;</span></span><br><span class="line">    <span class="string">\mathrm&#123;Bad&#125;</span> &amp; <span class="string">\mathrm&#123;Better&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\int_0^1</span> x^<span class="number">2</span> dx &amp; <span class="string">\int_0^1</span> x^<span class="number">2</span> <span class="string">\,&#123;\rm</span> d&#125;x</span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>\begin{array}{cc}<br>  \mathrm{Bad} &amp; \mathrm{Better} \<br>  \hline \<br>  \int_0^1 x^2 dx &amp; \int_0^1 x^2 ,{\rm d}x<br>\end{array}<br>$$</li>
+</ul>
+<p>注意比较两个式子间 $dx$ 与 ${\rm d} x$ 的不同。<br>使用 <code>\operatorname</code> 命令也可以达到相同的效果，详见<a href="#1%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6-operatorname">定义新的运算符</a>。</p>
+<h2 id="14．如何高亮一行公式"><a href="#14．如何高亮一行公式" class="headerlink" title="14．如何高亮一行公式"></a>14．如何高亮一行公式</h2><p>使用 <code>\bbox[底色, (可选)边距, (可选)边框 border: 框宽度 框类型 框颜色]</code> 命令来高亮一行公式。<br>底色和框颜色支持详见“<a href="#4%E6%9B%B4%E6%94%B9%E6%96%87%E5%AD%97%E9%A2%9C%E8%89%B2-color">更改文字颜色</a>”，边距及框宽度支持 <code>绝对像素 px</code> 或 <code>相对大小 em</code>，框类型支持 <code>实线 solid</code> 或 <code>虚线 dashed</code>。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="string">\bbox[yellow]&#123;</span></span><br><span class="line">    e^x=<span class="string">\lim_&#123;n\to\infty&#125;</span> <span class="string">\left(</span> <span class="number">1</span>+<span class="string">\frac&#123;x&#125;&#123;n&#125;</span> <span class="string">\right)^n</span> <span class="string">\qquad</span> (<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\bbox[yellow]{<br>    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)<br>}<br>$$</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="string">\bbox[#9ff,</span> <span class="number">5px</span>]&#123; % 此处向外添加 <span class="number">5</span> 像素的边距</span><br><span class="line">    e^x=<span class="string">\lim_&#123;n\to\infty&#125;</span> <span class="string">\left(</span> <span class="number">1</span>+<span class="string">\frac&#123;x&#125;&#123;n&#125;</span> <span class="string">\right)^n</span> <span class="string">\qquad</span> (<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\bbox[#9ff, 5px]{<br>    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)<br>}<br>$$</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span><span class="variable">$</span></span><br><span class="line">% 此处使用 <span class="number">0.5</span> 倍行高作为边距，附加 <span class="number">2</span> 像素的实线边框（Ctrl+Alt+Y 可见）</span><br><span class="line">\bbox[<span class="comment">#2f3542, 0.5em, border:2px solid #f1f2f6]&#123;</span></span><br><span class="line">    \<span class="type">color</span>&#123; <span class="comment">#f1f2f6&#125;&#123;e^x=\lim_&#123;n\to\infty&#125; \left( 1+\frac&#123;x&#125;&#123;n&#125; \right)^n \qquad (1)&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$</span><span class="variable">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\bbox[#2f3542, 0.5em, border:2px solid #f1f2f6]{<br>    \color{ #f1f2f6 }{<br>        e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)<br>    }<br>}<br>$$</p>
+<h2 id="15．大括号和行标的使用"><a href="#15．大括号和行标的使用" class="headerlink" title="15．大括号和行标的使用"></a>15．大括号和行标的使用</h2><p>在 <code>\left</code> 和 <code>\right</code> 之后加上要使用的括号来创建自动匹配高度的圆括号 <code>(</code> <code>)</code>，方括号 <code>[</code> <code>]</code> 和花括号 <code>\&#123;</code> <code>\&#125;</code>。<br>在每个公式末尾前使用 <code>\tag &#123;行标&#125;</code> 来实现行标。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">f<span class="keyword">\left</span>(</span><br><span class="line">   <span class="keyword">\left</span>[</span><br><span class="line">     <span class="keyword">\frac</span>&#123;</span><br><span class="line">       1+<span class="keyword">\left</span><span class="keyword">\&#123;</span>x,y<span class="keyword">\right</span><span class="keyword">\&#125;</span></span><br><span class="line">     &#125;&#123;</span><br><span class="line">       <span class="keyword">\left</span>(</span><br><span class="line">          <span class="keyword">\frac</span> xy + <span class="keyword">\frac</span> yx</span><br><span class="line">       <span class="keyword">\right</span>)</span><br><span class="line">       (u+1)</span><br><span class="line">     &#125;+a</span><br><span class="line">   <span class="keyword">\right</span>]<span class="built_in">^</span>&#123;3/2&#125;</span><br><span class="line"><span class="keyword">\right</span>)</span><br><span class="line"><span class="keyword">\tag</span> &#123;行标&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>f\left(<br>   \left[<br>     \frac{<br>       1+\left{x,y\right}<br>     }{<br>       \left(<br>          \frac xy + \frac yx<br>       \right)<br>       (u+1)<br>     }+a<br>   \right]^{3/2}<br>\right)<br>\tag {行标}<br>$$</p>
+<p>如果你需要在不同的行显示对应括号，可以在每一行对应处使用 <code>\left.</code> 或 <code>\right.</code> 来放一个“不存在的括号”。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;align*&#125;</span><br><span class="line">    a=<span class="built_in">&amp;</span><span class="keyword">\left</span>(1+2+3+ <span class="keyword">\cdots</span> <span class="keyword">\right</span>. <span class="keyword">\\</span></span><br><span class="line">      <span class="built_in">&amp;</span><span class="keyword">\cdots</span>+<span class="keyword">\left</span>. <span class="keyword">\infty</span>-2+<span class="keyword">\infty</span>-1+<span class="keyword">\infty</span><span class="keyword">\right</span>)</span><br><span class="line"><span class="keyword">\end</span>&#123;align*&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\begin{align*}<br>    a=&amp;\left(1+2+3+ \cdots \right. \<br>      &amp;\cdots+\left. \infty-2+\infty-1+\infty\right)<br>\end{align*}<br>$$</p>
+<p>如果你需要将大括号里面显示的分隔符也变大，可以使用 <code>\middle</code> 命令，此处分别使用单竖线 <code>|</code> 和双竖线 <code>\\|</code> 。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\left</span><span class="keyword">\langle</span></span><br><span class="line">    q <span class="keyword">\;</span> <span class="keyword">\middle</span>|</span><br><span class="line">        <span class="keyword">\frac</span>&#123;<span class="keyword">\frac</span> xy&#125;&#123;<span class="keyword">\frac</span> uv&#125;</span><br><span class="line">    <span class="keyword">\middle</span><span class="keyword">\|</span> p</span><br><span class="line"><span class="keyword">\right</span><span class="keyword">\rangle</span></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\left\langle<br>    q ; \middle|<br>        \frac{\frac xy}{\frac uv}<br>    \middle| p<br>\right\rangle<br>$$</p>
+<h2 id="16．其它命令"><a href="#16．其它命令" class="headerlink" title="16．其它命令"></a>16．其它命令</h2><h3 id="1-．定义新的运算符-operatorname"><a href="#1-．定义新的运算符-operatorname" class="headerlink" title="(1)．定义新的运算符 \operatorname"></a>(1)．定义新的运算符 \operatorname</h3><p>当需要使用的运算符不在 MathJax 的内置库中时，程序可能会报错或产生错误的渲染结果。此时可以使用 <code>\operatorname</code> 命令定义一个新的运算符号。</p>
+<ul>
+<li><strong>反例：</strong></li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;array&#125;&#123;c|c&#125;</span></span><br><span class="line">    <span class="string">\mathrm&#123;Error&#125;</span> &amp; <span class="string">\text&#123;Wrong</span> rendering&#125; <span class="string">\\</span></span><br><span class="line">    <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\arsinh(x)</span> &amp; arsinh(x) <span class="string">\\</span></span><br><span class="line">    <span class="string">\Res_&#123;z=1&#125;</span> &amp; Res_&#123;z=<span class="number">1</span>&#125;&#123;<span class="string">\frac&#123;1&#125;&#123;z^2-z&#125;=1&#125;</span> <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>\begin{array}{c|c}<pre><code>\mathrm&#123;Error&#125; &amp; \text&#123;Wrong rendering&#125; \\
+\hline \\
+\arsinh(x) &amp; arsinh(x) \\
+\Res_&#123;z=1&#125; &amp; Res_&#123;z=1&#125;&#123;\frac&#123;1&#125;&#123;z^2-z&#125;=1&#125; \\
+</code></pre>
+\end{array}<br>$$</li>
+</ul>
+<p>使用 <code>\operatorname&#123;运算符&#125;&#123;式子&#125;</code> 来生成一个普通运算，或使用 <code>\operatorname*&#123;运算符&#125;_&#123;下标&#125;^&#123;上标&#125;&#123;式子&#125;</code> 来生成一个含上下标的自定义运算。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">\begin</span><span class="template-variable">&#123;array&#125;</span><span class="template-variable">&#123;c|c&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    \text</span><span class="template-variable">&#123;Normal Operator&#125;</span><span class="language-xml"> &amp; \text</span><span class="template-variable">&#123;Operator with label above and below&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">    \hline \\</span></span><br><span class="line"><span class="language-xml">    \scriptsize\text</span><span class="template-variable">&#123;\operatorname&#123;arsinh&#125;</span><span class="template-variable">&#123;x&#125;</span><span class="language-xml">&#125; &amp; \scriptsize\text</span><span class="template-variable">&#123;\operatorname*&#123;Res&#125;</span><span class="language-xml">_</span><span class="template-variable">&#123;z=1&#125;</span><span class="template-variable">&#123;\frac&#123;1&#125;</span><span class="template-variable">&#123;z^2-z&#125;</span><span class="language-xml">=1&#125;&#125; \\</span></span><br><span class="line"><span class="language-xml">    \operatorname</span><span class="template-variable">&#123;arsinh&#125;</span><span class="template-variable">&#123;x&#125;</span><span class="language-xml"> &amp; \operatorname*</span><span class="template-variable">&#123;Res&#125;</span><span class="language-xml">_</span><span class="template-variable">&#123;z=1&#125;</span><span class="template-variable">&#123;\frac&#123;1&#125;</span><span class="template-variable">&#123;z^2-z&#125;</span><span class="language-xml">=1&#125; \\</span></span><br><span class="line"><span class="language-xml">\end</span><span class="template-variable">&#123;array&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>\begin{array}{c|c}<br>  \text{Normal Operator} &amp; \text{Operator with label above and below} \<br>  \scriptsize\text{\operatorname{arsinh}{x}} &amp; \scriptsize\text{\operatorname*{Res}<em>{z=1}{\frac{1}{z^2-z}=1}} \[2ex]<br>  \hline \<br>  \operatorname{arsinh}{x} &amp; \operatorname*{Res}</em>{z=1}{\frac{1}{z^2-z}=1}<br>\end{array}<br>$$</li>
+</ul>
+<p>查询<a target="_blank" rel="noopener external nofollow noreferrer" href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference/15077#15077">关于此命令的定义</a>和<a target="_blank" rel="noopener external nofollow noreferrer" href="http://meta.math.stackexchange.com/search?q=operatorname">关于此命令的讨论</a>来进一步了解此命令。</p>
+<h3 id="2-．添加注释文字-text"><a href="#2-．添加注释文字-text" class="headerlink" title="(2)．添加注释文字 \text"></a>(2)．添加注释文字 \text</h3><p>在 <code>\text &#123;文字&#125;</code> 中仍可以使用 <code>$公式$</code> 插入其它公式。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> f(n)= \begin&#123;cases&#125; n/<span class="number">2</span>, &amp; \text &#123;<span class="keyword">if</span> <span class="symbol">$</span>n<span class="symbol">$</span> is even&#125; \\ <span class="number">3</span>n+<span class="number">1</span>, &amp; \text&#123;<span class="keyword">if</span> <span class="symbol">$</span>n<span class="symbol">$</span> is odd&#125; \end&#123;cases&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>f(n)= \begin{cases} n/2, &amp; \text {if $n$ is even} \ 3n+1, &amp; \text{if $n$ is odd} \end{cases}<br>$$</li>
+</ul>
+<h3 id="3-．在字符间加入空格"><a href="#3-．在字符间加入空格" class="headerlink" title="(3)．在字符间加入空格"></a>(3)．在字符间加入空格</h3><p>有四种宽度的空格可以使用： <code>\,</code>、<code>\;</code>、<code>\quad</code> 和 <code>\qquad</code>，灵活使用 <code>\text&#123;n个空格&#125;</code> 也可以在任意位置实现空格。<br>同时存在一种负空格 <code>\!</code> 用来减小字符间距，一般在物理单位中使用。<br><strong>重复使用 <code>\!</code> 命令能够实现不同元素的叠加渲染，如$\wedge!!!!!!!!;\bigcirc$ 和 $ }!!!!!\div $</strong></p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;array&#125;&#123;c|c&#125;</span></span><br><span class="line">    <span class="string">\text&#123;Spaces&#125;</span> &amp; <span class="string">\text&#123;Negative</span> Space <span class="keyword">in</span> Units&#125; <span class="string">\\</span></span><br><span class="line">    <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\overbrace&#123;a</span> <span class="string">\!</span> b&#125;^&#123;<span class="string">\text&#123;\!&#125;&#125;</span> <span class="string">\mid</span> <span class="string">\underbrace&#123;ab&#125;_&#123;\rm&#123;default&#125;&#125;</span> <span class="string">\mid</span> <span class="string">\overbrace&#123;a</span> <span class="string">\,</span> b&#125;^&#123;<span class="string">\text&#123;\,&#125;&#125;</span> <span class="string">\mid</span> <span class="string">\underbrace&#123;a</span> <span class="string">\;</span> b&#125;_&#123;<span class="string">\text&#123;\;&#125;&#125;</span> <span class="string">\mid</span> <span class="string">\overbrace&#123;a</span> <span class="string">\quad</span> b&#125;^&#123;<span class="string">\text&#123;\quad&#125;&#125;</span> <span class="string">\mid</span> <span class="string">\underbrace&#123;a</span> <span class="string">\qquad</span> b&#125;_&#123;<span class="string">\text&#123;\qquad&#125;&#125;</span> &amp; <span class="string">\mathrm&#123;N&#125;\!\cdot\!\mathrm&#123;m&#125;</span> <span class="string">\mid</span> <span class="string">\mathrm&#123;s&#125;\!\cdot\!\mathrm&#123;A&#125;</span> <span class="string">\mid</span> <span class="string">\mathrm&#123;kg&#125;\!\cdot\!\mathrm&#123;m&#125;^2</span> <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$<br>\begin{array}{c|c}<pre><code>\text&#123;Spaces&#125; &amp; \text&#123;Negative Space in Units&#125; \\
+\hline \\
+\overbrace&#123;a \! b&#125;^&#123;\text&#123;\!&#125;&#125; \mid \underbrace&#123;ab&#125;_&#123;\rm&#123;default&#125;&#125; \mid \overbrace&#123;a \, b&#125;^&#123;\text&#123;\,&#125;&#125; \mid \underbrace&#123;a \; b&#125;_&#123;\text&#123;\;&#125;&#125; \mid \overbrace&#123;a \quad b&#125;^&#123;\text&#123;\quad&#125;&#125; \mid \underbrace&#123;a \qquad b&#125;_&#123;\text&#123;\qquad&#125;&#125; &amp; \mathrm&#123;N&#125;\!\cdot\!\mathrm&#123;m&#125; \mid \mathrm&#123;s&#125;\!\cdot\!\mathrm&#123;A&#125; \mid \mathrm&#123;kg&#125;\!\cdot\!\mathrm&#123;m&#125;^2 \\
+</code></pre>
+  \end{array}<br>$$</li>
+</ul>
+<p>一些常见的公式单位可表达如下：</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \mu_0=<span class="number">4</span>\<span class="built_in">pi</span>\times10^&#123;<span class="number">-7</span>&#125; \ \left.\mathrm&#123;\mathrm&#123;T&#125;\!\cdot\!\mathrm&#123;m&#125;&#125;\middle/\mathrm&#123;A&#125;\right. <span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span> <span class="number">180</span>^\circ=\<span class="built_in">pi</span> \ \mathrm&#123;rad&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span> \mathrm&#123;N_A&#125; = <span class="number">6.022</span>\times10^&#123;<span class="number">23</span>&#125; \ \mathrm&#123;mol&#125;^&#123;<span class="number">-1</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：<br>$$ \mu_0=4\pi\times10^{-7} \ \left.\mathrm{\mathrm{T}!\cdot!\mathrm{m}}\middle/\mathrm{A}\right. $$ $$ 180^\circ=\pi \ \mathrm{rad} $$ $$ \mathrm{N_A} = 6.022\times10^{23} \ \mathrm{mol}^{-1} $$</li>
+</ul>
+<h3 id="4-．更改文字颜色-color"><a href="#4-．更改文字颜色-color" class="headerlink" title="(4)．更改文字颜色 \color"></a>(4)．更改文字颜色 \color</h3><p>使用 <code>\color&#123;颜色&#125;&#123;文字&#125;</code> 来更改特定的文字颜色。</p>
+<p>更改文字颜色需要浏览器支持 ，如果浏览器不知道你所需的颜色，那么文字将被渲染为黑色。对于较旧的浏览器（HTML4 &amp; CSS2），以下颜色是被支持的：</p>
+<table>
+<thead>
+<tr>
+<th align="center">输入</th>
+<th align="center">显示</th>
+<th align="center">输入</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">black</td>
+<td align="center">$\color{black}{text}$</td>
+<td align="center">grey</td>
+<td align="center">$\color{grey}{text}$</td>
+</tr>
+<tr>
+<td align="center">silver</td>
+<td align="center">$\color{silver}{text}$</td>
+<td align="center">white</td>
+<td align="center">$\color{white}{text}$</td>
+</tr>
+<tr>
+<td align="center">maroon</td>
+<td align="center">$\color{maroon}{text}$</td>
+<td align="center">red</td>
+<td align="center">$\color{red}{text}$</td>
+</tr>
+<tr>
+<td align="center">yellow</td>
+<td align="center">$\color{yellow}{text}$</td>
+<td align="center">lime</td>
+<td align="center">$\color{lime}{text}$</td>
+</tr>
+<tr>
+<td align="center">olive</td>
+<td align="center">$\color{olive}{text}$</td>
+<td align="center">green</td>
+<td align="center">$\color{green}{text}$</td>
+</tr>
+<tr>
+<td align="center">teal</td>
+<td align="center">$\color{teal}{text}$</td>
+<td align="center">auqa</td>
+<td align="center">$\color{auqa}{text}$</td>
+</tr>
+<tr>
+<td align="center">blue</td>
+<td align="center">$\color{blue}{text}$</td>
+<td align="center">navy</td>
+<td align="center">$\color{navy}{text}$</td>
+</tr>
+<tr>
+<td align="center">purple</td>
+<td align="center">$\color{purple}{text}$</td>
+<td align="center">fuchsia</td>
+<td align="center">$\color{fuchsia}{text}$</td>
+</tr>
+</tbody></table>
+<p>对于较新的浏览器（HTML5 &amp; CSS3），HEX 颜色将被支持：</p>
+<p>输入 <code>\color &#123; #rgb&#125; &#123;text&#125;</code> 来自定义更多的颜色，其中 <code>#rgb</code> 或 <code>#rrggbb</code> 的 <code>r</code> <code>g</code> <code>b</code> 可输入 <code>0-9</code> 和 <code>a-f</code> 来表示红色、绿色和蓝色的纯度（饱和度）。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;array&#125;&#123;|rrrrrrrr|&#125;\hline</span></span><br><span class="line">    <span class="string">\verb+#000+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#000&#125;&#123;text&#125; &amp; &amp; &amp;</span></span><br><span class="line">    <span class="string">\verb+#00F+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#00F&#125;&#123;text&#125; &amp; &amp; \\</span></span><br><span class="line">    &amp; &amp; <span class="string">\verb+#0F0+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#0F0&#125;&#123;text&#125; &amp;</span></span><br><span class="line">    &amp; &amp; <span class="string">\verb+#0FF+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#0FF&#125;&#123;text&#125; \\</span></span><br><span class="line">    <span class="string">\verb+#F00+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#F00&#125;&#123;text&#125; &amp; &amp; &amp;</span></span><br><span class="line">    <span class="string">\verb+#F0F+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#F0F&#125;&#123;text&#125; &amp; &amp; \\</span></span><br><span class="line">    &amp; &amp; <span class="string">\verb+#FF0+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#FF0&#125;&#123;text&#125; &amp;</span></span><br><span class="line">    &amp; &amp; <span class="string">\verb+#FFF+</span> &amp; <span class="string">\color&#123;</span> <span class="comment">#FFF&#125;&#123;text&#125; \\</span></span><br><span class="line"><span class="string">\hline\end&#123;array&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示：</p>
+<p>$$<br>\begin{array}{|rrrrrrrr|}\hline</p>
+<pre><code>\verb+#000+ &amp; \color&#123; #000&#125;&#123;text&#125; &amp; &amp; &amp;
+\verb+#00F+ &amp; \color&#123; #00F&#125;&#123;text&#125; &amp; &amp; \\
+&amp; &amp; \verb+#0F0+ &amp; \color&#123; #0F0&#125;&#123;text&#125; &amp;
+&amp; &amp; \verb+#0FF+ &amp; \color&#123; #0FF&#125;&#123;text&#125; \\
+\verb+#F00+ &amp; \color&#123; #F00&#125;&#123;text&#125; &amp; &amp; &amp;
+\verb+#F0F+ &amp; \color&#123; #F0F&#125;&#123;text&#125; &amp; &amp; \\
+&amp; &amp; \verb+#FF0+ &amp; \color&#123; #FF0&#125;&#123;text&#125; &amp;
+&amp; &amp; \verb+#FFF+ &amp; \color&#123; #FFF&#125;&#123;text&#125; \\
+</code></pre>
+<p>  \hline\end{array}<br>$$</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;array&#125;&#123;|rrrrrrrr|&#125;<span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#000</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>00&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#005</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>05&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#00A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>0A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#00F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>0F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#500</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>00&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#505</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>05&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#50A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>0A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#50F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>0F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#A00</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A00&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A05</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A05&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A0A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A0A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A0F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A0F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#F00</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F00&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F05</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F05&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F0A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F0A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F0F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F0F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#080</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>80&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#085</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>85&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#08A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>8A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#08F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>8F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#580</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>80&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#585</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>85&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#58A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>8A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#58F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>8F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#A80</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A80&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A85</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A85&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A8A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A8A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#A8F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>A8F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#F80</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F80&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F85</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F85&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F8A</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F8A&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#F8F</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>F8F&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#0F0</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>F0&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#0F5</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>F5&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#0FA</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>FA&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#0FF</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#0</span>FF&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#5F0</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>F0&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#5F5</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>F5&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#5FA</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>FA&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#5FF</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#5</span>FF&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#AF0</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>AF0&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#AF5</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>AF5&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#AFA</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>AFA&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#AFF</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>AFF&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\verb</span>+<span class="string">#FF0</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>FF0&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#FF5</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>FF5&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#FFA</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>FFA&#125;&#123;text&#125; <span class="built_in">&amp;</span> <span class="keyword">\verb</span>+<span class="string">#FFF</span>+ <span class="built_in">&amp;</span> <span class="keyword">\color</span>&#123; <span class="params">#</span>FFF&#125;&#123;text&#125;  <span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\hline</span><span class="keyword">\end</span>&#123;array&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\begin{array}{|rrrrrrrr|}\hline<br>    \verb+#000+ &amp; \color{ #000}{text} &amp; \verb+#005+ &amp; \color{ #005}{text} &amp; \verb+#00A+ &amp; \color{ #00A}{text} &amp; \verb+#00F+ &amp; \color{ #00F}{text}  \<br>    \verb+#500+ &amp; \color{ #500}{text} &amp; \verb+#505+ &amp; \color{ #505}{text} &amp; \verb+#50A+ &amp; \color{ #50A}{text} &amp; \verb+#50F+ &amp; \color{ #50F}{text}  \<br>    \verb+#A00+ &amp; \color{ #A00}{text} &amp; \verb+#A05+ &amp; \color{ #A05}{text} &amp; \verb+#A0A+ &amp; \color{ #A0A}{text} &amp; \verb+#A0F+ &amp; \color{ #A0F}{text}  \<br>    \verb+#F00+ &amp; \color{ #F00}{text} &amp; \verb+#F05+ &amp; \color{ #F05}{text} &amp; \verb+#F0A+ &amp; \color{ #F0A}{text} &amp; \verb+#F0F+ &amp; \color{ #F0F}{text}  \<br>  \hline<br>    \verb+#080+ &amp; \color{ #080}{text} &amp; \verb+#085+ &amp; \color{ #085}{text} &amp; \verb+#08A+ &amp; \color{ #08A}{text} &amp; \verb+#08F+ &amp; \color{ #08F}{text}  \<br>    \verb+#580+ &amp; \color{ #580}{text} &amp; \verb+#585+ &amp; \color{ #585}{text} &amp; \verb+#58A+ &amp; \color{ #58A}{text} &amp; \verb+#58F+ &amp; \color{ #58F}{text}  \<br>    \verb+#A80+ &amp; \color{ #A80}{text} &amp; \verb+#A85+ &amp; \color{ #A85}{text} &amp; \verb+#A8A+ &amp; \color{ #A8A}{text} &amp; \verb+#A8F+ &amp; \color{ #A8F}{text}  \<br>    \verb+#F80+ &amp; \color{ #F80}{text} &amp; \verb+#F85+ &amp; \color{ #F85}{text} &amp; \verb+#F8A+ &amp; \color{ #F8A}{text} &amp; \verb+#F8F+ &amp; \color{ #F8F}{text}  \<br>  \hline<br>    \verb+#0F0+ &amp; \color{ #0F0}{text} &amp; \verb+#0F5+ &amp; \color{ #0F5}{text} &amp; \verb+#0FA+ &amp; \color{ #0FA}{text} &amp; \verb+#0FF+ &amp; \color{ #0FF}{text}  \<br>    \verb+#5F0+ &amp; \color{ #5F0}{text} &amp; \verb+#5F5+ &amp; \color{ #5F5}{text} &amp; \verb+#5FA+ &amp; \color{ #5FA}{text} &amp; \verb+#5FF+ &amp; \color{ #5FF}{text}  \<br>    \verb+#AF0+ &amp; \color{ #AF0}{text} &amp; \verb+#AF5+ &amp; \color{ #AF5}{text} &amp; \verb+#AFA+ &amp; \color{ #AFA}{text} &amp; \verb+#AFF+ &amp; \color{ #AFF}{text}  \<br>    \verb+#FF0+ &amp; \color{ #FF0}{text} &amp; \verb+#FF5+ &amp; \color{ #FF5}{text} &amp; \verb+#FFA+ &amp; \color{ #FFA}{text} &amp; \verb+#FFF+ &amp; \color{ #FFF}{text}  \<br>  \hline\end{array}<br>$$</p>
+<h3 id="5-．添加删除线"><a href="#5-．添加删除线" class="headerlink" title="(5)．添加删除线"></a>(5)．添加删除线</h3><p>使用删除线功能必须声明 <code>$$</code> 符号。</p>
+<p>在公式内使用 <code>\require&#123;cancel&#125;</code> 来允许<strong>片段删除线</strong>的显示。<br>声明片段删除线后，使用 <code>\cancel&#123;字符&#125;</code>、<code>\bcancel&#123;字符&#125;</code>、<code>\xcancel&#123;字符&#125;</code> 和 <code>\cancelto&#123;字符&#125;</code> 来实现各种片段删除线效果。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="string">\require&#123;cancel&#125;</span></span><br><span class="line"><span class="string">\begin&#123;array&#125;&#123;rl&#125;</span></span><br><span class="line">    <span class="string">\verb|y+\cancel&#123;x&#125;|</span> &amp; y+<span class="string">\cancel&#123;x&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\verb|\cancel&#123;y+x&#125;|</span> &amp; <span class="string">\cancel&#123;y+x&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\verb|y+\bcancel&#123;x&#125;|</span> &amp; y+<span class="string">\bcancel&#123;x&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\verb|y+\xcancel&#123;x&#125;|</span> &amp; y+<span class="string">\xcancel&#123;x&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\verb|y+\cancelto&#123;0&#125;&#123;x&#125;|</span> &amp; y+<span class="string">\cancelto&#123;0&#125;&#123;x&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\verb+\frac&#123;1\cancel9&#125;&#123;\cancel95&#125;</span> = <span class="string">\frac15+&amp;</span> <span class="string">\frac&#123;1\cancel9&#125;&#123;\cancel95&#125;</span> = <span class="string">\frac15</span> <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\require{cancel}<br>\begin{array}{rl}<br>    \verb|y+\cancel{x}| &amp; y+\cancel{x} \<br>    \verb|\cancel{y+x}| &amp; \cancel{y+x} \<br>    \verb|y+\bcancel{x}| &amp; y+\bcancel{x} \<br>    \verb|y+\xcancel{x}| &amp; y+\xcancel{x} \<br>    \verb|y+\cancelto{0}{x}| &amp; y+\cancelto{0}{x} \<br>    \verb+\frac{1\cancel9}{\cancel95} = \frac15+&amp; \frac{1\cancel9}{\cancel95} = \frac15 \<br>\end{array}<br>$$</p>
+<p>使用 <code>\require&#123;enclose&#125;</code> 来允许<strong>整段删除线</strong>的显示。<br>声明整段删除线后，使用 <code>\enclose&#123;删除线效果&#125;&#123;字符&#125;</code> 来实现各种整段删除线效果。<br>其中，删除线效果有 <code>horizontalstrike</code>、<code>verticalstrike</code>、<code>updiagonalstrike</code> 和 <code>downdiagonalstrike</code>，可叠加使用。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">$$</span></span><br><span class="line"><span class="language-xml">\require</span><span class="template-variable">&#123;enclose&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\begin</span><span class="template-variable">&#123;array&#125;</span><span class="template-variable">&#123;rl&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    \verb|\enclose</span><span class="template-variable">&#123;horizontalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml">| &amp; \enclose</span><span class="template-variable">&#123;horizontalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">    \verb|\enclose</span><span class="template-variable">&#123;verticalstrike&#125;</span><span class="template-variable">&#123;\frac xy&#125;</span><span class="language-xml">| &amp; \enclose</span><span class="template-variable">&#123;verticalstrike&#125;</span><span class="template-variable">&#123;\frac xy&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">    \verb|\enclose</span><span class="template-variable">&#123;updiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml">| &amp; \enclose</span><span class="template-variable">&#123;updiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">    \verb|\enclose</span><span class="template-variable">&#123;downdiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml">| &amp; \enclose</span><span class="template-variable">&#123;downdiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">    \verb|\enclose</span><span class="template-variable">&#123;horizontalstrike,updiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml">| &amp; \enclose</span><span class="template-variable">&#123;horizontalstrike,updiagonalstrike&#125;</span><span class="template-variable">&#123;x+y&#125;</span><span class="language-xml"> \\</span></span><br><span class="line"><span class="language-xml">\end</span><span class="template-variable">&#123;array&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">$$</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<p>$$<br>\require{enclose}<br>\begin{array}{rl}<br>    \verb|\enclose{horizontalstrike}{x+y}| &amp; \enclose{horizontalstrike}{x+y} \<br>    \verb|\enclose{verticalstrike}{\frac xy}| &amp; \enclose{verticalstrike}{\frac xy} \<br>    \verb|\enclose{updiagonalstrike}{x+y}| &amp; \enclose{updiagonalstrike}{x+y} \<br>    \verb|\enclose{downdiagonalstrike}{x+y}| &amp; \enclose{downdiagonalstrike}{x+y} \<br>    \verb|\enclose{horizontalstrike,updiagonalstrike}{x+y}| &amp; \enclose{horizontalstrike,updiagonalstrike}{x+y} \<br>\end{array}<br>$$</p>
+<p>此外， <code>\enclose</code> 命令还可以产生包围的边框和圆等，参见 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/menclose">MathML Menclose Documentation</a> 以查看更多效果。</p>
+<ul>
+<li>例子：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">分别使用 <code>circle</code> 和 <code>roundedbox</code> 包围的公式</th>
+</tr>
+</thead>
+</table>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="string">\require&#123;enclose&#125;</span></span><br><span class="line"><span class="string">\begin&#123;array&#125;&#123;c&#125;</span></span><br><span class="line">    <span class="string">\enclose&#123;circle&#125;&#123;f(\top),\,</span> f^<span class="number">2</span>(<span class="string">\top),\,</span> f^<span class="number">3</span>(<span class="string">\top)</span> <span class="string">\,\cdots\,</span> f^n(<span class="string">\top)&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\enclose&#123;roundedbox&#125;&#123;f(\bot),\,</span> f^<span class="number">2</span>(<span class="string">\bot),\,</span> f^<span class="number">3</span>(<span class="string">\bot)</span> <span class="string">\,\cdots\,</span> f^n(<span class="string">\bot)&#125;</span> <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">使用 <code>box</code> 框住所有公式</th>
+</tr>
+</thead>
+</table>
+<p>$$<br>\require{enclose}<br>\begin{array}{c}<br>    \enclose{circle}{f(\top),, f^2(\top),, f^3(\top) ,\cdots, f^n(\top)} \<br>    \enclose{roundedbox}{f(\bot),, f^2(\bot),, f^3(\bot) ,\cdots, f^n(\bot)} \<br>\end{array}<br>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line"><span class="string">\require&#123;enclose&#125;</span></span><br><span class="line"><span class="string">\enclose&#123;box&#125;&#123;</span></span><br><span class="line">    <span class="string">\begin&#123;array&#125;&#123;c&#125;</span></span><br><span class="line">        f(<span class="string">\top),\,</span> f^<span class="number">2</span>(<span class="string">\top),\,</span> f^<span class="number">3</span>(<span class="string">\top)</span> <span class="string">\,\cdots\,</span> f^n(<span class="string">\top)</span> <span class="string">\\</span></span><br><span class="line">        f(<span class="string">\bot),\,</span> f^<span class="number">2</span>(<span class="string">\bot),\,</span> f^<span class="number">3</span>(<span class="string">\bot)</span> <span class="string">\,\cdots\,</span> f^n(<span class="string">\bot)</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\end&#123;array&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">分别使用 <code>circle</code> 和 <code>roundedbox</code> 包围的公式</th>
+<th align="center">使用 <code>box</code> 框住所有公式</th>
+</tr>
+</thead>
+</table>
+<p>|$$<br>    \require{enclose}<br>    \begin{array}{c}<br>        \enclose{circle}{f(\top),, f^2(\top),, f^3(\top) ,\cdots, f^n(\top)} \<br>        \enclose{roundedbox}{f(\bot),, f^2(\bot),, f^3(\bot) ,\cdots, f^n(\bot)} \<br>    \end{array}<br>$$|<br>$$<br>\require{enclose}<br>    \enclose{box}{<br>    \begin{array}{c}<br>    f(\top),, f^2(\top),, f^3(\top) ,\cdots, f^n(\top) \<br>    f(\bot),, f^2(\bot),, f^3(\bot) ,\cdots, f^n(\bot) \<br>    \end{array}<br>    }<br>$$|</p>
+<p>此例语法可参见<a href="#%E4%BA%94%E6%95%B0%E7%BB%84%E4%B8%8E%E8%A1%A8%E6%A0%BC%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83">如何输入一个数组或表格</a>。</p>
+<p>#二、矩阵使用参考</p>
+<p>##1．如何输入无框矩阵</p>
+<p>在开头使用 <code>\begin&#123;matrix&#125;</code>，在结尾使用 <code>\end&#123;matrix&#125;</code>，在中间插入矩阵元素，每个元素之间插入 <code>&amp;</code> ，并在每行结尾处使用 <code>\\</code> 。<br>使用矩阵时必须声明 <code>$</code> 或 <code>$$</code> 符号。</p>
+<ul>
+<li>例子：<br>$$<br>\begin{matrix}<br>1 &amp; x &amp; x^2 \<br>1 &amp; y &amp; y^2 \<br>1 &amp; z &amp; z^2 \<br>\end{matrix}<br>$$<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line"><span class="number">1</span> &amp; x &amp; x^<span class="number">2</span> \\</span><br><span class="line"><span class="number">1</span> &amp; y &amp; y^<span class="number">2</span> \\</span><br><span class="line"><span class="number">1</span> &amp; z &amp; z^<span class="number">2</span> \\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br><span class="line">##<span class="number">2</span>．如何输入边框矩阵</span><br><span class="line"></span><br><span class="line">在开头将 `matrix` 替换为 `pmatrix` `bmatrix` `Bmatrix` `vmatrix` `Vmatrix` 。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+$ \begin{matrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{matrix} $<br>$ \begin{pmatrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{pmatrix} $<br>$ \begin{bmatrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{bmatrix} $<br>$ \begin{Bmatrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{Bmatrix} $<br>$ \begin{vmatrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{vmatrix} $<br>$ \begin{Vmatrix} 1 &amp; 2 \ 3 &amp; 4 \ \end{Vmatrix} $<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">|                      matrix                       |                       pmatrix                       |                       bmatrix                       |                       <span class="title class_">Bmatrix</span>                       |                       vmatrix                       |                       <span class="title class_">Vmatrix</span>                       |</span><br><span class="line">| <span class="symbol">:-----------------------------------------------</span>: | <span class="symbol">:-------------------------------------------------</span>: | <span class="symbol">:-------------------------------------------------</span>: | <span class="symbol">:-------------------------------------------------</span>: | <span class="symbol">:-------------------------------------------------</span>: | <span class="symbol">:-------------------------------------------------</span>: |</span><br><span class="line">| <span class="variable">$ </span>\begin&#123;matrix&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;matrix&#125; <span class="variable">$ </span>| <span class="variable">$ </span>\begin&#123;pmatrix&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;pmatrix&#125; <span class="variable">$ </span>| <span class="variable">$ </span>\begin&#123;bmatrix&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;bmatrix&#125; <span class="variable">$ </span>| <span class="variable">$ </span>\begin&#123;<span class="title class_">Bmatrix</span>&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;<span class="title class_">Bmatrix</span>&#125; <span class="variable">$ </span>| <span class="variable">$ </span>\begin&#123;vmatrix&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;vmatrix&#125; <span class="variable">$ </span>| <span class="variable">$ </span>\begin&#123;<span class="title class_">Vmatrix</span>&#125; <span class="number">1</span> &amp; <span class="number">2</span> \\ <span class="number">3</span> &amp; <span class="number">4</span> \\ \<span class="keyword">end</span>&#123;<span class="title class_">Vmatrix</span>&#125; <span class="variable">$ </span>|</span><br><span class="line"></span><br><span class="line"><span class="comment">##3．如何输入带省略符号的矩阵</span></span><br><span class="line"></span><br><span class="line">使用 `\cdots` <span class="variable">$\</span>cdots<span class="variable">$ </span>, `\ddots` <span class="variable">$\</span>ddots<span class="variable">$ </span>, `\vdots` <span class="variable">$\</span>vdots<span class="variable">$ </span>来输入省略符号。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+$$</li>
+</ul>
+<p>\begin{pmatrix}<br>1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \<br>1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n \<br>\end{pmatrix}</p>
+<p>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;pmatrix&#125;</span></span><br><span class="line"><span class="number">1</span> &amp; a_1 &amp; a_1^<span class="number">2</span> &amp; <span class="string">\cdots</span> &amp; a_1^n <span class="string">\\</span></span><br><span class="line"><span class="number">1</span> &amp; a_2 &amp; a_2^<span class="number">2</span> &amp; <span class="string">\cdots</span> &amp; a_2^n <span class="string">\\</span></span><br><span class="line"><span class="string">\vdots</span> &amp; <span class="string">\vdots</span> &amp; <span class="string">\vdots</span> &amp; <span class="string">\ddots</span> &amp; <span class="string">\vdots</span> <span class="string">\\</span></span><br><span class="line"><span class="number">1</span> &amp; a_m &amp; a_m^<span class="number">2</span> &amp; <span class="string">\cdots</span> &amp; a_m^n <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;pmatrix&#125;</span></span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line"><span class="comment">##4．如何输入带分割符号的矩阵</span></span><br><span class="line"></span><br><span class="line">详见[数组使用参考](<span class="comment">#五数组与表格使用参考)。</span></span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$</p>
+<p>\left[<br>\begin{array}{cc|c}<br>1 &amp; 2 &amp; 3 \<br>4 &amp; 5 &amp; 6 \<br>\end{array}<br>\right]</p>
+<p>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"><span class="string">\left[</span></span><br><span class="line"><span class="string">\begin&#123;array&#125;&#123;cc|c&#125;</span></span><br><span class="line"><span class="number">1</span> &amp; <span class="number">2</span> &amp; <span class="number">3</span> <span class="string">\\</span></span><br><span class="line"><span class="number">4</span> &amp; <span class="number">5</span> &amp; <span class="number">6</span> <span class="string">\\</span></span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br><span class="line"><span class="string">\right]</span></span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">其中 `cc|c` 代表在一个三列矩阵中的第二和第三列之间插入分割线。</span><br><span class="line"></span><br><span class="line"><span class="comment">##5．如何输入行中矩阵</span></span><br><span class="line"></span><br><span class="line">若想在一行内显示矩阵，可使用 `<span class="string">\bigl(\begin&#123;smallmatrix&#125;</span> 表达式 <span class="string">\end&#123;smallmatrix&#125;\bigr)`</span></span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这是一个行中矩阵的示例 $\bigl(\begin{smallmatrix} a &amp; b \ c &amp; d \end{smallmatrix}\bigr)$</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：这是一个行中矩阵的示例 $\bigl(\begin&#123;smallmatrix&#125; a &amp; b \\ c &amp; d \end&#123;smallmatrix&#125;\bigr)$ 。</span><br><span class="line"></span><br><span class="line">#三、方程式序列使用参考</span><br><span class="line"></span><br><span class="line">##<span class="number">1</span>．如何输入一个方程式序列</span><br><span class="line"></span><br><span class="line">人们经常想要一列整齐且居中的方程式序列。使用 `\begin&#123;align&#125;…\end&#123;align&#125;` 来创造一列方程式，其中在每行结尾处使用 `\\` 。使用方程式序列无需声明公式符号 `$` 或 `$$` 。</span><br><span class="line"></span><br><span class="line">**请注意 `&#123;align&#125;` 语句是自动编号的，使用 `&#123;align*&#125;` 声明不自动编号。**</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{align}<br>    \sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \<br>              &amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \<br>              &amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \<br>              &amp; = \frac{73}{12}\sqrt{1-\frac{1}{73^2}} \<br>              &amp; \approx \frac{73}{12}\left(1-\frac{1}{2\cdot73^2}\right) \<br>\end{align}</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">- 显示：</span></span><br><span class="line"><span class="language-xml">$$</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\begin</span><span class="template-variable">&#123;align&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">\sqrt</span><span class="template-variable">&#123;37&#125;</span><span class="language-xml"> &amp; = \sqrt</span><span class="template-variable">&#123;\frac&#123;73^2-1&#125;</span><span class="template-variable">&#123;12^2&#125;</span><span class="language-xml">&#125; \\</span></span><br><span class="line"><span class="language-xml">&amp; = \sqrt</span><span class="template-variable">&#123;\frac&#123;73^2&#125;</span><span class="template-variable">&#123;12^2&#125;</span><span class="language-xml">\cdot\frac</span><span class="template-variable">&#123;73^2-1&#125;</span><span class="template-variable">&#123;73^2&#125;</span><span class="language-xml">&#125; \\</span></span><br><span class="line"><span class="language-xml">&amp; = \sqrt</span><span class="template-variable">&#123;\frac&#123;73^2&#125;</span><span class="template-variable">&#123;12^2&#125;</span><span class="language-xml">&#125;\sqrt</span><span class="template-variable">&#123;\frac&#123;73^2-1&#125;</span><span class="template-variable">&#123;73^2&#125;</span><span class="language-xml">&#125; \\</span></span><br><span class="line"><span class="language-xml">&amp; = \frac</span><span class="template-variable">&#123;73&#125;</span><span class="template-variable">&#123;12&#125;</span><span class="language-xml">\sqrt</span><span class="template-variable">&#123;1-\frac&#123;1&#125;</span><span class="template-variable">&#123;73^2&#125;</span><span class="language-xml">&#125; \\</span></span><br><span class="line"><span class="language-xml">&amp; \approx \frac</span><span class="template-variable">&#123;73&#125;</span><span class="template-variable">&#123;12&#125;</span><span class="language-xml">\left(1-\frac</span><span class="template-variable">&#123;1&#125;</span><span class="template-variable">&#123;2\cdot73^2&#125;</span><span class="language-xml">\right) \\</span></span><br><span class="line"><span class="language-xml">\end</span><span class="template-variable">&#123;align&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">$$</span></span><br><span class="line"><span class="language-xml">本例中每行公式的编号续自“[如何插入公式](#1如何插入公式)”中的自动编号公式\eqref</span><span class="template-variable">&#123;<span class="keyword">eq</span>:sample&#125;</span><span class="language-xml"> 。</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">##2．在一个方程式序列的每一行中注明原因</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">在 `</span><span class="template-variable">&#123;align&#125;</span><span class="language-xml">` 中后添加 `&amp;` 符号来自动对齐后面的内容，可灵活组合 `\text` 和 `\tag` 语句。`\tag` 语句编号优先级高于自动编号。</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">- 例子：</span></span><br><span class="line"><span class="language-xml"></span></span><br></pre></td></tr></table></figure>
+<p>\begin{align}<br>    v + w &amp; = 0  &amp; \text{Given} \tag 1 \<br>       -w &amp; = -w + 0 &amp; \text{additive identity} \tag 2 \<br>   -w + 0 &amp; = -w + (v + w) &amp; \text{equations $(1)$ and $(2)$} \<br>\end{align}</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">  $$<span class="string">\begin&#123;align&#125;</span></span><br><span class="line">    v + w &amp; = <span class="number">0</span>  &amp; <span class="string">\text&#123;Given&#125;</span> <span class="string">\tag</span> <span class="number">1</span> <span class="string">\\</span></span><br><span class="line">       -w &amp; = -w + <span class="number">0</span> &amp; <span class="string">\text&#123;additive</span> identity&#125; <span class="string">\tag</span> <span class="number">2</span> <span class="string">\\</span></span><br><span class="line">   -w + <span class="number">0</span> &amp; = -w + (v + w) &amp; <span class="string">\text&#123;equations</span> $(<span class="number">1</span>)$ <span class="keyword">and</span> $(<span class="number">2</span>)$&#125; <span class="string">\\</span></span><br><span class="line">  <span class="string">\end&#123;align&#125;</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">本例中第一、第二行的自动编号被 `<span class="string">\tag`</span> 语句覆盖，第三行的编号为自动编号。</span><br><span class="line"></span><br><span class="line">&gt; **@joyphys** 如何引用 `<span class="string">\tag`</span> 标记的公式？</span><br><span class="line">&gt; &lt;span style=<span class="string">&quot;text-align: center; display: block;&quot;</span>&gt; 使用 `<span class="string">\tag&#123;yourtag&#125;`</span> 来标记公式，然后在 `<span class="string">\tag`</span> 之后加上 `<span class="string">\label&#123;yourlabel&#125;`</span> &lt;/span&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#四、条件表达式使用参考</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##1．如何输入一个条件表达式</span></span><br><span class="line"></span><br><span class="line">使用 `<span class="string">\begin&#123;cases&#125;…\end&#123;cases&#125;`</span> 来创造一组条件表达式，在每一行条件中插入 `&amp;` 来指定需要对齐的内容，并在每一行结尾处使用 `<span class="string">\\`。</span></span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>    f(n) =<br>        \begin{cases}<br>            n/2,  &amp; \text{if $n$ is even} \<br>            3n+1, &amp; \text{if $n$ is odd} \<br>        \end{cases}<br>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">f(n) =</span><br><span class="line">        <span class="string">\begin&#123;cases&#125;</span></span><br><span class="line">            n/<span class="number">2</span>,  &amp; <span class="string">\text&#123;if</span> $n$ <span class="keyword">is</span> even&#125; <span class="string">\\</span></span><br><span class="line">            <span class="number">3n</span>+<span class="number">1</span>, &amp; <span class="string">\text&#123;if</span> $n$ <span class="keyword">is</span> odd&#125; <span class="string">\\</span></span><br><span class="line">        <span class="string">\end&#123;cases&#125;</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">&gt; **@Sherlockk** 用 markdown+math 编辑时 `<span class="string">\text`</span> 内需用 `<span class="string">\(equation\)`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##2．如何输入一个左侧对齐的条件表达式</span></span><br><span class="line"></span><br><span class="line">若想让文字在**左侧对齐显示**，则有如下方式：</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>    \left.<br>        \begin{array}{l}<br>            \text{if $n$ is even:} &amp; n/2 \<br>            \text{if $n$ is odd:} &amp; 3n+1 \<br>        \end{array}<br>    \right}<br>    =f(n)<br>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line"><span class="string">\left.</span></span><br><span class="line">        <span class="string">\begin&#123;array&#125;&#123;l&#125;</span></span><br><span class="line">            <span class="string">\text&#123;if</span> $n$ <span class="keyword">is</span> even:&#125; &amp; n/<span class="number">2</span> <span class="string">\\</span></span><br><span class="line">            <span class="string">\text&#123;if</span> $n$ <span class="keyword">is</span> odd:&#125; &amp; <span class="number">3n</span>+<span class="number">1</span> <span class="string">\\</span></span><br><span class="line">        <span class="string">\end&#123;array&#125;</span></span><br><span class="line">    <span class="string">\right\&#125;</span></span><br><span class="line">    =f(n)</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"><span class="comment">##3．如何使条件表达式适配行高</span></span><br><span class="line"></span><br><span class="line">在一些情况下，条件表达式中某些行的行高为非标准高度，此时使用 `<span class="string">\\[2ex]`</span> 语句代替该行末尾的 `<span class="string">\\`</span> 来让编辑器适配。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line">  |不适配[<span class="number">2ex</span>]|</span><br><span class="line">  |:--:|</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>f(n) =<br>    \begin{cases}<br>        \frac{n}{2}, &amp; \text{if $n$ is even} \<br>        3n+1,        &amp; \text{if $n$ is odd} \<br>    \end{cases}<br>$$</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">| 适配[<span class="number">2</span>ex] |</span><br><span class="line">| <span class="symbol">:-------</span>: |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>f(n) =<br>    \begin{cases}<br>        \frac{n}{2}, &amp; \text{if $n$ is even} \[2ex]<br>        3n+1,        &amp; \text{if $n$ is odd} \<br>    \end{cases}<br>$$</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">  |不适配[<span class="number">2</span>ex]|适配[<span class="number">2</span>ex]|</span><br><span class="line"><span class="title">  |:--:|:--:</span>|</span><br><span class="line">  |$$</span><br><span class="line">  f(n) = </span><br><span class="line">    \begin&#123;cases&#125;</span><br><span class="line">        \frac&#123;n&#125;&#123;<span class="number">2</span>&#125;, &amp; \text&#123;if $n$ is even&#125; \\</span><br><span class="line">  <span class="number">3</span>n+<span class="number">1</span>, &amp; \text&#123;if $n$ is odd&#125; \\</span><br><span class="line">  \end&#123;cases&#125;</span><br><span class="line">  $$</span><br><span class="line">  |</span><br><span class="line">  $$</span><br><span class="line">  f(n) =</span><br><span class="line">  \begin&#123;cases&#125;</span><br><span class="line">  \frac&#123;n&#125;&#123;<span class="number">2</span>&#125;, &amp; \text&#123;if $n$ is even&#125; \\[<span class="number">2</span>ex]</span><br><span class="line">  <span class="number">3</span>n+<span class="number">1</span>, &amp; \text&#123;if $n$ is odd&#125; \\</span><br><span class="line">  \end&#123;cases&#125;</span><br><span class="line">  $$|</span><br><span class="line"></span><br><span class="line">**一个 `[ex]` 指一个 <span class="string">&quot;X-Height&quot;</span>，即 x 字母高度。可以根据情况指定多个 `[ex]`，如 `[<span class="number">3</span>ex]`、`[<span class="number">4</span>ex]` 等。**</span><br><span class="line">其实可以在任意换行处使用 `\\[<span class="number">2</span>ex]` 语句，只要你觉得合适。</span><br><span class="line"></span><br><span class="line">#五、数组与表格使用参考</span><br><span class="line"></span><br><span class="line">##<span class="number">1</span>．如何输入一个数组或表格</span><br><span class="line"></span><br><span class="line">通常，一个格式化后的表格比单纯的文字或排版后的文字更具有可读性。</span><br><span class="line">数组和表格均以 `\begin&#123;array&#125;` 开头，并在其后定义列数及每一列的文本对齐属性，`c` `l` `r` 分别代表居中、左对齐及右对齐。若需要插入垂直分割线，在定义式中插入 `|` ，若要插入水平分割线，在下一行输入前插入 `\hline` 。</span><br><span class="line">与矩阵相似，每行元素间均须要插入 `&amp;` ，每行元素以 `\\` 结尾，最后以 `\ end&#123;array&#125;` 结束数组。</span><br><span class="line">使用单个数组或表格时无需声明 `$` 或 `$$` 符号。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{array}{c|lcr}<br>    n &amp; \text{左对齐} &amp; \text{居中对齐} &amp; \text{右对齐} \<br>    \hline<br>    1 &amp; 0.24 &amp; 1 &amp; 125 \<br>    2 &amp; -1 &amp; 189 &amp; -8 \<br>    3 &amp; -20 &amp; 2000 &amp; 1+10i \<br>\end{array}</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">  $$</span><br><span class="line">  <span class="string">\begin&#123;array&#125;&#123;c|lcr&#125;</span></span><br><span class="line">    n &amp; <span class="string">\text&#123;左对齐&#125;</span> &amp; <span class="string">\text&#123;居中对齐&#125;</span> &amp; <span class="string">\text&#123;右对齐&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\hline</span></span><br><span class="line">    <span class="number">1</span> &amp; <span class="number">0.24</span> &amp; <span class="number">1</span> &amp; <span class="number">125</span> <span class="string">\\</span></span><br><span class="line">    <span class="number">2</span> &amp; -<span class="number">1</span> &amp; <span class="number">189</span> &amp; -<span class="number">8</span> <span class="string">\\</span></span><br><span class="line">    <span class="number">3</span> &amp; -<span class="number">20</span> &amp; <span class="number">2000</span> &amp; <span class="number">1</span>+<span class="number">10i</span> <span class="string">\\</span></span><br><span class="line">  <span class="string">\end&#123;array&#125;</span></span><br><span class="line">  $$</span><br><span class="line"></span><br><span class="line"><span class="comment">##2．如何输入一个嵌套的数组或表格</span></span><br><span class="line"></span><br><span class="line">多个数组<span class="string">\表格可</span> **互相嵌套** 并组成一组数组或表格。</span><br><span class="line">使用嵌套前必须声明 `$$` 符号。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{array}{c} % 总表格<br>    \begin{array}{cc} % 第一行内分成两列<br>        \begin{array}{c|cccc} % 第一列&quot;最小值&quot;数组<br>            \text{min} &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>            \hline<br>            0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \<br>            1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \<br>            2 &amp; 0 &amp; 1 &amp; 2 &amp; 2 \<br>            3 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>        \end{array}<br>        &amp;<br>        \begin{array}{c|cccc} % 第二列&quot;最大值&quot;数组<br>            \text{max} &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>            \hline<br>            0 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>            1 &amp; 1 &amp; 1 &amp; 2 &amp; 3 \<br>            2 &amp; 2 &amp; 2 &amp; 2 &amp; 3 \<br>            3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 \<br>        \end{array}<br>    \end{array} % 第一行表格组结束<br>    \<br>    \begin{array}{c|cccc} % 第二行 Delta 值数组<br>        \Delta &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>        \hline<br>        0 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \<br>        1 &amp; 1 &amp; 0 &amp; 1 &amp; 2 \<br>        2 &amp; 2 &amp; 1 &amp; 0 &amp; 1 \<br>        3 &amp; 3 &amp; 2 &amp; 1 &amp; 0 \<br>    \end{array} % 第二行表格结束<br>\end{array} % 总表格结束<br>$$</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\begin&#123;array&#125;&#123;c&#125; % 总表格</span><br><span class="line">    \begin&#123;array&#125;&#123;cc&#125; % 第一行内分成两列</span><br><span class="line">        \begin&#123;array&#125;&#123;c|cccc&#125; % 第一列&quot;最小值&quot;数组</span><br><span class="line">            \text&#123;min&#125; &amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">            \hline</span><br><span class="line">           <span class="number"> 0 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 0 </span>\\</span><br><span class="line">           <span class="number"> 1 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 1 </span>\\</span><br><span class="line">           <span class="number"> 2 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 2 </span>\\</span><br><span class="line">           <span class="number"> 3 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">        \end&#123;array&#125;</span><br><span class="line">        &amp;</span><br><span class="line">        \begin&#123;array&#125;&#123;c|cccc&#125; % 第二列&quot;最大值&quot;数组</span><br><span class="line">            \text&#123;max&#125; &amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">            \hline</span><br><span class="line">           <span class="number"> 0 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">           <span class="number"> 1 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">           <span class="number"> 2 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">           <span class="number"> 3 </span>&amp;<span class="number"> 3 </span>&amp;<span class="number"> 3 </span>&amp;<span class="number"> 3 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">        \end&#123;array&#125;</span><br><span class="line">    \end&#123;array&#125; % 第一行表格组结束</span><br><span class="line">    \\</span><br><span class="line">    \begin&#123;array&#125;&#123;c|cccc&#125; % 第二行 Delta 值数组</span><br><span class="line">        \Delta &amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">        \hline</span><br><span class="line">       <span class="number"> 0 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 3 </span>\\</span><br><span class="line">       <span class="number"> 1 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 2 </span>\\</span><br><span class="line">       <span class="number"> 2 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 0 </span>&amp;<span class="number"> 1 </span>\\</span><br><span class="line">       <span class="number"> 3 </span>&amp;<span class="number"> 3 </span>&amp;<span class="number"> 2 </span>&amp;<span class="number"> 1 </span>&amp;<span class="number"> 0 </span>\\</span><br><span class="line">    \end&#123;array&#125; % 第二行表格结束</span><br><span class="line">\end&#123;array&#125; % 总表格结束</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"><span class="comment">##3．如何输入一个方程组</span></span><br><span class="line"></span><br><span class="line">可以使用 `\begin&#123;array&#125; … \end&#123;array&#125;` 和 `\left\&#123; … \right.` 来创建一个方程组：</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>  \left{<br>    \begin{array}{c}<br>        a_1x+b_1y+c_1z=d_1 \<br>        a_2x+b_2y+c_2z=d_2 \<br>        a_3x+b_3y+c_3z=d_3 \<br>    \end{array}<br>  \right.<br>$$</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line"><span class="string">\left\&#123;</span></span><br><span class="line">    <span class="string">\begin&#123;array&#125;&#123;c&#125;</span></span><br><span class="line">        a_1x+b_1y+c_1z=d_1 <span class="string">\\</span></span><br><span class="line">        a_2x+b_2y+c_2z=d_2 <span class="string">\\</span></span><br><span class="line">        a_3x+b_3y+c_3z=d_3 <span class="string">\\</span></span><br><span class="line">    <span class="string">\end&#123;array&#125;</span></span><br><span class="line"><span class="string">\right.</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">或使用条件表达式组 `<span class="string">\begin&#123;cases&#125;</span> … <span class="string">\end&#123;cases&#125;`</span> 来实现相同效果：</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{cases}<br>    a_1x+b_1y+c_1z=d_1 \<br>    a_2x+b_2y+c_2z=d_2 \<br>    a_3x+b_3y+c_3z=d_3 \<br>\end{cases}</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">  $$</span><br><span class="line">    <span class="string">\begin&#123;cases&#125;</span></span><br><span class="line">      a_1x+b_1y+c_1z=d_1 <span class="string">\\</span></span><br><span class="line">      a_2x+b_2y+c_2z=d_2 <span class="string">\\</span></span><br><span class="line">      a_3x+b_3y+c_3z=d_3 <span class="string">\\</span></span><br><span class="line">    <span class="string">\end&#123;cases&#125;</span></span><br><span class="line">  $$</span><br><span class="line"></span><br><span class="line"><span class="comment">#六、连分数使用参考</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##1．如何输入一个连分式</span></span><br><span class="line"></span><br><span class="line">就像输入分式时使用 `<span class="string">\frac`</span> 一样，使用 `<span class="string">\cfrac`</span> 来创建一个连分数。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>x = a_0 + \cfrac{1^2}{a_1 +<br>            \cfrac{2^2}{a_2 +<br>              \cfrac{3^2}{a_3 +<br>                \cfrac{4^4}{a_4 +<br>                  \cdots<br>                }<br>              }<br>            }<br>          }<br>$$</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">x = <span class="built_in">a_0</span> + \cfrac&#123;<span class="number">1</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_1</span> +</span><br><span class="line">            \cfrac&#123;<span class="number">2</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_2</span> +</span><br><span class="line">              \cfrac&#123;<span class="number">3</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_3</span> +</span><br><span class="line">                \cfrac&#123;<span class="number">4</span>^<span class="number">4</span>&#125;&#123;<span class="built_in">a_4</span> +</span><br><span class="line">                  \cdots</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">不要使用普通的 `\frac` 或 `\over` 来生成连分数，看起来会很奇怪。</span><br><span class="line"></span><br><span class="line">- **反例：**</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>x = a_0 + \frac{1^2}{a_1 +<br>            \frac{2^2}{a_2 +<br>              \frac{3^2}{a_3 +<br>                \frac{4^4}{a_4 +<br>                  \cdots<br>                }<br>              }<br>            }<br>          }<br>$$</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">x = a_0 + \<span class="built_in">frac</span>&#123;<span class="number">1</span>^<span class="number">2</span>&#125;&#123;a_1 +</span><br><span class="line">            \<span class="built_in">frac</span>&#123;<span class="number">2</span>^<span class="number">2</span>&#125;&#123;a_2 +</span><br><span class="line">              \<span class="built_in">frac</span>&#123;<span class="number">3</span>^<span class="number">2</span>&#125;&#123;a_3 +</span><br><span class="line">                \<span class="built_in">frac</span>&#123;<span class="number">4</span>^<span class="number">4</span>&#125;&#123;a_4 +</span><br><span class="line">                  \cdots</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line"></span><br><span class="line">当然，你可以使用 `\<span class="built_in">frac</span>` 来表达连分数的**紧缩记法**。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>x = a_0 + \frac{1^2}{a_1 +}<br>          \frac{2^2}{a_2 +}<br>          \frac{3^2}{a_3 +}<br>          \frac{4^4}{a_4 +}<br>          \cdots<br>$$</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">x = <span class="built_in">a_0</span> + \frac&#123;<span class="number">1</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_1</span> +&#125;</span><br><span class="line">          \frac&#123;<span class="number">2</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_2</span> +&#125;</span><br><span class="line">          \frac&#123;<span class="number">3</span>^<span class="number">2</span>&#125;&#123;<span class="built_in">a_3</span> +&#125;</span><br><span class="line">          \frac&#123;<span class="number">4</span>^<span class="number">4</span>&#125;&#123;<span class="built_in">a_4</span> +&#125;</span><br><span class="line">          \cdots</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">连分数通常都太大以至于不易排版，所以建议在连分数前后声明 `$$` 符号，或使用像 `[a0,a1,a2,a3,…]` 一样的紧缩记法。</span><br><span class="line"></span><br><span class="line">#七、交换图表使用参考</span><br><span class="line"></span><br><span class="line">##<span class="number">1</span>．如何输入一个交换图表</span><br><span class="line"></span><br><span class="line"><span class="title">&gt; 推荐使用 Cmd Markdown 自带的各种图功能，详见 [Cmd Markdown 高阶语法手册](https://www.zybuluo.com/mdeditor?url=https:</span>//www.zybuluo.com/static/editor/md-help.markdown#<span class="number">7</span>-<span class="variable">%E6%</span>B5<span class="variable">%81%</span>E7<span class="variable">%A8%</span><span class="number">8</span>B<span class="variable">%E5%</span><span class="number">9</span>B%BE)。</span><br><span class="line"></span><br><span class="line">使用一行 `\require&#123;AMScd&#125;` 语句来允许交换图表的显示。</span><br><span class="line">声明交换图表后，语法与矩阵相似，在开头使用 `\begin&#123;CD&#125;`，在结尾使用 `\ end&#123;CD&#125;`，在中间插入图表元素，每个元素之间插入 `&amp;` ，并在每行结尾处使用 `\\`。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>\require{AMScd}<br>\begin{CD}<br>    A @&gt;a&gt;&gt; B \<br>    @V b V V# @VV c V \<br>    C @&gt;&gt;d&gt; D \<br>\end{CD}<br>$$</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\require&#123;AMScd&#125;</span><br><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;a&gt;&gt; B \\</span><br><span class="line">    @V b V V\# @VV c V \\</span><br><span class="line">    C @&gt;&gt;d&gt; D \\</span><br><span class="line">\end&#123;CD&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">其中，`@&gt;&gt;&gt;` 代表右箭头、`@&lt;&lt;&lt;` 代表左箭头、`@VVV` 代表下箭头、`@AAA` 代表上箭头、`@=` 代表水平双实线、`@|` 代表竖直双实线、`@.`代表没有箭头。</span><br><span class="line">在 `@&gt;&gt;&gt;` 的 `&gt;&gt;&gt;` 之间任意插入文字即代表该箭头的注释文字。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>\require{AMDcd}<br>\begin{CD}<br>    A @&gt;&gt;&gt; B @&gt;{\text{very long label}}&gt;&gt; C \<br>    @. @AAA @| \<br>    D @= E @&lt;&lt;&lt; F \<br>\end{CD}<br>$$</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\require&#123;AMDcd&#125;</span><br><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;&gt;&gt; B @&gt;&#123;\<span class="keyword">text</span>&#123;very long label&#125;&#125;&gt;&gt; C \\</span><br><span class="line">    @. @AAA @| \\</span><br><span class="line">    D @= E @&lt;&lt;&lt; F \\</span><br><span class="line">\end&#123;CD&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">在本例中，<span class="string">`very long label`</span> 自动延长了它所在箭头以及对应箭头的长度，因而交换图表十分适合进行化学反应式的书写。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$$<br>\require{AMDcd}<br>\begin{CD}<br>    \rm{RCOHR^{&#39;}SO_3Na} @&gt;{\large\text{Hydrolysis, $\Delta$, Dil.HCl}}&gt;&gt; \rm{(RCOR^{&#39;})+NaCl+SO_2+ H_2O}<br>\end{CD}<br>$$</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line"><span class="variable">$$</span></span><br><span class="line">\<span class="keyword">require</span>&#123;<span class="title class_">AMDcd</span>&#125;</span><br><span class="line">\begin&#123;<span class="title class_">CD</span>&#125;</span><br><span class="line">    \rm&#123;<span class="title class_">RCOHR</span>^&#123;<span class="string">&#x27;&#125;SO_3Na&#125; @&gt;&#123;\large\text&#123;Hydrolysis, $\Delta$, Dil.HCl&#125;&#125;&gt;&gt; \rm&#123;(RCOR^&#123;&#x27;</span>&#125;)+<span class="title class_">NaCl</span>+<span class="title class_">SO_2</span>+ <span class="title class_">H_2O</span>&#125;</span><br><span class="line">\<span class="keyword">end</span>&#123;<span class="title class_">CD</span>&#125;</span><br><span class="line"><span class="variable">$$</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#八、一些特殊的注意事项</span></span><br><span class="line"></span><br><span class="line">| **!! 本段内容为个人翻译，可能有不准确之处 !!** |</span><br><span class="line">| <span class="symbol">:--------------------------------------------</span>: |</span><br><span class="line"></span><br><span class="line"><span class="title class_">These</span> are issues that won<span class="string">&#x27;t affect the correctness of formulas, but might make them look significantly better or worse. Beginners should feel free to ignore this advice; someone else will correct it for them, or more likely nobody will care.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">现在指出的小问题并不会影响公式的正确显示，但能让它们看起来明显更好看。初学者可无视这些建议，自然会有强迫症患者替你们改掉它的，或者更可能地，不会有人在意这些细节。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Don&#x27;</span>t <span class="keyword">use</span> `\frac` <span class="keyword">in</span> exponents <span class="keyword">or</span> limits of integrals; it looks bad <span class="keyword">and</span> can be confusing, which is why it is rarely done <span class="keyword">in</span> professional mathematical typesetting. <span class="title class_">Write</span> the fraction horizontally, <span class="keyword">with</span> a <span class="symbol">slash:</span></span><br><span class="line"></span><br><span class="line">在以 <span class="variable">$e</span><span class="variable">$ </span>为底的指数函数、极限和积分中尽量不要使用 `\frac` 符号——它会使整段函数看起来很奇怪并可能产生歧义，因此它在专业数学排版中几乎从不出现。可试着横着写这些分式，中间使用斜线间隔 `/` （用斜线代替分数线）。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{array}{cc}<br>    \mathrm{Bad} &amp; \mathrm{Better} \<br>    \hline \<br>    \large e^{i\frac{\pi}2} \quad e^{\frac{i\pi}2}&amp; \large e^{i\pi/2} \[2ex]<br>    \int_{-\frac\pi2}^\frac\pi2 \sin x,dx &amp; \int_{-\pi/2}^{\pi/2}\sin x,dx \<br>\end{array}</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line">  $$</span><br><span class="line">  <span class="string">\begin&#123;array&#125;&#123;cc&#125;</span></span><br><span class="line">      <span class="string">\mathrm&#123;Bad&#125;</span> &amp; <span class="string">\mathrm&#123;Better&#125;</span> <span class="string">\\</span></span><br><span class="line">      <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">      <span class="string">\large</span> e^&#123;i<span class="string">\frac&#123;\pi&#125;2&#125;</span> <span class="string">\quad</span> e^&#123;<span class="string">\frac&#123;i\pi&#125;2&#125;&amp;</span> <span class="string">\large</span> e^&#123;i<span class="string">\pi/2&#125;</span> <span class="string">\\[2ex]</span></span><br><span class="line">      <span class="string">\int_&#123;-\frac\pi2&#125;^\frac\pi2</span> <span class="string">\sin</span> x<span class="string">\,dx</span> &amp; <span class="string">\int_&#123;-\pi/2&#125;^&#123;\pi/2&#125;\sin</span> x<span class="string">\,dx</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\end&#123;array&#125;</span></span><br><span class="line">  $$</span><br><span class="line"></span><br><span class="line">使用 `|` 符号作为分隔符时会产生错误的间距，因此在需要分隔时最好使用 `<span class="string">\mid`</span> 来代替它。</span><br><span class="line"></span><br><span class="line">- 例子:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{array}{cc}<br>    \mathrm{Bad} &amp; \mathrm{Better} \<br>    \hline \<br>    {x|x^2\in\Bbb Z} &amp; {x\mid x^2\in\Bbb Z} \<br>\end{array}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">-</span> 显示：</span><br><span class="line">  $$</span><br><span class="line">  \begin&#123;array&#125;&#123;cc&#125;</span><br><span class="line"><span class="code">      \mathrm&#123;Bad&#125; &amp; \mathrm&#123;Better&#125; \\</span></span><br><span class="line"><span class="code">      \hline \\</span></span><br><span class="line"><span class="code">      \&#123;x|x^2\in\Bbb Z\&#125; &amp; \&#123;x\mid x^2\in\Bbb Z\&#125; \\</span></span><br><span class="line"><span class="code">    \end&#123;array&#125;</span></span><br><span class="line"><span class="code">  $$</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">For double and triple integrals, don&#x27;t use <span class="code">`\int\int`</span> or <span class="code">`\int\int\int`</span>. Instead use the special forms <span class="code">`\iint`</span> and <span class="code">`\iiint`</span>:</span><br><span class="line"></span><br><span class="line">使用多重积分符号时，不要多次使用 <span class="code">`\int`</span> 来声明，直接使用 <span class="code">`\iint`</span> 来表示二重积分或 <span class="code">`\iiint`</span> 来表示三重积分。</span><br><span class="line">在表示面积分和体积分时下标建议使用 <span class="code">`\boldsymbol&#123;S&#125;`</span> 和 <span class="code">`\boldsymbol&#123;V&#125;`</span> 符号；对于多维函数的超体积，可使用 <span class="code">`\idotsint`</span>，如下面的例子所示。</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{array}{cc}<br>    \mathrm{Bad} &amp; \mathrm{Better} \<br>    \hline \<br>    \int\int_S f(x),dy,dx &amp; \iint_{\boldsymbol{S}} f(x),{\rm d}y,{\rm d}x \<br>    \int\int\int_V f(x),dz,dy,dx &amp; \iiint_{\boldsymbol{V}} f(x),{\rm d}z,{\rm d}y,{\rm d}x \[3ex]<br>    \hline \<br>    \text{多重积分示例} &amp; \idotsint_{\boldsymbol{D}} f(x_1,x_2,,\cdots, ,x_n),{\rm d}x_1\cdots{\rm d}x_n<br>\end{array}</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 显示：</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line"><span class="string">\require&#123;AMSmath&#125;</span></span><br><span class="line"><span class="string">\begin&#123;array&#125;&#123;cc&#125;</span></span><br><span class="line">    <span class="string">\mathrm&#123;Bad&#125;</span> &amp; <span class="string">\mathrm&#123;Better&#125;</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\int\int_S</span> f(x)<span class="string">\,dy\,dx</span> &amp; <span class="string">\iint_&#123;\boldsymbol&#123;S&#125;&#125;</span> f(x)<span class="string">\,&#123;\rm</span> d&#125;y<span class="string">\,&#123;\rm</span> d&#125;x <span class="string">\\</span></span><br><span class="line">    <span class="string">\int\int\int_V</span> f(x)<span class="string">\,dz\,dy\,dx</span> &amp; <span class="string">\iiint_&#123;\boldsymbol&#123;V&#125;&#125;</span> f(x)<span class="string">\,&#123;\rm</span> d&#125;z<span class="string">\,&#123;\rm</span> d&#125;y<span class="string">\,&#123;\rm</span> d&#125;x <span class="string">\\[3ex]</span></span><br><span class="line">    <span class="string">\hline</span> <span class="string">\\</span></span><br><span class="line">    <span class="string">\text&#123;多重积分示例&#125;</span> &amp; <span class="string">\idotsint_&#123;\boldsymbol&#123;D&#125;&#125;</span> f(x_1,x_2,<span class="string">\,\cdots\,</span> ,x_n)<span class="string">\,&#123;\rm</span> d&#125;x_1<span class="string">\cdots&#123;\rm</span> d&#125;x_n</span><br><span class="line"><span class="string">\end&#123;array&#125;</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">Use `<span class="string">\,`,</span> <span class="keyword">to</span> insert a thin space before differentials; without this $<span class="string">\TeX$</span> will mash them together:</span><br><span class="line"></span><br><span class="line">使用多重积分时，在被积变量后加入 `<span class="string">\,`</span> （或在微分符号 $&#123;<span class="string">\rm</span> d&#125;$ 之前）来插入一个小的间距，否则各种被积变量将会挤成一团。注意比较 $&#123;<span class="string">\rm</span> d&#125;z&#123;<span class="string">\rm</span> d&#125; y&#123;<span class="string">\rm</span> d&#125; x$ 的不同。</span><br><span class="line"></span><br><span class="line">- 例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>\begin{array}{cc}<br>    \mathrm{Bad} &amp; \mathrm{Better} \<br>    \hline \<br>    \iiint_V f(x){\rm d}z {\rm d}y {\rm d}x &amp; \iiint_{\boldsymbol{V}} f(x),{\rm d}z,{\rm d}y,{\rm d}x \<br>\end{array}</p>
+<pre><code>
+- 显示：
+  $$
+  \begin&#123;array&#125;&#123;cc&#125;
+      \mathrm&#123;Bad&#125; &amp; \mathrm&#123;Better&#125; \\
+      \hline \\
+      \iiint_V f(x)&#123;\rm d&#125;z &#123;\rm d&#125;y &#123;\rm d&#125;x &amp; \iiint_&#123;\boldsymbol&#123;V&#125;&#125; f(x)\,&#123;\rm d&#125;z\,&#123;\rm d&#125;y\,&#123;\rm d&#125;x \\
+    \end&#123;array&#125;
+  $$
+
+---
+
+感谢您花费时间阅读这份指导手册，本手册内容可能有疏漏之处，欢迎更改指正。
+更多语法请参见：[Cmd Markdown 简明语法手册](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown)，[Cmd Markdown 高阶语法手册](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册)。
+祝您记录、阅读、分享愉快！
+
+Drafted &amp; Translated by [Eric P.](https://ericp.cn)
+2015-10-02
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://david-deng.cn/my-blog">David</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://david-deng.cn/my-blog/2023/05/10/MarkDown-Formula-Guide-Manual/">https://david-deng.cn/my-blog/2023/05/10/MarkDown-Formula-Guide-Manual/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://david-deng.cn/my-blog" target="_blank">David 的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/my-blog/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/my-blog/tags/markdown/">markdown</a></div><div class="post_share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/WeChatPay.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/WeChatPay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/Alipay.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/Alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/my-blog/2023/05/09/Linear-Regression-And-Logistic-Regression/" title="线性回归和逻辑回归"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" onerror="onerror=null;src='/my-blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">线性回归和逻辑回归</div></div></a></div><div class="next-post pull-right"><a href="/my-blog/2023/05/11/educoder-ml-homework/" title="头歌 - 机器学习 - 逻辑回归"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" onerror="onerror=null;src='/my-blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">头歌 - 机器学习 - 逻辑回归</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/my-blog/2023/05/06/typora-shortcut-keys/" title="typora 快捷键"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-06</div><div class="title">typora 快捷键</div></div></a></div><div><a href="/my-blog/2023/10/17/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91OverLeaf%20%E5%85%8D%E8%B4%B9%E6%B0%B8%E4%B9%85%E5%8D%87%E7%BA%A7%20Professional%20%E8%AE%A2%E9%98%85/" title="【教程】OverLeaf 免费永久升级 Professional 订阅"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">【教程】OverLeaf 免费永久升级 Professional 订阅</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/my-blog/img/avatar.png" onerror="this.onerror=null;this.src='/my-blog/img/loading.gif'" alt="avatar"/></div><div class="author-info__name">David</div><div class="author-info__description">Welcome to David's Blog</div></div><div class="card-info-data site-data is-center"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/david-deng-01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/david-deng-01" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/David_0925" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=635647792&amp;website=www.oicqzone.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:david-deng-0925@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%AC%E5%BC%8F%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83"><span class="toc-number">1.</span> <span class="toc-text">一、公式使用参考</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%8E%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1．如何插入公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text">2．如何输入上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%88%86%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">4．如何输入分数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%BC%80%E6%96%B9"><span class="toc-number">1.4.</span> <span class="toc-text">5．如何输入开方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="toc-number">1.5.</span> <span class="toc-text">6．如何输入省略号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%90%91%E9%87%8F"><span class="toc-number">1.6.</span> <span class="toc-text">7．如何输入向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%A7%AF%E5%88%86"><span class="toc-number">1.7.</span> <span class="toc-text">8．如何输入积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E6%9E%81%E9%99%90%E8%BF%90%E7%AE%97"><span class="toc-number">1.8.</span> <span class="toc-text">9．如何输入极限运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%B4%AF%E5%8A%A0%E3%80%81%E7%B4%AF%E4%B9%98%E8%BF%90%E7%AE%97"><span class="toc-number">1.9.</span> <span class="toc-text">10．如何输入累加、累乘运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D"><span class="toc-number">1.10.</span> <span class="toc-text">11．如何输入希腊字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E5%85%B6%E5%AE%83%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">1.11.</span> <span class="toc-text">12．如何输入其它特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%EF%BC%8E%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.1.</span> <span class="toc-text">(1)．关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%EF%BC%8E%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.2.</span> <span class="toc-text">(2)．集合运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%EF%BC%8E%E5%AF%B9%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.3.</span> <span class="toc-text">(3)．对数运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%EF%BC%8E%E4%B8%89%E8%A7%92%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.4.</span> <span class="toc-text">(4)．三角运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%EF%BC%8E%E5%BE%AE%E7%A7%AF%E5%88%86%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.5.</span> <span class="toc-text">(5)．微积分运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%EF%BC%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.6.</span> <span class="toc-text">(6)．逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%EF%BC%8E%E6%88%B4%E5%B8%BD%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.11.7.</span> <span class="toc-text">(7)．戴帽符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%EF%BC%8E%E8%BF%9E%E7%BA%BF%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.11.8.</span> <span class="toc-text">(8)．连线符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%EF%BC%8E%E7%AE%AD%E5%A4%B4%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.11.9.</span> <span class="toc-text">(9)．箭头符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13%EF%BC%8E%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%AD%97%E4%BD%93%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.12.</span> <span class="toc-text">13．如何进行字体转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14%EF%BC%8E%E5%A6%82%E4%BD%95%E9%AB%98%E4%BA%AE%E4%B8%80%E8%A1%8C%E5%85%AC%E5%BC%8F"><span class="toc-number">1.13.</span> <span class="toc-text">14．如何高亮一行公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15%EF%BC%8E%E5%A4%A7%E6%8B%AC%E5%8F%B7%E5%92%8C%E8%A1%8C%E6%A0%87%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.14.</span> <span class="toc-text">15．大括号和行标的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16%EF%BC%8E%E5%85%B6%E5%AE%83%E5%91%BD%E4%BB%A4"><span class="toc-number">1.15.</span> <span class="toc-text">16．其它命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%EF%BC%8E%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6-operatorname"><span class="toc-number">1.15.1.</span> <span class="toc-text">(1)．定义新的运算符 \operatorname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%EF%BC%8E%E6%B7%BB%E5%8A%A0%E6%B3%A8%E9%87%8A%E6%96%87%E5%AD%97-text"><span class="toc-number">1.15.2.</span> <span class="toc-text">(2)．添加注释文字 \text</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%EF%BC%8E%E5%9C%A8%E5%AD%97%E7%AC%A6%E9%97%B4%E5%8A%A0%E5%85%A5%E7%A9%BA%E6%A0%BC"><span class="toc-number">1.15.3.</span> <span class="toc-text">(3)．在字符间加入空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%EF%BC%8E%E6%9B%B4%E6%94%B9%E6%96%87%E5%AD%97%E9%A2%9C%E8%89%B2-color"><span class="toc-number">1.15.4.</span> <span class="toc-text">(4)．更改文字颜色 \color</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%EF%BC%8E%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="toc-number">1.15.5.</span> <span class="toc-text">(5)．添加删除线</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="LeetCode刷题400道打卡"/></a><div class="content"><a class="title" href="/my-blog/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡">LeetCode刷题400道打卡</a><time datetime="2024-03-17T16:00:00.000Z" title="发表于 2024-03-18 00:00:00">2024-03-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="多模态基础模型：从专家到通用助理"/></a><div class="content"><a class="title" href="/my-blog/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理">多模态基础模型：从专家到通用助理</a><time datetime="2024-01-04T14:42:08.000Z" title="发表于 2024-01-04 22:42:08">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="校园网自动登录脚本"/></a><div class="content"><a class="title" href="/my-blog/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本">校园网自动登录脚本</a><time datetime="2023-12-30T09:21:30.000Z" title="发表于 2023-12-30 17:21:30">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-5.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="多模态讽刺识别基线模型复现"/></a><div class="content"><a class="title" href="/my-blog/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现">多模态讽刺识别基线模型复现</a><time datetime="2023-11-24T08:51:18.000Z" title="发表于 2023-11-24 16:51:18">2023-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/my-blog/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/my-blog/img/404.jpg'" alt="宝塔面板失效"/></a><div class="content"><a class="title" href="/my-blog/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效">宝塔面板失效</a><time datetime="2023-11-24T08:19:27.000Z" title="发表于 2023-11-24 16:19:27">2023-11-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By David</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="http://www.beian.gov.cn/portal/registerSystemInfo" rel="external nofollow noreferrer" target="_blank"> <img style="vertical-align:middle; width:20px; " src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/icp.png"> 赣公网安备36082302000135号</a> <a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" id="beian"  target="_blank">赣ICP备2023013705号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/my-blog/js/utils.js?v=4.13.0"></script><script src="/my-blog/js/main.js?v=4.13.0"></script><script src="/my-blog/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/my-blog/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
