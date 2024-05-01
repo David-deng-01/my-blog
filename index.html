@@ -1,87 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅游照片墙 - Vue 版</title>
-    <!-- 引入Bootstrap CSS -->
-    <link rel="stylesheet" href="lib/bootstrap-5.3.0/css/bootstrap.min.css">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>David 的博客 - Welcome to David's Blog</title><meta name="author" content="David"><meta name="copyright" content="David"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这里是程序员 David 的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="David 的博客">
+<meta property="og:url" content="https://david-deng.cn/index.html">
+<meta property="og:site_name" content="David 的博客">
+<meta property="og:description" content="这里是程序员 David 的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://david-deng.cn/img/avatar.png">
+<meta property="article:author" content="David">
+<meta property="article:tag" content="博客, 经验, 深度学习, DL, 机器学习, ML, 人工智能, AI, PyTorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://david-deng.cn/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://david-deng.cn/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"文章距离最近一次更新已经","messageNext":"天，文章的内容可能已经过期。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: David","link":"链接: ","source":"来源: David 的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'David 的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-05-01 17:04:23'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-    <!-- 引入Lightbox CSS -->
-    <link rel="stylesheet" href="lib/lightbox2-2.11.4/css/lightbox.min.css">
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
 
-    <!-- 引入自定义 CSS -->
-    <link rel="stylesheet" href="lib/css/index.css">
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-    <!-- 引入Bootstrap JS -->
-    <script src="lib/js/jquery.js"></script>
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/loading.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('http://cdn-hw-static2.shanhutech.cn/bizhi/staticwp/202310/e538193639ebdd65354c6d5452b579f4--1998463982.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="David 的博客"><span class="site-name">David 的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://david-deng.cn/wallpaper/mk-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 孟坤壁纸</span></a></li><li><a class="site-page child" href="https://david-deng.cn/wallpaper/xben-wallpaper/"><i class="fa-fw fas fa-images"></i><span> 小笨壁纸</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">David 的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/david-deng-01" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/David_0925" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=635647792&amp;website=www.oicqzone.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:david-deng-0925@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode刷题400道打卡"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡">LeetCode刷题400道打卡</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-17T16:00:00.000Z" title="发表于 2024-03-18 00:00:00">2024-03-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-17T16:00:00.000Z" title="更新于 2024-03-18 00:00:00">2024-03-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/LeetCode/">LeetCode</a></span></div><div class="content">LeetCode 刷题 400 道打卡记录一下 LeetCode 刷题 400 道我的 LeetCode 主页  
 
-    <!-- 引入lightbox插件用于图片弹窗查看 -->
-    <script src="lib/lightbox2-2.11.4/js/lightbox-plus-jquery.min.js"></script>
+书山有路勤为径，学海无涯苦作舟。诸君共勉之！再接再厉吧！
+时间：2024-03-18
 
-    <!-- 引入Bootstrap JS -->
-    <script src="lib/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多模态基础模型：从专家到通用助理"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理">多模态基础模型：从专家到通用助理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-04T14:42:08.000Z" title="发表于 2024-01-04 22:42:08">2024-01-04</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-04T14:45:16.000Z" title="更新于 2024-01-04 22:45:16">2024-01-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI/NLP/">NLP</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/AI/">AI</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/NLP/">NLP</a></span></div><div class="content">多模态大模型综述</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="校园网自动登录脚本"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本">校园网自动登录脚本</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-30T09:21:30.000Z" title="发表于 2023-12-30 17:21:30">2023-12-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-03T08:26:12.000Z" title="更新于 2024-01-03 16:26:12">2024-01-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/spider/">spider</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/spider/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/spider/">spider</a></span></div><div class="content">校园网自动登录脚本</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多模态讽刺识别基线模型复现"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现">多模态讽刺识别基线模型复现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-24T08:51:18.000Z" title="发表于 2023-11-24 16:51:18">2023-11-24</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-24T13:02:00.000Z" title="更新于 2023-11-24 21:02:00">2023-11-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87/">论文</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87/%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB/">讽刺识别</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87/%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB/%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B/">基线模型</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B/">基线模型</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB/">讽刺识别</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%BA%E6%96%87/">论文</a></span></div><div class="content">多模态讽刺识别基线模型复现</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝塔面板失效"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效">宝塔面板失效</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-24T08:19:27.000Z" title="发表于 2023-11-24 16:19:27">2023-11-24</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-24T13:00:32.000Z" title="更新于 2023-11-24 21:00:32">2023-11-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">宝塔面板失效</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/30/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二分查找"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/30/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找">二分查找</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-30T07:16:46.000Z" title="发表于 2023-10-30 15:16:46">2023-10-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-16T07:52:22.000Z" title="更新于 2023-12-16 15:52:22">2023-12-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/LeetCode/">LeetCode</a></span></div><div class="content">二分查找二分查找的概念
+一些网站对于二分查找的解释
 
-    <!-- 引入lozad JS -->
-    <script src="lib/js/lozad.js"></script>
+百度百科：二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法。但是，折半查找要求线性表必须采用顺序存储结构，而且表中元素按关键字有序排列。
 
-    <!-- 引入Vue.js -->
-    <script src="lib/js/vue.js"></script>
+菜鸟教程：二分搜索是一种在有序数组中查找某一特定元素的搜索算法。搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。
 
-</head>
-<body>
 
-<div id="app" class="container mt-5">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Image</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./video.html">Video</a>
-                    </li>
-                </ul>
+wikipedia：在计算机科学中，二分查找算法（英语：binary search algorithm），也称折半搜索算法（英语：half-interval search algorithm）[1]、对数搜索算法（英语：logarithmic search algorithm）[2]，是一种在有序数组中查找某一特定元素的搜索算法。搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/28/heapq-%E5%A0%86%E9%98%9F%E5%88%97%E7%AE%97%E6%B3%95/" title="heapq 堆队列算法"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="heapq 堆队列算法"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/28/heapq-%E5%A0%86%E9%98%9F%E5%88%97%E7%AE%97%E6%B3%95/" title="heapq 堆队列算法">heapq 堆队列算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-28T05:34:19.000Z" title="发表于 2023-10-28 13:34:19">2023-10-28</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-16T13:34:32.000Z" title="更新于 2023-11-16 21:34:32">2023-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/heapq/">heapq</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/heapq/">heapq</a></span></div><div class="content">Python heapq 堆队列算法模块解释说明源码：Lib/heapq.py
+
+这个模块实现了堆队列算法，即优先队列算法。
+堆是一棵完全二叉树，其中每个节点的值都小于等于其各个子节点的值。这个使用数组的实现，索引从 0 开始，且对所有的 k 都有 heap[k] &lt;= heap[2*k+1] 和 heap[k] &lt;= heap[2*k+2]。比较时不存在的元素被认为是无限大。堆最有趣的特性在于最小的元素总是在根结点：heap[0]。
+这个API与教材的堆算法实现有所不同，具体区别有两方面：（a）我们使用了从零开始的索引。这使得节点和其孩子节点索引之间的关系不太直观但更加适合，因为 Python 使用从零开始的索引。 （b）我们的 pop 方法返回最小的项而不是最大的项（这在教材中称为“最小堆”；而“最大堆”在教材中更为常见，因为它更适用于原地排序）。
+基于这两方面，把堆看作原生的Python list也没什么奇怪的： heap[0] 表示最小的元素，同时 heap.sort() 维护了堆的不变性！
+要创建一个堆，可以新建一个空列表 []，或者用函数 heapify() 把 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/25/1%202023-10-25%20%E7%BB%84%E4%BC%9A%E5%88%86%E4%BA%AB/" title="【2023-10-25 组会分享】大语言模型综述"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【2023-10-25 组会分享】大语言模型综述"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/25/1%202023-10-25%20%E7%BB%84%E4%BC%9A%E5%88%86%E4%BA%AB/" title="【2023-10-25 组会分享】大语言模型综述">【2023-10-25 组会分享】大语言模型综述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-24T16:00:00.000Z" title="发表于 2023-10-25 00:00:00">2023-10-25</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-16T13:34:22.000Z" title="更新于 2023-11-16 21:34:22">2023-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI/NLP/">NLP</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/AI/">AI</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/NLP/">NLP</a></span></div><div class="content">大语言模型综述A Survey of Large Language Models
+文章基本信息如下
+
+文章名字：A Survey of Large Language Models
+发表时间：2023年3月
+发表期刊：arxiv(预印版)
+发表机构：中国人民大学 - AI Box小组 (ruc.edu.cn)
+
+
+0 摘要 (Abstract)
+时代背景：
+
+自从20世纪50年代图灵测试被提出以来，人类一直在探索如何用机器掌握语言智能。
+近年来，通过在大规模语料库上对Transformer 模型进行预训练，人们提出了预训练语言模型（Pre-training Language Model, PLM），其在解决各种自然语言处理（Natural Language Processing, NLP）任务方面表现出强大的能力。
+近年来，学术界和工业界极大地 推进了针对LLM的研究，其中一个显著的进展是推出了ChatGPT（一种基于LLM开发的强大AI聊天机器人），它引起了社会的广泛 关注。
+
+
+
+研究发现：
+
+研究人员发现扩展模型规模可以提高模型能力，因此他们通过将参数增加到更大的 尺寸来进一步研究 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/17/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91OverLeaf%20%E5%85%8D%E8%B4%B9%E6%B0%B8%E4%B9%85%E5%8D%87%E7%BA%A7%20Professional%20%E8%AE%A2%E9%98%85/" title="【教程】OverLeaf 免费永久升级 Professional 订阅"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【教程】OverLeaf 免费永久升级 Professional 订阅"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/17/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91OverLeaf%20%E5%85%8D%E8%B4%B9%E6%B0%B8%E4%B9%85%E5%8D%87%E7%BA%A7%20Professional%20%E8%AE%A2%E9%98%85/" title="【教程】OverLeaf 免费永久升级 Professional 订阅">【教程】OverLeaf 免费永久升级 Professional 订阅</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-17T02:51:30.000Z" title="发表于 2023-10-17 10:51:30">2023-10-17</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-16T13:34:14.000Z" title="更新于 2023-11-16 21:34:14">2023-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/OverLeaf/">OverLeaf</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OverLeaf/">OverLeaf</a></span></div><div class="content">【教程】OverLeaf 免费永久升级 Professional 订阅在读博士或者硕士的同学，可能经常会需要用到LaTex和Overleaf来对论文进行编辑和排版。常见的LaTex有两种使用的方式，一种是下载到自己本地然后在本地进行编译运行，另一种是在线编译运行。这里需要讲到的是在线编译运行的方式使用LaTex。
+Overleaf 是在线编译运行LaTex的代表软件之一。Overleaf因其界面友好、可实时修改评论，且支持多人在线协作而受到许多人的欢迎。它支持多种运行的环境，有非常多的论文模板可以选用比如像ACM的会议通常会提供这两种工具的模版，并且是完全免费的。
+Overleaf的免费版本是不能解锁review模式等全部功能的。今天在这里分享一个实用小技巧，让大家可以免费获得Professional Plan，解锁全部功能！
+OverLeaf 官网
+中文官网：Overleaf, 在线LaTeX编辑器
+英文官网：Overleaf, Online LaTeX Editor
+
+IEEE Collabratec 官网
+英文官网：IEEE Collabratec®
+
+需要使用的工具
+科学上网小 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/11/other-%E8%BD%AC%E8%BD%BD-cndn-Pycharm%E8%A7%A3%E5%86%B3%E5%90%AF%E5%8A%A8%E6%97%B6%E5%80%99%E7%B4%A2%E5%BC%95%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/" title="Pycharm解决启动时候索引慢的问题"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pycharm解决启动时候索引慢的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/11/other-%E8%BD%AC%E8%BD%BD-cndn-Pycharm%E8%A7%A3%E5%86%B3%E5%90%AF%E5%8A%A8%E6%97%B6%E5%80%99%E7%B4%A2%E5%BC%95%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/" title="Pycharm解决启动时候索引慢的问题">Pycharm解决启动时候索引慢的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-11T08:30:00.000Z" title="发表于 2023-10-11 16:30:00">2023-10-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-15T08:59:18.000Z" title="更新于 2023-11-15 16:59:18">2023-11-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/csdn/">csdn</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%BD%AC%E8%BD%BD/">转载</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/csdn/">csdn</a></span></div><div class="content">设置里去掉update里面的两个勾shared indexes中，把自动下载索引改成不下载使用本地索引
+
+本文转自 https://blog.csdn.net/weixin_43941438/article/details/132240663，如有侵权，请联系删除。
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/loading.gif'" alt="avatar"/></div><div class="author-info__name">David</div><div class="author-info__description">Welcome to David's Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/david-deng-01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/david-deng-01" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/David_0925" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=635647792&amp;website=www.oicqzone.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:david-deng-0925@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode刷题400道打卡"/></a><div class="content"><a class="title" href="/2024/03/18/other-leetcode-%E3%80%902024-03-18-LeetCode-%E5%88%B7%E9%A2%98-400%E9%81%93%E6%89%93%E5%8D%A1%E3%80%91/" title="LeetCode刷题400道打卡">LeetCode刷题400道打卡</a><time datetime="2024-03-17T16:00:00.000Z" title="发表于 2024-03-18 00:00:00">2024-03-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多模态基础模型：从专家到通用助理"/></a><div class="content"><a class="title" href="/2024/01/04/2024-01-05%20%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E7%BB%BC%E8%BF%B0/" title="多模态基础模型：从专家到通用助理">多模态基础模型：从专家到通用助理</a><time datetime="2024-01-04T14:42:08.000Z" title="发表于 2024-01-04 22:42:08">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="校园网自动登录脚本"/></a><div class="content"><a class="title" href="/2023/12/30/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/" title="校园网自动登录脚本">校园网自动登录脚本</a><time datetime="2023-12-30T09:21:30.000Z" title="发表于 2023-12-30 17:21:30">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多模态讽刺识别基线模型复现"/></a><div class="content"><a class="title" href="/2023/11/24/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B%E5%A4%8D%E7%8E%B0/" title="多模态讽刺识别基线模型复现">多模态讽刺识别基线模型复现</a><time datetime="2023-11-24T08:51:18.000Z" title="发表于 2023-11-24 16:51:18">2023-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝塔面板失效"/></a><div class="content"><a class="title" href="/2023/11/24/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%A4%B1%E6%95%88/" title="宝塔面板失效">宝塔面板失效</a><time datetime="2023-11-24T08:19:27.000Z" title="发表于 2023-11-24 16:19:27">2023-11-24</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
             </div>
-        </div>
-    </nav>
-
-    <div class="row photo-gallery">
-        <!-- Vue将会在这里动态渲染照片 -->
-        <div
-                v-for="(photo, index) in photos"
-                :key="index"
-                class="col-md-3 col-sm-6 mb-4"
-        >
-            <!-- 调整列宽以适应每行5张图片 -->
-            <a :href="photo.src" data-lightbox="gallery">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                     :data-src="photo.compressed_src"
-                     :alt="photo.alt"
-                     class="img-fluid rounded shadow-sm fit-image lozad"/>
-            </a>
-        </div>
-    </div>
-</div>
-</body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let observer = lozad('.lozad', {
-            rootMargin: '100px 0px', // 观察的根元素边缘，可以调整以适应不同需求
-            threshold: 0.1, // 图片进入视口多少比例时开始加载，0~1之间
-        });
-        observer.observe();
-    });
-</script>
-
-<!-- 引入自定义 JS -->
-<script src="lib/js/index.js"></script>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/NLP/"><span class="card-category-list-name">NLP</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Educoder/"><span class="card-category-list-name">Educoder</span><span class="card-category-list-count">5</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Educoder/ML/"><span class="card-category-list-name">ML</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Plan/"><span class="card-category-list-name">Plan</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Plan/Graduate/"><span class="card-category-list-name">Graduate</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.35em; color: rgb(81, 74, 5)">笔记</a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.15em; color: rgb(75, 110, 92)">深度学习</a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.35em; color: rgb(89, 160, 23)">教程</a><a href="/tags/typora/" style="font-size: 1.15em; color: rgb(54, 27, 97)">typora</a><a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 1.15em; color: rgb(84, 132, 111)">快捷键</a><a href="/tags/Educoder/" style="font-size: 1.45em; color: rgb(1, 40, 102)">Educoder</a><a href="/tags/ML/" style="font-size: 1.45em; color: rgb(126, 110, 121)">ML</a><a href="/tags/markdown/" style="font-size: 1.15em; color: rgb(85, 46, 14)">markdown</a><a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.15em; color: rgb(183, 191, 172)">计划</a><a href="/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/" style="font-size: 1.15em; color: rgb(96, 193, 5)">研究生</a><a href="/tags/OverLeaf/" style="font-size: 1.15em; color: rgb(192, 56, 118)">OverLeaf</a><a href="/tags/Pytorch/" style="font-size: 1.15em; color: rgb(116, 78, 105)">Pytorch</a><a href="/tags/AI/" style="font-size: 1.25em; color: rgb(120, 26, 160)">AI</a><a href="/tags/NLP/" style="font-size: 1.25em; color: rgb(22, 116, 29)">NLP</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.45em; color: rgb(116, 147, 126)">算法</a><a href="/tags/LeetCode/" style="font-size: 1.45em; color: rgb(181, 169, 32)">LeetCode</a><a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 1.15em; color: rgb(139, 200, 144)">宝塔面板</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(47, 30, 122)">Linux</a><a href="/tags/%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.15em; color: rgb(170, 115, 173)">基线模型</a><a href="/tags/%E8%AE%BD%E5%88%BA%E8%AF%86%E5%88%AB/" style="font-size: 1.15em; color: rgb(148, 7, 96)">讽刺识别</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-11-10T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">95.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-05-01T09:04:23.211Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By David</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="http://www.beian.gov.cn/portal/registerSystemInfo" rel="external nofollow noreferrer" target="_blank"> <img style="vertical-align:middle; width:20px; " src="https://cdn.jsdelivr.net/gh/David-deng-01/images/blog/icp.png"> 赣公网安备36082302000135号</a> <a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" id="beian"  target="_blank">赣ICP备2023013705号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = result.data.content
+      }
+    })
+  })
+}
+typedJSFn.run(subtitleType)
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
